@@ -37,9 +37,9 @@ main{padding:18px 20px 40px;max-width:1640px;width:100%;margin:0 auto;display:fl
 .surface{background:var(--surface);border:1px solid var(--border);border-radius:10px}
 .ch{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;flex-wrap:wrap}.ch h2{font-size:14px;margin:0;font-weight:650}.ch p{margin:2px 0 0;font-size:11.5px;color:var(--muted);max-width:760px}
 .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.sp{flex:1}
-.g{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.g{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g5{grid-template-columns:repeat(5,minmax(0,1fr))}.g6{grid-template-columns:repeat(6,minmax(0,1fr))}
 .c12{grid-template-columns:repeat(12,minmax(0,1fr))}.c4{grid-column:span 4}.c5{grid-column:span 5}.c7{grid-column:span 7}.c8{grid-column:span 8}
-@media(max-width:1200px){.g4,.g6{grid-template-columns:repeat(2,minmax(0,1fr))}.c12>*{grid-column:span 12!important}.g3{grid-template-columns:1fr}}
+@media(max-width:1200px){.g4,.g5,.g6{grid-template-columns:repeat(2,minmax(0,1fr))}.c12>*{grid-column:span 12!important}.g3{grid-template-columns:1fr}}
 @media(max-width:780px){.g2{grid-template-columns:1fr}#sb{display:none}}
 .pill{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;border:1px solid var(--border);background:var(--surface);color:var(--muted)}
 .p-acc{background:var(--acc-bg);color:var(--acc);border-color:var(--acc-bd)}.p-green{background:var(--green-bg);color:var(--green);border-color:var(--green-bd)}.p-amber{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-bd)}.p-red{background:var(--red-bg);color:var(--red);border-color:var(--red-bd)}.p-sky{background:var(--sky-bg);color:var(--sky);border-color:var(--sky-bd)}
@@ -63,7 +63,7 @@ input[type=range]::-moz-range-thumb{width:13px;height:13px;border-radius:50%;bac
 .tw{overflow:auto;border:1px solid var(--border);border-radius:10px}.tw.h{max-height:460px}
 table{border-collapse:collapse;width:100%}th{position:sticky;top:0;background:var(--card);z-index:1;text-align:left;color:var(--muted);font-size:10px;font-weight:650;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border);padding:8px 10px;white-space:nowrap}
 td{border-bottom:1px solid var(--border);padding:8px 10px;font-size:12px;vertical-align:middle}tr:last-child td{border-bottom:0}tbody tr:hover td{background:var(--hover)}
-td.n,th.n{text-align:right;font-family:"JetBrains Mono",monospace}tr.sel td{background:var(--acc-bg)!important}.click{cursor:pointer}
+td.n,th.n{text-align:right;font-family:"JetBrains Mono",monospace;white-space:nowrap}tr.sel td{background:var(--acc-bg)!important}.click{cursor:pointer}
 th.s{cursor:pointer}th.s:hover{color:var(--acc)}
 .ban{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:10px 14px;font-size:12px;border:1px solid}
 .ban b{white-space:nowrap}.ban.syn{background:var(--amber-bg);border-color:var(--amber-bd)}.ban.real{background:var(--green-bg);border-color:var(--green-bd)}.ban.eng{background:var(--sky-bg);border-color:var(--sky-bd)}
@@ -135,7 +135,7 @@ function lineChart(o){const W=o.w||760,H=o.h||250,L=o.L||66,R=14,T=16,B=30;const
   if(o.zero)mn=Math.min(0,mn);const pad=(mx-mn)*.08||1;if(o.yMax==null)mx+=pad;if(!o.zero&&o.yMin==null)mn-=pad;
   const x=i=>L+(W-L-R)*(xs===1?.5:i/(xs-1)),y=v=>T+(H-T-B)*(1-(v-mn)/(mx-mn));let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block">`;
   for(let k=0;k<=4;k++){const v=mn+(mx-mn)*k/4;s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="10.5" fill="var(--dim)">${o.fmt?o.fmt(v):v.toFixed(0)}</text>`}
-  const ev=o.xEvery||Math.ceil(xs/9);o.labels.forEach((l,i)=>{if(i%ev===0||i===xs-1)s+=`<text x="${x(i)}" y="${H-9}" text-anchor="middle" font-size="10.5" fill="var(--dim)">${l}</text>`});
+  const ev=o.xEvery||Math.ceil(xs/9);o.labels.forEach((l,i)=>{if((i%ev===0&&xs-1-i>=ev)||i===xs-1)s+=`<text x="${x(i)}" y="${H-9}" text-anchor="middle" font-size="10.5" fill="var(--dim)">${l}</text>`});
   (o.bands||[]).forEach(b=>{s+=`<rect x="${x(b.from)-7}" y="${T}" width="${x(b.to)-x(b.from)+14}" height="${H-T-B}" fill="${b.color||'var(--amber)'}" opacity=".13" rx="4"/>${b.label?`<text x="${x(b.from)-10}" y="${H-B-8}" text-anchor="end" font-size="10.5" font-weight="600" fill="${b.color||'var(--amber)'}">${b.label}</text>`:''}`});
   (o.vlines||[]).forEach(v=>{s+=`<line x1="${x(v.i)}" x2="${x(v.i)}" y1="${T}" y2="${H-B}" stroke="${v.color}" stroke-dasharray="4 3"/><text x="${x(v.i)+4}" y="${H-B-5}" font-size="10" fill="${v.color}" font-weight="600">${v.label}</text>`});
   (o.hlines||[]).forEach(v=>{if(v.v<mn||v.v>mx)return;s+=`<line x1="${L}" x2="${W-R}" y1="${y(v.v)}" y2="${y(v.v)}" stroke="${v.color}" stroke-dasharray="5 4"/><text x="${W-R-4}" y="${y(v.v)-4}" text-anchor="end" font-size="10" fill="${v.color}">${v.label}</text>`});
@@ -171,7 +171,7 @@ const IC={grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y=
  eye:'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>',sliders:'<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>',
  check:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'};
 const VIEWS=[
- ['1','Where are we winning or losing',[['command','Command Center','grid',()=>D.findings.length,'p-acc'],['customers','Customer Health','users']]],
+ ['1','Where are we winning or losing',[['command','Command Center','grid'],['explore','Portfolio Explorer','search'],['declines','Declines & Friction','alert'],['newusers','New Users & Activation','plus'],['economics','Card Economics','coin'],['customers','Customer Health','users'],['pulse','Weekly Pulse','bar',()=>D.findings.length,'p-acc']]],
  ['2','Why did it move',[['investigate','Insight Investigator','search',()=>D.findings.filter(f=>!f.best).length+' open','p-red'],['watch','Proposition Watch','eye',()=>D.conflicts.length,'p-amber']]],
  ['3','What happens to the deal',[['deal','Deal Studio','sliders']]],
  ['4','What should we propose',[['cardlab','Card Lab','card'],['offerlab','Offer Lab','tag']]],
@@ -195,8 +195,9 @@ function render(){renderNav();const m=META[S.view];document.getElementById('ttl'
 // slider dispatcher: sets state at a dotted path, updates the label, then calls the view's partial updater (keeps the slider alive while dragging)
 function SL(k,v){const p=k.split('.');let o=S;for(let i=0;i<p.length-1;i++)o=o[p[i]];o[p[p.length-1]]=v;const e=document.getElementById('sv_'+k);if(e)e.textContent=FMT[k]?FMT[k](v):v;(UPD[p[0]]||render)()}
 
-// ================================================================== COMMAND CENTER
-R.command=()=>{const iss=ISS.filter(issOK);const tot=W.map((_,i)=>sum(iss.map(k=>issTotal(k)[i])));const tx=W.map((_,i)=>sum(iss.map(k=>issTotal(k,'txns')[i])));
+/*PORTFOLIO*/
+// ================================================================== WEEKLY PULSE (weekly merchant telemetry and engine findings)
+R.pulse=()=>{const iss=ISS.filter(issOK);const tot=W.map((_,i)=>sum(iss.map(k=>issTotal(k)[i])));const tx=W.map((_,i)=>sum(iss.map(k=>issTotal(k,'txns')[i])));
   const ctl=issTotal(CTL);const sp=tot[FI],prv=tot[FI-1],wow=sp/prv-1;const base8=mean(tot.slice(FI-8,FI)),cbase=mean(ctl.slice(FI-8,FI));const rel=(sp/base8-1)-(ctl[FI]/cbase-1);
   const fs=D.findings.filter(f=>issOK(f.issuer));const unex=fs.filter(f=>!f.best).length;
   let h=`<div class="ban syn"><b>Demo telemetry.</b><span>Spend is synthetic, with three moves planted in the week of ${WL[FI]}. The findings, causes, tests and SQL come from the real engine run on that data. Click a pin or a mover to investigate.</span></div>`;
