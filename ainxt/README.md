@@ -6,7 +6,7 @@ Everything in this folder is written to be pasted into AiNxt screens. Order matt
 Your Agent Builder and Factory screens show **"Missing or invalid Authorization header"**. Ask for:
 1. Builder rights for Agent Builder, Workflow and Factory in your workspace (or the role that grants them).
 2. A **read-only Trino service account** issued as a JWT / API token (AiNxt said it needs one). Store it in **Profile > API Token Vault**, never in the repo.
-3. How Factory **Tools** are registered: HTTP endpoint (OpenAPI / JSON schema), MCP server, or Python. `tools/tool_specs.json` and `tools/server.py` cover the HTTP case; the CLI (`python -m r360 ...`) covers the "run a command" case.
+3. How Factory **Tools** are registered. The public AiNxt Enterprise code (github.com/npci/ainxt-enterprise) registers tools from **external MCP servers** (stdio or SSE) as `<server>__<tool>`; `tools/mcp_server.py` is built for that. Confirm your Buddy 2.0.1 deployment does the same, and that an admin can add an external MCP server (the stdio command must be `python3`, `python`, `node`, `npx`, `uv`, `uvx` or `deno`). Fallbacks: `tools/server.py` (HTTP; the public code only allows HTTPS endpoints and blocks private addresses) and the CLI (`python -m r360 ...`).
 4. Whether workflows can call the Code agent or a server job (needed for the snapshot refresh and for writing findings).
 5. Which Git host the Code agent and ADLC Pipeline use for this repo (the clone dialog uses a **GitLab** token).
 Full list: `docs/QUESTIONS_FOR_AINXT_TEAM.md`.
@@ -20,9 +20,20 @@ Projects > New project, name **RuPay 360**.
 ## 2. Repo
 Code > Clone from Git (GitLab token) or Open folder on the unzipped repo. Run once: `pip install -r requirements.txt`, then `python -m pytest` (should pass) and `python demo/make_synthetic.py`.
 
-## 3. Tools (Factory > Tools)
-Register the 16 tools in `tools/tool_specs.json`. If Factory takes HTTP tools: run `tools/server.py` on the internal machine that can reach Trino, with `R360_TOOL_TOKEN` and the Trino token set, and point each tool at `POST /tools/<name>` with header `Authorization: Bearer <token>`.
-Until Trino is connected, set `R360_SOURCE=local:demo/data` to use synthetic data.
+## 3. Tools (register as an external MCP server)
+**Preferred route.** In the admin area for external MCP servers add one server:
+- Name: `rupay360` (the name becomes the tool prefix: `rupay360__r360_sql`, `rupay360__r360_run_insights`, ...)
+- Transport: `stdio`
+- Command: `python3`   Args: `["/path/to/repo/tools/mcp_server.py"]`
+- Env: `R360_SOURCE=trino` plus the Trino variables from `.env.example`. Put the Trino token in the AiNxt Token Vault or the server's environment, never in the repo. Until Trino is connected use `R360_SOURCE=local:demo/data`.
+The server must run on a machine that has Python 3.10+, `pip install -r requirements.txt` done, and network access to Trino.
+
+**Check it worked** (run on that machine, no AiNxt needed): `python -m pytest tests/test_mcp_server.py`. In AiNxt: the 16 `rupay360__...` tools should be listed; call `rupay360__r360_deal_engine` with `{"scenario":"base"}` and expect net BPS 15.996.
+
+**Skills.** `ainxt/skills_registry.json` has one skill definition per markdown skill (name, description, ordered tools, tags), shaped like AiNxt's `SkillDefinition`. Regenerate with `python scripts/build_skill_registry.py --server-name <name you used>` if you named the server differently. The markdown skills stay the human-readable instructions.
+
+**Caveat.** This follows the public npci/ainxt-enterprise code, which could not be run here against your Buddy 2.0.1. Names, fields and the admin screen may differ. If registration fails, send the error to the AiNxt team along with `docs/QUESTIONS_FOR_AINXT_TEAM.md`, or tell your internal model to adapt `tools/mcp_server.py` (it is allowed to, see AGENTS.md) and report the change.
+HTTP fallback: run `tools/server.py` with `R360_TOOL_TOKEN` set and point each tool in `tools/tool_specs.json` at `POST /tools/<name>` with header `Authorization: Bearer <token>`.
 
 ## 4. Wikis (Factory > Wikis)
 Create one wiki per file in `wikis/`: rupay360-rules, source-facts, glossary, playbooks, metric-dictionary.

@@ -1,0 +1,171 @@
+[
+  {
+    "name": "answer_grounded",
+    "description": "Answer an analyst's question using only tools, with every number traced.",
+    "tools": [
+      "rupay360__r360_record_verdict"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/answer-grounded.md"
+  },
+  {
+    "name": "build_issuer_pitch_pack",
+    "description": "Build a cited evidence pack for an issuer conversation.",
+    "tools": [
+      "rupay360__r360_deal_engine"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/build-issuer-pitch-pack.md"
+  },
+  {
+    "name": "challenge_a_finding",
+    "description": "Challenge a finding before it is published: look for other explanations, weak comparisons and data problems.",
+    "tools": [
+      "rupay360__r360_sql"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/challenge-a-finding.md"
+  },
+  {
+    "name": "check_data_quality",
+    "description": "Check the snapshot data before insights run.",
+    "tools": [
+      "rupay360__r360_sql"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/check-data-quality.md"
+  },
+  {
+    "name": "extract_catalog",
+    "description": "Extract CVP, MITC or offer terms from a bank page, offer portal or PDF into the catalog schemas, with sources, only when the source changed.",
+    "tools": [
+      "rupay360__r360_card",
+      "rupay360__r360_catalog_search",
+      "rupay360__r360_propose_catalog_change"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/extract-catalog.md"
+  },
+  {
+    "name": "investigate_a_move",
+    "description": "Investigate an unusual move in spend for a merchant, card, category or issuer and find the most likely cause, with evidence.",
+    "tools": [
+      "rupay360__r360_get_finding",
+      "rupay360__r360_run_insights",
+      "rupay360__r360_proposition_events",
+      "rupay360__r360_card",
+      "rupay360__r360_sql",
+      "rupay360__r360_propose_metric"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/investigate-a-move.md"
+  },
+  {
+    "name": "learn_from_verdicts",
+    "description": "Improve the platform from analyst verdicts: thresholds, priors and playbooks.",
+    "tools": [
+      "rupay360__r360_scorecard"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/learn-from-verdicts.md"
+  },
+  {
+    "name": "measure_proposition_impact",
+    "description": "Measure what a CVP/MITC change or a major offer did to spend, activity and wallet share, with a control group.",
+    "tools": [
+      "rupay360__r360_proposition_events"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/measure-proposition-impact.md"
+  },
+  {
+    "name": "monitor_deal",
+    "description": "Track an issuer deal against its locked baseline and flag cliffs.",
+    "tools": [
+      "rupay360__r360_deal_engine",
+      "rupay360__r360_sql"
+    ],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/monitor-deal.md"
+  },
+  {
+    "name": "reconcile_sources",
+    "description": "Find and resolve conflicts between card pages, MITC documents and offer terms.",
+    "tools": [],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/reconcile-sources.md"
+  },
+  {
+    "name": "write_briefing",
+    "description": "Write the short plain-English note for a finding, for the Insight Briefing and the weekly email.",
+    "tools": [],
+    "workflow_name": null,
+    "tags": [
+      "rupay360"
+    ],
+    "version": "1.0.0",
+    "author": "rupay-360",
+    "enabled": true,
+    "instructions_file": "ainxt/skills/write-briefing.md"
+  }
+]
