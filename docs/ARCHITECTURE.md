@@ -84,7 +84,7 @@ The app only reads files: snapshot aggregates, catalogs and the ledger. First sc
 If hosting is not available soon, the briefing page and AiNxt chat are enough to run the intelligence loop; Superset can carry the plain charts.
 
 ## 8. Trust and safety built in
-- Read-only data, personal-data columns refused, row cap, every query logged (`engine/r360/data_access.py`).
+- Read-only data, column restrictions from `engine/config/restrictions.json` (empty by default), row cap, every query logged (`engine/r360/data_access.py`).
 - Agents propose; people approve (Curator Queue, merge requests).
 - Critic on every finding; "likely" language unless a control comparison supports a claim.
 - Writer output checked against the bundle's numbers.

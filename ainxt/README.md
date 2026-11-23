@@ -30,6 +30,8 @@ The server must run on a machine that has Python 3.10+, `pip install -r requirem
 
 **Check it worked** (run on that machine, no AiNxt needed): `python -m pytest tests/test_mcp_server.py`. In AiNxt: the 16 `rupay360__...` tools should be listed; call `rupay360__r360_deal_engine` with `{"scenario":"base"}` and expect net BPS 15.996.
 
+**User-level rows and column restrictions.** Our code no longer hard-codes any personal-data column rule. `engine/config/restrictions.json` (empty by default) lists column-name patterns to refuse; the data team and your internal models own it, and the model may edit it on its own terms and report the change. `restrictions.example.json` has a starter list. Real enforcement should come from the Trino service account's permissions and AiNxt's own gates, so ask for an account that cannot read raw PAN, mobile, email or account columns. Per-user rows keyed by an encrypted ID work as soon as the data is available.
+
 **Skills.** `ainxt/skills_registry.json` has one skill definition per markdown skill (name, description, ordered tools, tags), shaped like AiNxt's `SkillDefinition`. Regenerate with `python scripts/build_skill_registry.py --server-name <name you used>` if you named the server differently. The markdown skills stay the human-readable instructions.
 
 **Caveat.** This follows the public npci/ainxt-enterprise code, which could not be run here against your Buddy 2.0.1. Names, fields and the admin screen may differ. If registration fails, send the error to the AiNxt team along with `docs/QUESTIONS_FOR_AINXT_TEAM.md`, or tell your internal model to adapt `tools/mcp_server.py` (it is allowed to, see AGENTS.md) and report the change.

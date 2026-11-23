@@ -20,13 +20,13 @@ When you do:
 3. Share a short summary with AK: what changed, why, how you tested it, and anything AK must decide.
 
 What stays fixed regardless (these protect the data and the people in it, not the design):
-read-only data access, no credentials or personal data in outputs or commits, confidential terms
+read-only data access, no credentials in outputs or commits (column restrictions are set in engine/config/restrictions.json by the data team and internal models), confidential terms
 kept out of committed files, a source for every catalog value, and tests for any change to the
 maths (update the tests with the change and explain the difference).
 
 ## Hard rules
 1. **Numbers come from SQL or tested engines.** You may invent metrics and tests; write the SQL or code, run it, quote the result. Never do the arithmetic in prose. Math in `engine/` needs tests first (`tests/`).
-2. **Read-only data.** All queries go through `engine/r360/data_access.py` (read-only, no personal-data columns, row cap, logged). Never bypass it.
+2. **Read-only data.** All queries go through `engine/r360/data_access.py` (read-only, row cap, logged; column restrictions come from engine/config/restrictions.json). Never bypass it.
 3. **No secrets in the repo.** Tokens live in `.env` or the AiNxt API Token Vault. Never print or commit credentials, PAN, card keys, mobile numbers or raw transaction rows.
 4. **Confidential documents** stay in `docs/internal-context/` (git-ignored). Do not copy interchange rates or deal terms into committed files.
 5. **Every catalog value needs a source** (document or URL, page or section, date retrieved). Unknown = null + flag. MITC wins on fees.

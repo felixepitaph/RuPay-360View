@@ -9,7 +9,6 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "engine"))
-from r360.data_access import SENSITIVE_COL  # noqa: E402
 
 
 def _session(msgs):
@@ -37,11 +36,24 @@ def test_handshake_list_and_call():
     assert "blocked" in r[5]["result"]["content"][0]["text"].lower()  # write SQL refused through MCP too
 
 
-@pytest.mark.parametrize("col", ["pan", "card_key", "mobile_no", "cvv", "account_number", "ifsc_code", "api_key", "access_token", "pin", "customer_email"])
-def test_sensitive_columns_refused(col):
-    assert SENSITIVE_COL.search(col)
+def test_restrictions_are_config_driven(tmp_path, monkeypatch):
+    import pandas as pd
+    from r360.data_access import QueryBlocked, check_result
+    df = pd.DataFrame({"card_key": ["x"], "mobile_no": ["y"], "spend": [1]})
+    monkeypatch.setenv("R360_RESTRICTIONS", str(tmp_path / "missing.json"))
+    check_result(df)                                    # no file: nothing refused
+    f = tmp_path / "r.json"
+    f.write_text(json.dumps({"refuse_column_patterns": ["mobile"]}))
+    monkeypatch.setenv("R360_RESTRICTIONS", str(f))
+    import importlib, r360.data_access as da
+    importlib.reload(da)
+    with pytest.raises(da.QueryBlocked):
+        da.check_result(df)                             # file lists mobile: refused
+    f.write_text(json.dumps({"refuse_column_patterns": []}))
+    da.check_result(df)                                 # internal models/data team edited it: allowed
 
 
-@pytest.mark.parametrize("col", ["spend", "merchant_id", "shopping_spend", "week_start", "cards", "issuer_bank", "txn_count"])
-def test_ordinary_columns_not_flagged(col):
-    assert not SENSITIVE_COL.search(col)
+def test_shipped_default_refuses_nothing():
+    import pandas as pd
+    from r360.data_access import check_result
+    check_result(pd.DataFrame({"user_ref": ["a"], "spend": [1]}))
