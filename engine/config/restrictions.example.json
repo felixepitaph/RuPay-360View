@@ -1,0 +1,29 @@
+{
+  "note": "Starter list (what earlier versions hard-coded). Copy into restrictions.json to enforce.",
+  "refuse_column_patterns": [
+    "^pan$",
+    "_pan$",
+    "^pan_",
+    "card_key",
+    "card_?no",
+    "card_?number",
+    "mobile",
+    "phone",
+    "msisdn",
+    "acct",
+    "account_?no",
+    "account_?number",
+    "aadhaar",
+    "vpa",
+    "email",
+    "cvv",
+    "^expiry$",
+    "card_?expiry",
+    "(^|_)pin($|_)",
+    "ifsc",
+    "private_?key",
+    "api_?key",
+    "access_?token",
+    "secret"
+  ]
+}

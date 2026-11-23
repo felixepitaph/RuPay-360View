@@ -1,7 +1,7 @@
 """The tool layer: every capability an AiNxt agent may use, as a named function with a JSON schema.
 
 Rules built in:
-  * Reads go through data_access (read-only, no personal-data columns, row cap, logged).
+  * Reads go through data_access (read-only, row cap, logged; column restrictions from engine/config/restrictions.json).
   * Agents never write to catalog/, ledger/ or engine/config directly. Write tools only create
     *proposals* in proposals/ which a human approves in the AiNxt Curator Queue (or a merge request).
   * Numbers returned here come from SQL or tested engines; agents must quote them, not recompute.
@@ -155,7 +155,7 @@ def _s(props, req):
 
 S, I, O, A = {"type": "string"}, {"type": "integer"}, {"type": "object"}, {"type": "array"}
 SPECS = [
-    ("r360_sql", r360_sql, "Run one READ-ONLY SQL query on the RuPay 360 semantic layer and get rows back. Use for any number you need, including new metrics you invent. Personal-data columns and raw-table dumps are refused; aggregate inside the query. Always state the purpose.",
+    ("r360_sql", r360_sql, "Run one READ-ONLY SQL query on the RuPay 360 semantic layer and get rows back. Use for any number you need, including new metrics you invent. Raw-table dumps over the row cap are refused, and any column restrictions in engine/config/restrictions.json apply. Always state the purpose.",
      _s({"query": S, "purpose": S, "limit": I}, ["query", "purpose"])),
     ("r360_describe_tables", r360_describe_tables, "List the tables and columns you may query.", _s({}, [])),
     ("r360_run_insights", r360_run_insights, "Run the Watcher on the latest (or given) week, investigate every flag against the catalogs and data, and save new findings to the ledger.",

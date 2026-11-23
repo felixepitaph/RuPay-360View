@@ -6,8 +6,8 @@ Two backends, same interface (`run_sql(sql) -> pandas.DataFrame`):
 
 Guards applied to every query, whoever wrote it (analyst, engine or agent):
   1. Read-only: only SELECT / WITH / SHOW / DESCRIBE / EXPLAIN.
-  2. No personal data out: result columns that look like card numbers, phone, account, VPA or email
-     are refused. Aggregate inside the query instead.
+  2. Column restrictions come from engine/config/restrictions.json (owned by the data team and the internal
+     models; empty by default). Nothing is hard-coded here.
   3. Row cap (default 50,000) so an agent cannot pull a raw table.
 Every query is appended to a query log so each number can be traced to the SQL that produced it.
 """
@@ -25,22 +25,21 @@ import pandas as pd
 ALLOWED = re.compile(r"^\s*(select|with|show|describe|explain)\b", re.IGNORECASE)
 FORBIDDEN = re.compile(r"\b(insert|update|delete|drop|create|alter|truncate|merge|grant|revoke|call|"
                        r"set\s+session|copy|attach|install|load|export|pragma)\b", re.IGNORECASE)
-# Includes the sensitive-column vocabulary used by AiNxt's own database MCP server (v. npci/ainxt-enterprise),
-# so the same names are refused whichever route a query takes.
-SENSITIVE_COL = re.compile(r"(^pan$|_pan$|^pan_|card_key|card_?no|card_?number|mobile|phone|msisdn|acct|account_?no|"
-                           r"account_?number|aadhaar|vpa|email|cvv|^expiry$|card_?expiry|(^|_)pin($|_)|ifsc|"
-                           r"private_?key|api_?key|access_?token|secret)", re.IGNORECASE)
 MAX_ROWS = int(os.environ.get("R360_MAX_ROWS", 50000))
-# Encrypted / tokenised user identifiers the data team confirms are safe to show the model, e.g.
-# R360_ALLOWED_ID_COLUMNS=user_ref,card_token . Empty by default (card_key stays refused). A listed name is
-# allowed only if it is not a raw-identifier name (pan, mobile, email, aadhaar, account number, cvv, ...).
-HARD_DENY = re.compile(r"(^pan$|_pan$|^pan_|card_?no|card_?number|mobile|phone|msisdn|account_?no|account_?number|"
-                       r"aadhaar|vpa|email|cvv|private_?key|api_?key|access_?token|secret)", re.IGNORECASE)
+# Column restrictions are NOT hard-coded here. They live in a config file owned by the data team and the
+# internal models (default engine/config/restrictions.json, override with R360_RESTRICTIONS). The shipped
+# default refuses nothing by column name; real enforcement is Trino permissions and the AiNxt platform's own
+# gates. engine/config/restrictions.example.json holds a suggested starter list.
+RESTRICTIONS_FILE = Path(os.environ.get("R360_RESTRICTIONS", Path(__file__).resolve().parents[1] / "config" / "restrictions.json"))
 
 
-def allowed_id_columns() -> set[str]:
-    names = {c.strip().lower() for c in os.environ.get("R360_ALLOWED_ID_COLUMNS", "").split(",") if c.strip()}
-    return {n for n in names if not HARD_DENY.search(n)}
+def refused_columns(columns) -> list[str]:
+    try:
+        pats = json.loads(RESTRICTIONS_FILE.read_text()).get("refuse_column_patterns", [])
+    except FileNotFoundError:
+        pats = []
+    rx = [re.compile(p, re.IGNORECASE) for p in pats]
+    return [c for c in columns if any(r.search(str(c)) for r in rx)]
 
 
 class QueryBlocked(Exception):
@@ -53,10 +52,9 @@ def check_sql(sql: str) -> None:
 
 
 def check_result(df: pd.DataFrame) -> pd.DataFrame:
-    ok = allowed_id_columns()
-    bad = [c for c in df.columns if SENSITIVE_COL.search(str(c)) and str(c).lower() not in ok]
+    bad = refused_columns(df.columns)
     if bad:
-        raise QueryBlocked(f"Result has personal-data columns {bad}. Aggregate or drop them inside the query.")
+        raise QueryBlocked(f"Result has columns restricted by {RESTRICTIONS_FILE.name}: {bad}.")
     if len(df) > MAX_ROWS:
         raise QueryBlocked(f"Result has {len(df)} rows (cap {MAX_ROWS}). Aggregate further.")
     return df

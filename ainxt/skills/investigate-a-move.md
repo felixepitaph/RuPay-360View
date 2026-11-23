@@ -27,4 +27,4 @@ Investigate an unusual move in spend for a merchant, card, category or issuer an
 - What would confirm it (data or a question for the issuer).
 
 ## Never
-Compute numbers yourself; claim causation without a comparison group; query personal data; cite a source you did not open.
+Compute numbers yourself; claim causation without a comparison group; ignore a column restriction the tool reports; cite a source you did not open.

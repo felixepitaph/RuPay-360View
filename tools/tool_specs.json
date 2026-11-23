@@ -1,312 +1,312 @@
 [
- {
-  "name": "r360_sql",
-  "description": "Run one READ-ONLY SQL query on the RuPay 360 semantic layer and get rows back. Use for any number you need, including new metrics you invent. Personal-data columns and raw-table dumps are refused; aggregate inside the query. Always state the purpose.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "query": {
-     "type": "string"
-    },
-    "purpose": {
-     "type": "string"
-    },
-    "limit": {
-     "type": "integer"
+  {
+    "name": "r360_sql",
+    "description": "Run one READ-ONLY SQL query on the RuPay 360 semantic layer and get rows back. Use for any number you need, including new metrics you invent. Raw-table dumps over the row cap are refused, and any column restrictions in engine/config/restrictions.json apply. Always state the purpose.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "query",
+        "purpose"
+      ]
     }
-   },
-   "required": [
-    "query",
-    "purpose"
-   ]
-  }
- },
- {
-  "name": "r360_describe_tables",
-  "description": "List the tables and columns you may query.",
-  "input_schema": {
-   "type": "object",
-   "properties": {},
-   "required": []
-  }
- },
- {
-  "name": "r360_run_insights",
-  "description": "Run the Watcher on the latest (or given) week, investigate every flag against the catalogs and data, and save new findings to the ledger.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "week": {
-     "type": "string",
-     "description": "Monday of the week, YYYY-MM-DD"
+  },
+  {
+    "name": "r360_describe_tables",
+    "description": "List the tables and columns you may query.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
     }
-   },
-   "required": []
-  }
- },
- {
-  "name": "r360_get_finding",
-  "description": "Get one finding's full evidence bundle (flag, candidate causes, tests with SQL, cautions).",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "finding_id": {
-     "type": "string"
+  },
+  {
+    "name": "r360_run_insights",
+    "description": "Run the Watcher on the latest (or given) week, investigate every flag against the catalogs and data, and save new findings to the ledger.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "week": {
+          "type": "string",
+          "description": "Monday of the week, YYYY-MM-DD"
+        }
+      },
+      "required": []
     }
-   },
-   "required": [
-    "finding_id"
-   ]
-  }
- },
- {
-  "name": "r360_list_findings",
-  "description": "List recent findings with headlines.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "status": {
-     "type": "string"
-    },
-    "limit": {
-     "type": "integer"
+  },
+  {
+    "name": "r360_get_finding",
+    "description": "Get one finding's full evidence bundle (flag, candidate causes, tests with SQL, cautions).",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "finding_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id"
+      ]
     }
-   },
-   "required": []
-  }
- },
- {
-  "name": "r360_offers_active",
-  "description": "Offers live in a date window, optionally for one merchant, category or issuer. Each offer carries its source.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "start": {
-     "type": "string"
-    },
-    "end": {
-     "type": "string"
-    },
-    "merchant": {
-     "type": "string"
-    },
-    "category": {
-     "type": "string"
-    },
-    "issuer": {
-     "type": "string"
+  },
+  {
+    "name": "r360_list_findings",
+    "description": "List recent findings with headlines.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "required": []
     }
-   },
-   "required": [
-    "start",
-    "end"
-   ]
-  }
- },
- {
-  "name": "r360_catalog_search",
-  "description": "Keyword search across CVP cards, offers and proposition events.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "text": {
-     "type": "string"
-    },
-    "limit": {
-     "type": "integer"
+  },
+  {
+    "name": "r360_offers_active",
+    "description": "Offers live in a date window, optionally for one merchant, category or issuer. Each offer carries its source.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "merchant": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "issuer": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
     }
-   },
-   "required": [
-    "text"
-   ]
-  }
- },
- {
-  "name": "r360_card",
-  "description": "Full CVP record for one card_id (e.g. YES_SELECT, IDFC_FIRST_WEALTH).",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "card_id": {
-     "type": "string"
+  },
+  {
+    "name": "r360_catalog_search",
+    "description": "Keyword search across CVP cards, offers and proposition events.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "text"
+      ]
     }
-   },
-   "required": [
-    "card_id"
-   ]
-  }
- },
- {
-  "name": "r360_proposition_events",
-  "description": "Dated CVP / MITC changes in a window, optionally for one issuer.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "start": {
-     "type": "string"
-    },
-    "end": {
-     "type": "string"
-    },
-    "issuer": {
-     "type": "string"
+  },
+  {
+    "name": "r360_card",
+    "description": "Full CVP record for one card_id (e.g. YES_SELECT, IDFC_FIRST_WEALTH).",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "card_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "card_id"
+      ]
     }
-   },
-   "required": [
-    "start",
-    "end"
-   ]
-  }
- },
- {
-  "name": "r360_deal_engine",
-  "description": "Run the verified Deal Model V1.1 engine. Returns net / gross / incentive BPS, totals and per-year results. Never estimate deal economics yourself.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "variants": {
-     "type": "array"
-    },
-    "config": {
-     "type": "object"
-    },
-    "scenario": {
-     "type": "string",
-     "enum": [
-      "base",
-      "conservative",
-      "aggressive"
-     ]
+  },
+  {
+    "name": "r360_proposition_events",
+    "description": "Dated CVP / MITC changes in a window, optionally for one issuer.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "issuer": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
     }
-   },
-   "required": []
-  }
- },
- {
-  "name": "r360_source_check",
-  "description": "Check whether a bank page or PDF text changed since the last approved extraction (hash compare). Extract only if changed.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "url": {
-     "type": "string"
-    },
-    "page_text": {
-     "type": "string"
+  },
+  {
+    "name": "r360_deal_engine",
+    "description": "Run the verified Deal Model V1.1 engine. Returns net / gross / incentive BPS, totals and per-year results. Never estimate deal economics yourself.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "variants": {
+          "type": "array"
+        },
+        "config": {
+          "type": "object"
+        },
+        "scenario": {
+          "type": "string",
+          "enum": [
+            "base",
+            "conservative",
+            "aggressive"
+          ]
+        }
+      },
+      "required": []
     }
-   },
-   "required": [
-    "url",
-    "page_text"
-   ]
-  }
- },
- {
-  "name": "r360_propose_catalog_change",
-  "description": "Propose a change to a CVP, MITC, offers or events catalog file. Goes to the Curator Queue; never edits the catalog directly. Sources are mandatory.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "target_file": {
-     "type": "string"
-    },
-    "change": {
-     "type": "object"
-    },
-    "reason": {
-     "type": "string"
-    },
-    "sources": {
-     "type": "array"
+  },
+  {
+    "name": "r360_source_check",
+    "description": "Check whether a bank page or PDF text changed since the last approved extraction (hash compare). Extract only if changed.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "page_text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "page_text"
+      ]
     }
-   },
-   "required": [
-    "target_file",
-    "change",
-    "reason",
-    "sources"
-   ]
-  }
- },
- {
-  "name": "r360_propose_metric",
-  "description": "Propose a new metric you found useful: name, plain definition, the SQL. The SQL is test-run first. Goes to the Curator Queue for the metric dictionary.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "name": {
-     "type": "string"
-    },
-    "definition": {
-     "type": "string"
-    },
-    "sql": {
-     "type": "string"
-    },
-    "why_useful": {
-     "type": "string"
-    },
-    "example_result": {
-     "type": "object"
+  },
+  {
+    "name": "r360_propose_catalog_change",
+    "description": "Propose a change to a CVP, MITC, offers or events catalog file. Goes to the Curator Queue; never edits the catalog directly. Sources are mandatory.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "target_file": {
+          "type": "string"
+        },
+        "change": {
+          "type": "object"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "target_file",
+        "change",
+        "reason",
+        "sources"
+      ]
     }
-   },
-   "required": [
-    "name",
-    "definition",
-    "sql",
-    "why_useful"
-   ]
-  }
- },
- {
-  "name": "r360_record_verdict",
-  "description": "Record an analyst's verdict on a finding (CORRECT, WRONG, PARTLY) with the true cause if known. Only when the analyst says so.",
-  "input_schema": {
-   "type": "object",
-   "properties": {
-    "finding_id": {
-     "type": "string"
-    },
-    "verdict": {
-     "type": "string",
-     "enum": [
-      "CORRECT",
-      "WRONG",
-      "PARTLY"
-     ]
-    },
-    "true_cause": {
-     "type": "string"
-    },
-    "note": {
-     "type": "string"
-    },
-    "by": {
-     "type": "string"
+  },
+  {
+    "name": "r360_propose_metric",
+    "description": "Propose a new metric you found useful: name, plain definition, the SQL. The SQL is test-run first. Goes to the Curator Queue for the metric dictionary.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        },
+        "sql": {
+          "type": "string"
+        },
+        "why_useful": {
+          "type": "string"
+        },
+        "example_result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "definition",
+        "sql",
+        "why_useful"
+      ]
     }
-   },
-   "required": [
-    "finding_id",
-    "verdict"
-   ]
+  },
+  {
+    "name": "r360_record_verdict",
+    "description": "Record an analyst's verdict on a finding (CORRECT, WRONG, PARTLY) with the true cause if known. Only when the analyst says so.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "finding_id": {
+          "type": "string"
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "CORRECT",
+            "WRONG",
+            "PARTLY"
+          ]
+        },
+        "true_cause": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "by": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "verdict"
+      ]
+    }
+  },
+  {
+    "name": "r360_scorecard",
+    "description": "Precision of past findings by cause type and confidence, from analyst verdicts.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "r360_validate_catalog",
+    "description": "Validate all catalog files against their schemas.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
   }
- },
- {
-  "name": "r360_scorecard",
-  "description": "Precision of past findings by cause type and confidence, from analyst verdicts.",
-  "input_schema": {
-   "type": "object",
-   "properties": {},
-   "required": []
-  }
- },
- {
-  "name": "r360_validate_catalog",
-  "description": "Validate all catalog files against their schemas.",
-  "input_schema": {
-   "type": "object",
-   "properties": {},
-   "required": []
-  }
- }
 ]

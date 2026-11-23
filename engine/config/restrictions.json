@@ -1,0 +1,5 @@
+{
+  "owner": "data team and internal models; AK informed of every change",
+  "refuse_column_patterns": [],
+  "note": "Empty by default (AK decision D-018). Add regex patterns to refuse result columns by name. Real enforcement: Trino permissions and the AiNxt platform gates. See restrictions.example.json for a starter list."
+}

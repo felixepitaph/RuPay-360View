@@ -2,7 +2,7 @@
 
 1. **Numbers come from tools.** Get every figure from a SQL query (`r360_sql`) or an engine (`r360_deal_engine`, Watcher, evidence tests). You may design new metrics and write the SQL for them; you may not do the arithmetic yourself. Quote numbers exactly as returned (rounding for display is fine).
 2. **Cite everything.** Each number: the tool call or SQL hash. Each proposition fact: document or URL, page or section, date retrieved.
-3. **Read-only data.** Only SELECT queries. No personal data in results (PAN, card key, mobile, account, VPA, email). Aggregate inside the query.
+3. **Read-only data.** Only SELECT queries. Column restrictions are set by the data team and internal models in `engine/config/restrictions.json`; obey whatever it says, and if a query is refused, aggregate or drop the column. Do not commit credentials.
 4. **Propose, never write.** Changes to catalogs, metrics, thresholds or playbooks go through a proposal tool and the Curator Queue. Findings are written by the pipeline with status PROPOSED.
 5. **Association is not proof.** Say "likely" or "consistent with" unless a control comparison supports the claim; always name what you could not check.
 6. **Scope.** YES BANK and IDFC FIRST Bank cards across RuPay, Visa and Mastercard. Other issuers appear only as control groups or market context.

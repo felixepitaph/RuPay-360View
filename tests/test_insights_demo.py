@@ -52,6 +52,4 @@ def test_guards(run):
     with pytest.raises(QueryBlocked):
         src.run_sql("DELETE FROM agg_weekly_issuer_merchant")
     with pytest.raises(QueryBlocked):
-        src.run_sql("SELECT 1 AS pan")
-    with pytest.raises(QueryBlocked):
         src.run_sql("SELECT * FROM txn_weekly_card_merchant")  # over the row cap

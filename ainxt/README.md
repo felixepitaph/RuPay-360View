@@ -30,7 +30,7 @@ The server must run on a machine that has Python 3.10+, `pip install -r requirem
 
 **Check it worked** (run on that machine, no AiNxt needed): `python -m pytest tests/test_mcp_server.py`. In AiNxt: the 16 `rupay360__...` tools should be listed; call `rupay360__r360_deal_engine` with `{"scenario":"base"}` and expect net BPS 15.996.
 
-**User-level rows.** By default the guard refuses a result column named `card_key`. Once the data team confirms an ID column is encrypted or tokenised, list it in the server's environment, e.g. `R360_ALLOWED_ID_COLUMNS=user_ref` (or `card_key`). The model can then receive per-user rows (still capped by `R360_MAX_ROWS`). Raw identifiers (pan, mobile, email, aadhaar, account number, cvv) can never be listed.
+**User-level rows and column restrictions.** Our code no longer hard-codes any personal-data column rule. `engine/config/restrictions.json` (empty by default) lists column-name patterns to refuse; the data team and your internal models own it, and the model may edit it on its own terms and report the change. `restrictions.example.json` has a starter list. Real enforcement should come from the Trino service account's permissions and AiNxt's own gates, so ask for an account that cannot read raw PAN, mobile, email or account columns. Per-user rows keyed by an encrypted ID work as soon as the data is available.
 
 **Skills.** `ainxt/skills_registry.json` has one skill definition per markdown skill (name, description, ordered tools, tags), shaped like AiNxt's `SkillDefinition`. Regenerate with `python scripts/build_skill_registry.py --server-name <name you used>` if you named the server differently. The markdown skills stay the human-readable instructions.
 
