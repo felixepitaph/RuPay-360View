@@ -25,8 +25,11 @@ import pandas as pd
 ALLOWED = re.compile(r"^\s*(select|with|show|describe|explain)\b", re.IGNORECASE)
 FORBIDDEN = re.compile(r"\b(insert|update|delete|drop|create|alter|truncate|merge|grant|revoke|call|"
                        r"set\s+session|copy|attach|install|load|export|pragma)\b", re.IGNORECASE)
+# Includes the sensitive-column vocabulary used by AiNxt's own database MCP server (v. npci/ainxt-enterprise),
+# so the same names are refused whichever route a query takes.
 SENSITIVE_COL = re.compile(r"(^pan$|_pan$|^pan_|card_key|card_?no|card_?number|mobile|phone|msisdn|acct|account_?no|"
-                           r"aadhaar|vpa|email)", re.IGNORECASE)
+                           r"account_?number|aadhaar|vpa|email|cvv|^expiry$|card_?expiry|(^|_)pin($|_)|ifsc|"
+                           r"private_?key|api_?key|access_?token|secret)", re.IGNORECASE)
 MAX_ROWS = int(os.environ.get("R360_MAX_ROWS", 50000))
 
 
