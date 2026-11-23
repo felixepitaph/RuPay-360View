@@ -45,3 +45,17 @@ def test_sensitive_columns_refused(col):
 @pytest.mark.parametrize("col", ["spend", "merchant_id", "shopping_spend", "week_start", "cards", "issuer_bank", "txn_count"])
 def test_ordinary_columns_not_flagged(col):
     assert not SENSITIVE_COL.search(col)
+
+
+def test_encrypted_id_column_can_be_allowed(monkeypatch):
+    import pandas as pd
+    from r360.data_access import QueryBlocked, check_result
+    df = pd.DataFrame({"user_ref": ["a1", "b2"], "spend": [10, 20]})
+    monkeypatch.delenv("R360_ALLOWED_ID_COLUMNS", raising=False)
+    check_result(pd.DataFrame({"user_ref": ["x"], "spend": [1]}))          # not matched by the sensitive pattern, passes anyway
+    with pytest.raises(QueryBlocked):
+        check_result(pd.DataFrame({"card_key": ["x"], "spend": [1]}))      # raw card_key still refused by default
+    monkeypatch.setenv("R360_ALLOWED_ID_COLUMNS", "card_key,mobile_no")
+    check_result(pd.DataFrame({"card_key": ["x"], "spend": [1]}))          # allowed once the data team lists it
+    with pytest.raises(QueryBlocked):
+        check_result(pd.DataFrame({"mobile_no": ["x"]}))                   # raw identifiers can never be allow-listed

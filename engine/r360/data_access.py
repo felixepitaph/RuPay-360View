@@ -31,6 +31,16 @@ SENSITIVE_COL = re.compile(r"(^pan$|_pan$|^pan_|card_key|card_?no|card_?number|m
                            r"account_?number|aadhaar|vpa|email|cvv|^expiry$|card_?expiry|(^|_)pin($|_)|ifsc|"
                            r"private_?key|api_?key|access_?token|secret)", re.IGNORECASE)
 MAX_ROWS = int(os.environ.get("R360_MAX_ROWS", 50000))
+# Encrypted / tokenised user identifiers the data team confirms are safe to show the model, e.g.
+# R360_ALLOWED_ID_COLUMNS=user_ref,card_token . Empty by default (card_key stays refused). A listed name is
+# allowed only if it is not a raw-identifier name (pan, mobile, email, aadhaar, account number, cvv, ...).
+HARD_DENY = re.compile(r"(^pan$|_pan$|^pan_|card_?no|card_?number|mobile|phone|msisdn|account_?no|account_?number|"
+                       r"aadhaar|vpa|email|cvv|private_?key|api_?key|access_?token|secret)", re.IGNORECASE)
+
+
+def allowed_id_columns() -> set[str]:
+    names = {c.strip().lower() for c in os.environ.get("R360_ALLOWED_ID_COLUMNS", "").split(",") if c.strip()}
+    return {n for n in names if not HARD_DENY.search(n)}
 
 
 class QueryBlocked(Exception):
@@ -43,7 +53,8 @@ def check_sql(sql: str) -> None:
 
 
 def check_result(df: pd.DataFrame) -> pd.DataFrame:
-    bad = [c for c in df.columns if SENSITIVE_COL.search(str(c))]
+    ok = allowed_id_columns()
+    bad = [c for c in df.columns if SENSITIVE_COL.search(str(c)) and str(c).lower() not in ok]
     if bad:
         raise QueryBlocked(f"Result has personal-data columns {bad}. Aggregate or drop them inside the query.")
     if len(df) > MAX_ROWS:

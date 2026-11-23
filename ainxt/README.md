@@ -30,6 +30,8 @@ The server must run on a machine that has Python 3.10+, `pip install -r requirem
 
 **Check it worked** (run on that machine, no AiNxt needed): `python -m pytest tests/test_mcp_server.py`. In AiNxt: the 16 `rupay360__...` tools should be listed; call `rupay360__r360_deal_engine` with `{"scenario":"base"}` and expect net BPS 15.996.
 
+**User-level rows.** By default the guard refuses a result column named `card_key`. Once the data team confirms an ID column is encrypted or tokenised, list it in the server's environment, e.g. `R360_ALLOWED_ID_COLUMNS=user_ref` (or `card_key`). The model can then receive per-user rows (still capped by `R360_MAX_ROWS`). Raw identifiers (pan, mobile, email, aadhaar, account number, cvv) can never be listed.
+
 **Skills.** `ainxt/skills_registry.json` has one skill definition per markdown skill (name, description, ordered tools, tags), shaped like AiNxt's `SkillDefinition`. Regenerate with `python scripts/build_skill_registry.py --server-name <name you used>` if you named the server differently. The markdown skills stay the human-readable instructions.
 
 **Caveat.** This follows the public npci/ainxt-enterprise code, which could not be run here against your Buddy 2.0.1. Names, fields and the admin screen may differ. If registration fails, send the error to the AiNxt team along with `docs/QUESTIONS_FOR_AINXT_TEAM.md`, or tell your internal model to adapt `tools/mcp_server.py` (it is allowed to, see AGENTS.md) and report the change.
