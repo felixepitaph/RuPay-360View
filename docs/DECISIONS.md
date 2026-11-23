@@ -71,3 +71,6 @@ Date: 2026-11-23. Reading npci/ainxt-enterprise showed external MCP servers are 
 ### D-018: Column restrictions are not hard-coded; data team and internal models own them (Accepted, AK)
 Date: 2026-11-23. AK: do not keep PII field restrictions at Claude's level; internal models set their own. Replaced the hard-coded sensitive-column list with `engine/config/restrictions.json` (empty by default; starter list in `restrictions.example.json`). Read-only SQL, row cap and the query log are unchanged. Risk accepted: with an empty list nothing in this code stops a query returning identifier columns, so enforcement depends on the Trino service account's permissions and AiNxt's own gates. Recommendation recorded: ask for a read-only account that cannot read raw PAN, mobile, email or account columns.
 
+
+### D-019: Analysis catalogue of 61 analyses, 6 engines and 17 interactive modules (Proposed, AK)
+Date: 2026-11-23. After comparing two HTML mockups, AK asked for the widest possible set of analyses and simulatable modules. `docs/ANALYSIS_CATALOGUE.md` lists them with the engine, data wave and required tests. Nothing is built. Each analysis needs a planted-truth test, a materiality floor and false-alarm control before it is shown. The internal models may reorder, merge or drop entries once the real Trino tables are known.
