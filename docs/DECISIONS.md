@@ -74,3 +74,18 @@ Date: 2026-11-23. AK: do not keep PII field restrictions at Claude's level; inte
 
 ### D-019: Analysis catalogue of 61 analyses, 6 engines and 17 interactive modules (Proposed, AK)
 Date: 2026-11-23. After comparing two HTML mockups, AK asked for the widest possible set of analyses and simulatable modules. `docs/ANALYSIS_CATALOGUE.md` lists them with the engine, data wave and required tests. Nothing is built. Each analysis needs a planted-truth test, a materiality floor and false-alarm control before it is shown. The internal models may reorder, merge or drop entries once the real Trino tables are known.
+
+### D-020: Portfolio views are a design reference; internal data and documents override them (Proposed, AK)
+Date: 2026-11-23. AK asked for a portfolio-first Command Center using the metrics he tracks (CIF, spends, volume, active cards, activation %, issuance, SPAC, TPAC, ATS), three channels (credit card, credit card on UPI, international), drill-downs (MCC, merchant, geography, UPI app), decline codes with reasons, new-to-ecosystem users, and card economics (interchange, switching fee, product fee). `scripts/portfolio_views.js` and `portfolio()` in `scripts/build_preview.py` implement these on synthetic data.
+
+**Status: everything in these views is a starting point.** AK's internal data and reference documents take precedence wherever they differ, and the internal models should change the views, definitions and code without asking first (see D-016 and the discretion clause in AGENTS.md). Expect the following to be replaced:
+- **Metric definitions.** CIF, active card, activation %, issuance, SPAC, TPAC and ATS are defined here from AK's one-line descriptions. Use the definitions in the internal documents and the actual Trino columns. "Active" is monthly and per channel here; the real window may differ. The all-channel active count here is a rough union of the three channels, not a true distinct count.
+- **Channel definitions.** How a transaction is assigned to credit card, credit card on UPI or international, and what CIF means per channel (here the UPI and international CIF are subsets of the card base).
+- **Economics.** Interchange, switching fee and product fee are placeholder numbers, not NPCI rates. Replace with the confidential rate tables. Which fee applies to which rail, whether product fee is per card per month, and who earns what are all assumptions to confirm. Rates stay out of committed files (AGENTS.md rule 4): load them from `docs/internal-context/`.
+- **Decline codes.** The 12 codes and their descriptions are generic card-network codes. UPI has its own response codes. Replace the table with the internal reference document, including the cause grouping (technical, cardholder, issuer policy), which is mine.
+- **New-user logic.** "New to the ecosystem" is first-ever transaction, per AK. The lag from issuance to first transaction and the first-transaction channel split are invented here.
+- **Dimensions.** MCC list, merchant list, geographies and UPI app list are illustrative. Real lists come from the tables.
+- **Layout, tiles and thresholds.** The scorecard targets, the spends bridge (CIF × activation × TPAC × ATS), the recovery and activation levers and the six-view structure are one way to organise it. Change them if what the data shows suggests a better one.
+- **Visa and Mastercard.** Not shown. The views cover RuPay credit only, until a source for network comparison exists.
+
+What stays regardless: numbers shown in a live version come from SQL or tested engines (the bridge arithmetic here is in the page and needs a parity test before it ships), and synthetic data never feeds real findings.
