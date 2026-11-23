@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RuPay 360 · Platform preview</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1b2430;--mut:#667085;--line:#e3e7ee;--acc:#0b5fff;--acc2:#e8f0ff;--ok:#12805c;--warn:#b54708;--bad:#c01048;--yes:#7a3ff0;--idfc:#c4281c;--ctl:#98a2b3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:#101828;color:#fff;padding:12px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header h1{font-size:17px;margin:0;font-weight:650}header .sub{color:#98a2b3;font-size:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}.chip{font-size:11px;border-radius:999px;padding:3px 10px;font-weight:600}
+.c-real{background:#d1fadf;color:#05603a}.c-eng{background:#d1e9ff;color:#175cd3}.c-syn{background:#fef0c7;color:#93370d}
+nav{background:#fff;border-bottom:1px solid var(--line);padding:0 24px;display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+nav button.tab{border:0;background:none;padding:12px 14px;font:inherit;font-weight:600;color:var(--mut);cursor:pointer;border-bottom:3px solid transparent}
+nav button.tab.on{color:var(--acc);border-bottom-color:var(--acc)}
+.filters{margin-left:auto;display:flex;gap:8px;align-items:center;padding:6px 0}.filters label{color:var(--mut);font-size:12px}
+select,input[type=text],input[type=date]{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
+main{padding:20px 24px;max-width:1280px;margin:0 auto}
+.banner{border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
+.b-syn{background:#fffaeb;border:1px solid #fedf89;color:#7a2e0e}.b-real{background:#ecfdf3;border:1px solid #abefc6;color:#054f31}.b-eng{background:#eff8ff;border:1px solid #b2ddff;color:#194185}
+.grid{display:grid;gap:16px}.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.g2{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0 0 4px;font-size:15px}.card .hint{color:var(--mut);font-size:12px;margin-bottom:10px}
+.kpi .v{font-size:26px;font-weight:700;margin-top:4px}.kpi .l{color:var(--mut);font-size:12px}.kpi .d{font-size:12px;margin-top:2px}
+.up{color:var(--ok)}.dn{color:var(--bad)}.neu{color:var(--mut)}
+table{border-collapse:collapse;width:100%;font-size:13px}th{text-align:left;color:var(--mut);font-weight:600;font-size:12px;border-bottom:1px solid var(--line);padding:8px 8px;position:sticky;top:0;background:#fff;cursor:default}
+td{padding:8px;border-bottom:1px solid #f0f2f6;vertical-align:top}tr.click{cursor:pointer}tr.click:hover td{background:#f8faff}tr.sel td{background:var(--acc2)}
+th.sortable{cursor:pointer}th.sortable:hover{color:var(--acc)}
+.tbl{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.badge{display:inline-block;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:650}
+.hi{background:#d1fadf;color:#05603a}.me{background:#fef0c7;color:#93370d}.lo{background:#fee4e2;color:#912018}.un{background:#eaecf0;color:#344054}
+.fs{background:#e0eaff;color:#2849b8}.emi{background:#fce7f6;color:#9e165f}
+.sub-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}.sub-tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font:inherit;cursor:pointer}.sub-tabs button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.finding{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px;background:#fff}
+.finding .hd{font-weight:600;margin-bottom:4px}.finding .meta{color:var(--mut);font-size:12px}
+.finding details{margin-top:8px}.finding summary{cursor:pointer;color:var(--acc);font-weight:600}
+.test{border-left:3px solid var(--line);padding:4px 10px;margin:8px 0}.test.SUPPORTS{border-color:var(--ok)}.test.WEAKENS{border-color:var(--bad)}.test.INFO{border-color:var(--ctl)}
+pre{background:#101828;color:#d0d5dd;border-radius:8px;padding:10px;overflow:auto;font-size:12px;margin:6px 0}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}.btn:hover{border-color:var(--acc)}.btn.pri{background:var(--acc);color:#fff;border-color:var(--acc)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.muted{color:var(--mut)}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--mut);margin:6px 0;flex-wrap:wrap}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.slider{display:grid;grid-template-columns:150px 1fr 60px;gap:10px;align-items:center;margin:8px 0}.slider input{width:100%}
+.detail dl{display:grid;grid-template-columns:170px 1fr;gap:6px 12px;margin:0}.detail dt{color:var(--mut)}.detail dd{margin:0}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#101828;color:#fff;padding:10px 16px;border-radius:10px;display:none;max-width:80vw;font-size:13px;z-index:9}
+.pill{display:inline-block;background:#f2f4f7;border-radius:6px;padding:1px 7px;margin:1px 3px 1px 0;font-size:12px}
+svg text{font-family:inherit}
+footer{color:var(--mut);font-size:12px;padding:16px 24px;text-align:center}
+</style></head><body>
+<header><div><h1>RuPay 360 · Platform preview</h1><div class="sub" id="built"></div></div>
+<div class="chips"><span class="chip c-real">REAL: extracted catalogs</span><span class="chip c-eng">REAL: Deal Model engine</span><span class="chip c-syn">SYNTHETIC: spend and network data</span></div></header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<div class="toast" id="toast"></div>
+<footer>Preview only. Spend, card counts, network split and wallet share are made up. Cards, fees, offers and conflicts come from the bank pages, MITCs and the Nov 2026 booklet. The Deal Model uses the model's default inputs, not a real deal.</footer>
+<script id="data" type="application/json">/*DATA*/</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const NS='http://www.w3.org/2000/svg';
+function h(tag,attrs,...kids){const e=tag in {svg:1,g:1,path:1,line:1,rect:1,text:1,circle:1,polyline:1}?document.createElementNS(NS,tag):document.createElement(tag);
+ for(const [k,v] of Object.entries(attrs||{})){if(v===null||v===undefined||v===false)continue;if(k==='class')e.setAttribute('class',v);else if(k.startsWith('on'))e[k]=v;else e.setAttribute(k,v===true?'':v)}
+ for(const c of kids.flat()){if(c===null||c===undefined||c===false)continue;e.append(c.nodeType?c:document.createTextNode(String(c)))}return e}
+const $=id=>document.getElementById(id);
+function inr(n){if(n===null||n===undefined||isNaN(n))return '–';const a=Math.abs(n);if(a>=1e7)return '₹'+(n/1e7).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})+' Cr';if(a>=1e5)return '₹'+(n/1e5).toFixed(1)+' L';return '₹'+Math.round(n).toLocaleString('en-IN')}
+function pct(x,d=1){return (x*100).toFixed(d)+'%'}
+function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',6000)}
+const COL={'YES BANK':'var(--yes)','IDFC FIRST Bank':'var(--idfc)','OTHER ISSUERS (control)':'var(--ctl)'};
+const state={tab:'cc',issuer:'ALL',card:null,sub:'offers',offerDate:D.meta.offer_date_default,sortKey:'annual',sortDir:-1};
+const issOK=i=>state.issuer==='ALL'||i===state.issuer;
+$('built').textContent='Built '+D.meta.built_at+' · demo week '+D.meta.focus_week;
+
+// ---------- charts ----------
+function lineChart(weeks,series,opts={}){const W=720,H=260,L=56,R=16,T=14,B=34;const vals=series.flatMap(s=>s.values);const mx=Math.max(...vals)*1.08,mn=opts.zero===false?Math.min(...vals)*0.9:Math.min(0,Math.min(...vals));
+ const x=i=>L+(W-L-R)*i/(weeks.length-1),y=v=>T+(H-T-B)*(1-(v-mn)/(mx-mn));
+ const svg=h('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%',role:'img','aria-label':opts.label||'line chart'});
+ for(let k=0;k<=4;k++){const v=mn+(mx-mn)*k/4;svg.append(h('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:'#eaecf0'}),h('text',{x:L-8,y:y(v)+4,'text-anchor':'end','font-size':11,fill:'#667085'},opts.fmt?opts.fmt(v):v.toFixed(0)))}
+ weeks.forEach((w,i)=>{if(i%2===0)svg.append(h('text',{x:x(i),y:H-10,'text-anchor':'middle','font-size':10.5,fill:'#667085'},w.slice(5)))});
+ (opts.bands||[]).forEach(b=>{const a=weeks.indexOf(b.from),z=weeks.indexOf(b.to);if(a<0)return;const x0=x(a)-8,x1=x(z<0?a:z)+8;svg.append(h('rect',{x:x0,y:T,width:x1-x0,height:H-T-B,fill:'#fff3d6',opacity:.8}),h('text',{x:x0-4,y:T+12,'text-anchor':'end','font-size':10.5,fill:'#93370d'},b.label))});
+ series.forEach(s=>{svg.append(h('polyline',{points:s.values.map((v,i)=>x(i)+','+y(v)).join(' '),fill:'none',stroke:s.color,'stroke-width':2.2,'stroke-dasharray':s.dash||null}))});
+ return svg}
+function hbar(rows,opts={}){/* rows:[{label,parts:[{v,color,name}]}] stacked 100% */const W=720,rh=30,L=190,H=rows.length*rh+10;const svg=h('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%',role:'img','aria-label':opts.label||'stacked bars'});
+ rows.forEach((r,i)=>{const y=i*rh+4;svg.append(h('text',{x:L-8,y:y+16,'text-anchor':'end','font-size':12,fill:'#344054'},r.label));let x=L;const tot=r.parts.reduce((a,p)=>a+p.v,0);
+  r.parts.forEach(p=>{const w=(W-L-16)*p.v/tot;svg.append(h('rect',{x,y,width:w,height:22,fill:p.color,rx:3}));if(w>36)svg.append(h('text',{x:x+w/2,y:y+15,'text-anchor':'middle','font-size':11,fill:'#fff'},Math.round(100*p.v/tot)+'%'));x+=w})});return svg}
+function colChart(cats,series,fmt){const W=720,H=250,L=60,R=10,T=14,B=30;const mx=Math.max(...series.flatMap(s=>s.values))*1.1;const gw=(W-L-R)/cats.length,bw=Math.min(34,gw/(series.length+1));
+ const y=v=>T+(H-T-B)*(1-v/mx);const svg=h('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%',role:'img','aria-label':'grouped columns'});
+ for(let k=0;k<=4;k++){const v=mx*k/4;svg.append(h('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:'#eaecf0'}),h('text',{x:L-8,y:y(v)+4,'text-anchor':'end','font-size':11,fill:'#667085'},fmt(v)))}
+ cats.forEach((c,i)=>{const cx=L+gw*i+gw/2;svg.append(h('text',{x:cx,y:H-10,'text-anchor':'middle','font-size':12,fill:'#344054'},c));
+  series.forEach((s,j)=>{const bx=cx-(series.length*bw)/2+j*bw;svg.append(h('rect',{x:bx,y:y(s.values[i]),width:bw-3,height:H-B-y(s.values[i]),fill:s.color,rx:2}))})});return svg}
+const legend=items=>h('div',{class:'legend'},items.map(i=>h('span',null,h('i',{style:'background:'+i[1]}),i[0])));
+const confBadge=c=>h('span',{class:'badge '+({HIGH:'hi',MEDIUM:'me',LOW:'lo'}[c]||'un')},c||'NO CAUSE');
+
+// ---------- Command Center ----------
+function viewCC(){const W=D.weekly.weeks,last=W.length-1;const iss=['YES BANK','IDFC FIRST Bank'].filter(issOK);
+ const sp=i=>iss.reduce((a,k)=>a+D.weekly.spend[k][i],0),cd=i=>iss.reduce((a,k)=>a+D.weekly.cards[k][i],0);
+ const wow=sp(last)/sp(last-1)-1;const fs=D.findings.filter(f=>issOK(f.issuer));
+ const unex=fs.filter(f=>!f.best).length;const el=h('div');
+ el.append(h('div',{class:'banner b-syn'},h('b',null,'Synthetic spend. '),'The three moves in this feed were planted in made-up data to test the engine. The findings, causes, evidence tests and SQL are produced by the real engine from the real offer catalog shape.'));
+ el.append(h('div',{class:'grid g4'},
+  kpi('Weekly card spend (latest week)',inr(sp(last)),(wow>=0?'▲ ':'▼ ')+pct(Math.abs(wow))+' vs prior week',wow>=0?'up':'dn'),
+  kpi('Active cards (latest week)',cd(last).toLocaleString('en-IN'),'synthetic sample','neu'),
+  kpi('Findings this week',fs.length,unex+' with no cause identified','neu'),
+  kpi('Catalog conflicts to fix',D.conflicts.length,'page vs MITC, see Proposition Hub','neu')));
+ const series=iss.map(k=>({name:k,color:COL[k],values:D.weekly.spend[k]}));if(state.issuer==='ALL')series.push({name:'OTHER ISSUERS (control)',color:COL['OTHER ISSUERS (control)'],values:D.weekly.spend['OTHER ISSUERS (control)'],dash:'5 4'});
+ const c1=h('div',{class:'card',style:'margin-top:16px'},h('h3',null,'Weekly card spend'),h('div',{class:'hint'},'Highlighted band: the one catalogued competing offer in the demo window.'),
+  lineChart(W,series,{fmt:v=>inr(v),bands:D.markers,label:'weekly spend',zero:false}),legend(series.map(s=>[s.name,s.color])));el.append(c1);
+ const feed=h('div',{class:'card',style:'margin-top:16px'},h('h3',null,'Insight feed'),h('div',{class:'hint'},'What moved and why, ranked by size of move. Click "Evidence" to see every test and its SQL.'));
+ if(!fs.length)feed.append(h('div',{class:'muted'},'No findings for this filter.'));
+ fs.forEach(f=>feed.append(findingEl(f)));el.append(feed);return el}
+function kpi(l,v,d,cls){return h('div',{class:'card kpi'},h('div',{class:'l'},l),h('div',{class:'v'},v),h('div',{class:'d '+cls},d))}
+function findingEl(f){const verd=v=>h('button',{class:'btn',onclick:()=>{const cmd=`python -m r360 verdict ${f.id} ${v[0]} --note "..."`;navigator.clipboard&&navigator.clipboard.writeText(cmd);toast('Copied. In the real platform this records your verdict: '+cmd)}},v[1]);
+ const det=h('details',null,h('summary',null,'Evidence'));
+ f.candidates.forEach(c=>{det.append(h('div',{class:'meta',style:'margin-top:8px'},h('b',null,'Possible cause: '),c.summary,' · prior score ',c.prior_score));
+  c.tests.forEach(t=>det.append(h('div',{class:'test '+t.reading},h('b',null,t.test.replace(/_/g,' ')+' · '+t.reading),h('div',null,t.plain_english),h('details',null,h('summary',{style:'font-weight:400'},'SQL'),h('pre',null,t.sql)))))});
+ if(!f.candidates.length)det.append(h('div',{class:'meta'},'No catalogued cause was found, so the platform says so instead of guessing.'));
+ return h('div',{class:'finding'},h('div',{class:'hd'},f.headline),h('div',{class:'meta'},confBadge(f.confidence),' ',f.merchant,' · ',f.issuer,' · week of ',f.week,' · z = ',f.z,' · status ',f.status),det,h('div',{class:'row',style:'margin:10px 0 0'},verd(['CORRECT','Right']),verd(['PARTLY','Partly right']),verd(['WRONG','Wrong'])))}
+
+// ---------- Card Economics ----------
+function viewCards(){const el=h('div');el.append(h('div',{class:'banner b-real'},h('b',null,'Real extraction. '),'Every value comes from the bank page or MITC with its source. Where a page does not say something (for example the card network), it is shown as "not stated", not guessed.'));
+ const q=h('input',{type:'text',placeholder:'Search card or benefit',oninput:()=>draw()});
+ const spend=h('input',{type:'text',placeholder:'Annual spend, e.g. 1200000',style:'width:210px',oninput:()=>draw()});
+ el.append(h('div',{class:'row'},q,spend,h('span',{class:'muted'},'Enter annual spend to see which annual fees would be waived.')));
+ const wrap=h('div',{class:'grid g2',style:'grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)'});el.append(wrap);
+ function draw(){const t=(q.value||'').toLowerCase(),sv=parseFloat((spend.value||'').replace(/,/g,''))||0;
+  let rows=D.cards.filter(c=>issOK(c.issuer)&&(!t||JSON.stringify(c).toLowerCase().includes(t)));
+  rows.sort((a,b)=>((a[state.sortKey]??-1)-(b[state.sortKey]??-1))*state.sortDir);
+  const th=(k,l)=>h('th',{class:'sortable',onclick:()=>{state.sortDir=state.sortKey===k?-state.sortDir:1;state.sortKey=k;draw()}},l+(state.sortKey===k?(state.sortDir>0?' ▲':' ▼'):''));
+  const tb=h('table',null,h('thead',null,h('tr',null,h('th',null,'Card'),h('th',null,'Issuer'),th('joining','Joining'),th('annual','Annual'),h('th',null,'Waiver at'),h('th',null,'Network'),sv?h('th',null,'Fee at your spend'):null)),
+   h('tbody',null,rows.map(c=>{let fee='–';if(sv){fee=c.annual===0||c.annual===null?'₹0':(c.waiver&&sv>=c.waiver?h('span',{class:'up'},'Waived'):inr(c.annual))}
+    return h('tr',{class:'click'+(state.card===c.id?' sel':''),onclick:()=>{state.card=c.id;draw()}},h('td',null,h('b',null,c.name)),h('td',null,c.issuer.replace(' Bank','')),h('td',null,c.joining===null?'–':inr(c.joining)),h('td',null,c.annual===null?'–':inr(c.annual)),h('td',null,c.waiver?inr(c.waiver):'–'),h('td',null,c.network?c.network:h('span',{class:'badge un'},'not stated')),sv?h('td',null,fee):null)})));
+  wrap.replaceChildren(h('div',{class:'card'},h('h3',null,rows.length+' cards'),h('div',{class:'tbl'},tb)),cardDetail())}
+ draw();return el}
+function cardDetail(){const c=D.cards.find(x=>x.id===state.card);if(!c)return h('div',{class:'card'},h('h3',null,'Card detail'),h('div',{class:'muted'},'Select a card to see its fees, earn rules, benefits, conflicts and source.'));
+ const dl=[];const add=(k,v)=>{if(v!==null&&v!==undefined&&v!=='')dl.push(h('dt',null,k),h('dd',null,v))};
+ add('Issuer',c.issuer);add('Network',c.network||'not stated on the page');add('Type',c.backing);add('Eligibility',c.eligibility?Object.entries(JSON.parse(c.eligibility)).map(([k,v])=>k.replace(/_/g,' ')+': '+v).join('; '):null);add('Joining fee',c.joining===null?null:inr(c.joining));add('Annual fee',c.annual===null?null:inr(c.annual));add('Annual fee waived at',c.waiver?inr(c.waiver)+' spend':null);
+ add('Forex markup',c.forex);add('Lounge (domestic)',c.lounge_dom);add('Lounge (international)',c.lounge_int);add('Fuel surcharge waiver',c.fuel);add('Reward currency',c.reward_name);add('Welcome benefits',(c.welcome||[]).join('; '));add('Verification',c.verified);
+ const earn=c.earn.length?h('table',null,h('thead',null,h('tr',null,h('th',null,'Category'),h('th',null,'Rate'),h('th',null,'Cap'))),h('tbody',null,c.earn.map(e=>h('tr',null,h('td',null,e.cat),h('td',null,e.rate),h('td',null,e.cap||'–'))))):null;
+ return h('div',{class:'card detail'},h('h3',null,c.name),h('div',{class:'hint'},c.id),h('dl',null,dl),
+  earn?h('div',null,h('h3',{style:'margin-top:14px'},'Earn rules'),earn):null,
+  c.conflicts.length?h('div',{class:'banner b-syn',style:'margin-top:12px'},h('b',null,'Page notes: '),c.conflicts.join(' · ')):null,
+  h('div',{style:'margin-top:12px'},h('a',{href:c.source,target:'_blank',rel:'noopener'},'Source page')))}
+
+// ---------- Wallet Share ----------
+function viewWallet(){const el=h('div');el.append(h('div',{class:'banner b-syn'},h('b',null,'Synthetic. '),'These shapes show how the module would read. The real numbers need the card network on each transaction (from the BIN list, still an open item) and Trino access. Do not quote any number on this tab.'));
+ const iss=['YES BANK','IDFC FIRST Bank'].filter(issOK);
+ iss.forEach(k=>{const w=D.wallet[k];
+  el.append(h('div',{class:'grid g2',style:'margin-bottom:16px'},
+   h('div',{class:'card'},h('h3',null,k+' · network share by category'),h('div',{class:'hint'},'Share of the issuer’s card spend, by network.'),
+    hbar(w.categories.map(c=>({label:c.name,parts:[{v:c.rupay,color:'#0b5fff',name:'RuPay'},{v:c.visa,color:'#7a5af8',name:'Visa'},{v:c.mc,color:'#f79009',name:'Mastercard'}]})),{label:k+' network share'}),legend([['RuPay','#0b5fff'],['Visa','#7a5af8'],['Mastercard','#f79009']])),
+   h('div',{class:'card'},h('h3',null,k+' · RuPay share over time'),h('div',{class:'hint'},'Weekly RuPay share of the issuer’s card spend.'),
+    lineChart(D.weekly.weeks,[{name:'RuPay share',color:COL[k],values:w.rupay_trend}],{fmt:v=>pct(v,0),label:'rupay share trend'}),
+    h('h3',{style:'margin-top:12px'},'Share of wallet'),h('div',{class:'hint'},'Share of a cardholder’s total card spend that sits on this issuer’s card.'),
+    colChart(['<20%','20-40%','40-60%','60-80%','>80%'],[{name:'cardholders',color:COL[k],values:w.wallet_bands}],v=>pct(v,0)))));});
+ return el}
+
+// ---------- Proposition Hub ----------
+function viewHub(){const el=h('div');const tabs=[['offers','Offers'],['events','CVP / MITC changes'],['conflicts','Page vs MITC'],['coverage','Coverage']];
+ el.append(h('div',{class:'banner b-real'},h('b',null,'Real extraction. '),'These are the causes the engine tests against: offers, CVP and MITC changes. Each row cites its source.'));
+ el.append(h('div',{class:'sub-tabs'},tabs.map(t=>h('button',{class:state.sub===t[0]?'on':'',onclick:()=>{state.sub=t[0];render()}},t[1]))));
+ const body=h('div');el.append(body);
+ if(state.sub==='offers'){const q=h('input',{type:'text',placeholder:'Merchant or category',oninput:()=>draw()});const dt=h('input',{type:'date',value:state.offerDate,onchange:()=>{state.offerDate=dt.value;draw()}});
+  const mode=h('select',{onchange:()=>draw()},['ALL','FS','EMI','OTHER'].map(m=>h('option',{value:m},m==='ALL'?'All payment modes':m)));
+  const live=h('select',{onchange:()=>draw()},h('option',{value:'live'},'Live on date'),h('option',{value:'all'},'All dates'));
+  body.append(h('div',{class:'row'},q,live,dt,mode));const out=h('div');body.append(out);
+  function draw(){const t=(q.value||'').toLowerCase();const d=dt.value;
+   let rows=D.offers.filter(o=>issOK(o.issuer)&&(!t||(o.merchant+' '+o.category).toLowerCase().includes(t))&&(mode.value==='ALL'||(mode.value==='OTHER'?!['FS','EMI'].includes(o.mode):o.mode===mode.value))&&(live.value==='all'||(!o.start||o.start<=d)&&(!o.end||o.end>=d)));
+   out.replaceChildren(h('div',{class:'muted',style:'margin-bottom:8px'},rows.length+' offers'),h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,['Issuer','Merchant','Category','Mode','Benefit','Valid','Source'].map(x=>h('th',null,x)))),
+    h('tbody',null,rows.slice(0,200).map(o=>h('tr',null,h('td',null,o.issuer.replace(' Bank','')),h('td',null,h('b',null,o.merchant)),h('td',null,o.category),h('td',null,h('span',{class:'badge '+(o.mode==='FS'?'fs':o.mode==='EMI'?'emi':'un')},o.mode||'?')),h('td',null,o.benefit,o.cond?h('div',{class:'muted',style:'font-size:12px'},o.cond):null),h('td',null,(o.start||'?')+' to '+(o.end||'?')+(o.dow?' ('+o.dow+')':'')),h('td',{class:'muted'},o.source)))))),rows.length>200?h('div',{class:'muted'},'Showing the first 200.'):'')}
+  draw()}
+ if(state.sub==='events'){body.append(h('div',{class:'card'},h('h3',null,D.events.length+' dated CVP and MITC changes'),h('div',{class:'hint'},'Offer starts and ends are generated from the offer catalog; these are the card-terms changes.'),
+   h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,['Effective','Issuer','Type','Direction','What changed','Cards'].map(x=>h('th',null,x)))),h('tbody',null,D.events.filter(e=>issOK(e.issuer)).map(e=>h('tr',null,h('td',null,e.date),h('td',null,e.issuer),h('td',null,e.type),h('td',null,e.direction),h('td',null,e.desc),h('td',null,e.cards.map(c=>h('span',{class:'pill'},c))))))))))}
+ if(state.sub==='conflicts'){body.append(h('div',{class:'card'},h('h3',null,'Where the bank page and the MITC disagree'),h('div',{class:'hint'},'The MITC is treated as current. The catalog entries still need updating.'),
+   h('div',{class:'tbl'},h('table',null,h('thead',null,h('tr',null,['Card','Field','Page says','MITC says','Note'].map(x=>h('th',null,x)))),h('tbody',null,D.conflicts.map(c=>h('tr',null,c.map(x=>h('td',null,x)))))))))}
+ if(state.sub==='coverage'){const cv=D.coverage;body.append(h('div',{class:'grid g4'},kpi('Cards in catalog',cv.cards,'YES BANK '+cv.by_issuer['YES BANK']+' · IDFC '+cv.by_issuer['IDFC FIRST Bank'],'neu'),kpi('Offers in catalog',cv.offers,'IDFC '+cv.offers_by['IDFC FIRST Bank']+' · YES '+cv.offers_by['YES BANK'],'neu'),kpi('Cards with no network stated',cv.no_network,'needed for wallet share','neu'),kpi('Offers with no eligible cards listed',cv.no_cards,'cannot be tied to a card','neu')),
+   h('div',{class:'card',style:'margin-top:16px'},h('h3',null,'Not yet extracted'),h('div',{class:'hint'},'Card pages found but not read yet.'),Object.entries(cv.not_yet).map(([k,v])=>h('div',null,h('b',null,k+': '),v.length?v.map(x=>h('span',{class:'pill'},x)):'none')))) }
+ return el}
+
+// ---------- Deal Performance ----------
+function viewDeal(){const el=h('div');const G=D.deal.grid;el.append(h('div',{class:'banner b-eng'},h('b',null,'Real Deal Model engine, illustrative inputs. '),'Results come from the tested engine (the same code as the Python tests) using the model’s default inputs: closing cards 60,000 to 300,000 over five years. It is not a real deal. Sliders snap to pre-computed steps.'));
+ const lv={cif:3,volume:3,activation:3};const names={cif:'Card issuance',volume:'Transactions per card',activation:'Activation'};let preset=null;
+ const out=h('div');const ctl=h('div',{class:'card'});
+ const sliders=Object.keys(lv).map(k=>{const s=h('input',{type:'range',min:0,max:G.levels.length-1,step:1,value:lv[k],oninput:()=>{lv[k]=+s.value;preset=null;draw()}});const v=h('span',null,'');return{k,s,v,row:h('div',{class:'slider'},h('span',null,names[k]),s,v)}});
+ const pbtns=['base','conservative','aggressive'].map(p=>h('button',{class:'btn',onclick:()=>{preset=p;draw()}},p[0].toUpperCase()+p.slice(1)));
+ ctl.append(h('h3',null,'Scenario'),h('div',{class:'hint'},'Pick a preset (exact engine scenario) or move the sliders (1.0 = base).'),h('div',{class:'row'},pbtns),...sliders.map(s=>s.row));
+ function draw(){let r;if(preset){r=D.deal.presets[preset];sliders.forEach(s=>s.v.textContent='preset')}else{r=G.runs[lv.cif+'-'+lv.volume+'-'+lv.activation];sliders.forEach(s=>s.v.textContent='×'+G.levels[lv[s.k]].toFixed(1))}
+  const fl=D.deal.corridor.floor,ce=D.deal.corridor.ceiling;
+  const k=h('div',{class:'grid g4'},kpi('Net revenue, bps of spend',r.net_bps.toFixed(3),'corridor '+fl+' to '+ce+' bps: '+(r.net_bps>ce?'above':r.net_bps<fl?'below':'within'),'neu'),kpi('Gross revenue, bps',r.gross_bps.toFixed(2),'before incentives','neu'),kpi('Incentives, bps',r.incentive_bps.toFixed(2),'paid to the issuer','neu'),kpi('Net revenue, 5 years',inr(r.net_rev),'on '+inr(r.spends)+' spend','neu'));
+  const yrs=r.years;const tbl=h('table',null,h('thead',null,h('tr',null,['Year','Closing cards','Spend','Revenue','Incentives','Net'].map(x=>h('th',null,x)))),h('tbody',null,yrs.map(y=>h('tr',null,h('td',null,y.year),h('td',null,Math.round(y.cif).toLocaleString('en-IN')),h('td',null,inr(y.spends)),h('td',null,inr(y.revenue)),h('td',null,inr(y.incentives)),h('td',null,inr(y.net))))));
+  out.replaceChildren(k,h('div',{class:'card',style:'margin-top:16px'},h('h3',null,'Revenue and incentives by year'),colChart(yrs.map(y=>y.year),[{name:'Revenue',color:'#0b5fff',values:yrs.map(y=>y.revenue)},{name:'Incentives',color:'#f79009',values:yrs.map(y=>y.incentives)},{name:'Net',color:'#12805c',values:yrs.map(y=>Math.max(0,y.net))}],inr),legend([['Revenue','#0b5fff'],['Incentives','#f79009'],['Net','#12805c']]),h('div',{class:'tbl',style:'margin-top:10px'},tbl),
+   h('div',{class:'muted',style:'margin-top:8px'},'Net bps is a ratio, so a scenario can move revenue and incentives by different amounts. Check the year table before reading a lower or higher bps as better.')))}
+ el.append(ctl,h('div',{style:'height:16px'}),out);draw();return el}
+
+// ---------- shell ----------
+const TABS=[['cc','Command Center',viewCC],['cards','Card Economics',viewCards],['wallet','Wallet Share',viewWallet],['hub','Proposition Hub',viewHub],['deal','Deal Performance',viewDeal]];
+function render(){const nav=$('nav');nav.replaceChildren(...TABS.map(t=>h('button',{class:'tab'+(state.tab===t[0]?' on':''),onclick:()=>{state.tab=t[0];render()}},t[1])),
+  h('div',{class:'filters'},h('label',null,'Issuer'),h('select',{onchange:e=>{state.issuer=e.target.value;render()}},[['ALL','Both banks'],['YES BANK','YES BANK'],['IDFC FIRST Bank','IDFC FIRST Bank']].map(o=>h('option',{value:o[0],selected:state.issuer===o[0]},o[1])))));
+ const t=TABS.find(x=>x[0]===state.tab);$('main').replaceChildren(t[2]())}
+render();
+</script></body></html>
