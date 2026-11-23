@@ -27,3 +27,4 @@ app/briefing.html
 demo/data/
 .pytest_cache/
 app/briefing_demo.html
+app/platform_preview.html
