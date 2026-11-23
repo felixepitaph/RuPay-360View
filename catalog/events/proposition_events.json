@@ -1,0 +1,191 @@
+{
+ "description": "Dated changes to CVP and MITC that can explain moves in spend. Offer start and end events are generated from the offers catalogs by the engine, not stored here. Every event must cite its source.",
+ "events": [
+  {
+   "event_id": "YES_2026-06-15_REWARD_EXCLUSIONS",
+   "issuer_bank": "YES BANK",
+   "card_ids": [
+    "YES_MARQUEE",
+    "YES_ELITE_PLUS",
+    "YES_SELECT",
+    "YES_ACE",
+    "YES_PROSPERITY_REWARDS"
+   ],
+   "event_type": "CVP_CHANGE",
+   "effective_date": "2026-06-15",
+   "direction": "DEVALUATION",
+   "affected_categories": [
+    "INSURANCE",
+    "EDUCATION",
+    "RAILWAYS",
+    "TOLL",
+    "FERRY",
+    "JEWELLERY"
+   ],
+   "description": "Reward points withdrawn on insurance, education, railways, toll and ferry (and jewellery on Elite+, Select, ACE, Prosperity Rewards). Select-category MCC list narrowed.",
+   "sources": [
+    {
+     "document": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/select-credit-card",
+     "locator": "T&C note a) and c), 'Effective 15th June 2026'",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  },
+  {
+   "event_id": "YES_2026-06-15_FOREX_MARKUP",
+   "issuer_bank": "YES BANK",
+   "card_ids": [
+    "YES_ELITE_PLUS",
+    "YES_SELECT",
+    "YES_ACE",
+    "YES_PROSPERITY_REWARDS"
+   ],
+   "event_type": "MITC_CHANGE",
+   "effective_date": "2026-06-15",
+   "direction": "DEVALUATION",
+   "affected_categories": [
+    "INTERNATIONAL"
+   ],
+   "description": "Forex markup raised: Elite+ 2.75% to 3.00%; Select and ACE 2.75% to 3.50%; Prosperity Rewards 3.40% to 3.50%.",
+   "sources": [
+    {
+     "document": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/select-credit-card",
+     "locator": "T&C note i), 'Foreign Currency Markup applicable prior to 15th June 2026 is 2.75%'",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  },
+  {
+   "event_id": "YES_2026-06-15_ACE_UPI_NO_POINTS",
+   "issuer_bank": "YES BANK",
+   "card_ids": [
+    "YES_ACE"
+   ],
+   "event_type": "CVP_CHANGE",
+   "effective_date": "2026-06-15",
+   "direction": "DEVALUATION",
+   "affected_categories": [
+    "UPI"
+   ],
+   "description": "ACE: reward points no longer awarded on UPI transactions.",
+   "sources": [
+    {
+     "document": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/ace-credit-card",
+     "locator": "Rewards section, 'Effective 15th June 2026'",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  },
+  {
+   "event_id": "YES_2026-06-15_FUEL_WAIVER_RANGE",
+   "issuer_bank": "YES BANK",
+   "card_ids": [
+    "YES_MARQUEE",
+    "YES_ELITE_PLUS",
+    "YES_SELECT",
+    "YES_ACE",
+    "YES_PROSPERITY_REWARDS"
+   ],
+   "event_type": "CVP_CHANGE",
+   "effective_date": "2026-06-15",
+   "direction": "DEVALUATION",
+   "affected_categories": [
+    "FUEL"
+   ],
+   "description": "Fuel surcharge waiver transaction range changed from Rs400-5,000 to narrower card-specific ranges (e.g. Rs500-3,000 on Select and ACE).",
+   "sources": [
+    {
+     "document": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/select-credit-card",
+     "locator": "T&C note e)",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  },
+  {
+   "event_id": "YES_2026-10-01_ELITE_PLUS_MOVIES_DISTRICT",
+   "issuer_bank": "YES BANK",
+   "card_ids": [
+    "YES_ELITE_PLUS"
+   ],
+   "event_type": "CVP_CHANGE",
+   "effective_date": "2026-10-01",
+   "direction": "NEUTRAL",
+   "affected_categories": [
+    "MOVIES"
+   ],
+   "description": "Elite+ movie offer moved to District app/website, discount capped Rs250 per calendar month.",
+   "sources": [
+    {
+     "document": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/elite-plus-credit-card",
+     "locator": "T&C note i)",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  },
+  {
+   "event_id": "IDFC_2026-06-18_MOVIE_SPEND_GATE",
+   "issuer_bank": "IDFC FIRST Bank",
+   "card_ids": [
+    "IDFC_FIRST_WEALTH",
+    "IDFC_FIRST_POWER_PLUS"
+   ],
+   "event_type": "CVP_CHANGE",
+   "effective_date": "2026-06-18",
+   "direction": "DEVALUATION",
+   "affected_categories": [
+    "MOVIES"
+   ],
+   "description": "Movie offer now requires spend in the previous or current month (Wealth: Rs20,000 in the month).",
+   "sources": [
+    {
+     "document": "https://www.idfcfirst.bank.in/credit-card/wealth",
+     "locator": "Movie offer footnote, 'effective 18 June 2026'",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  },
+  {
+   "event_id": "IDFC_2026-06-18_MAYURA_POINTS_LIMIT",
+   "issuer_bank": "IDFC FIRST Bank",
+   "card_ids": [
+    "IDFC_MAYURA"
+   ],
+   "event_type": "CVP_CHANGE",
+   "effective_date": "2026-06-18",
+   "direction": "DEVALUATION",
+   "affected_categories": [
+    "ALL"
+   ],
+   "description": "Mayura: reward points earned only on spends up to the credit limit per billing cycle.",
+   "sources": [
+    {
+     "document": "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/mayura",
+     "locator": "Reward terms, 'Effective 18 June 2026'",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  },
+  {
+   "event_id": "IDFC_2025-02-20_FUEL_WAIVER_CAP",
+   "issuer_bank": "IDFC FIRST Bank",
+   "card_ids": [
+    "IDFC_FIRST_WEALTH",
+    "IDFC_FIRST_SELECT"
+   ],
+   "event_type": "CVP_CHANGE",
+   "effective_date": "2025-02-20",
+   "direction": "DEVALUATION",
+   "affected_categories": [
+    "FUEL"
+   ],
+   "description": "Fuel surcharge waiver cap revised to Rs300 per statement cycle.",
+   "sources": [
+    {
+     "document": "https://www.idfcfirst.bank.in/credit-card/wealth",
+     "locator": "Fuel waiver note, 'Effective 20th February 2025'",
+     "retrieved_on": "2026-11-23"
+    }
+   ]
+  }
+ ]
+}

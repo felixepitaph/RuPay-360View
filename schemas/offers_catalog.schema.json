@@ -1,0 +1,218 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Offer catalog entry (v2, tested against the IDFC FIRST Nov 2026 offers booklet)",
+  "type": "object",
+  "required": [
+    "offer_id",
+    "offer_source",
+    "merchant_brand",
+    "payment_mode",
+    "benefit",
+    "validity",
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "offer_id": {
+      "type": "string"
+    },
+    "offer_source": {
+      "enum": [
+        "RUPAY_NETWORK",
+        "VISA_NETWORK",
+        "MC_NETWORK",
+        "ISSUER",
+        "COBRAND_PARTNER"
+      ]
+    },
+    "issuer_bank": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "eligible_cards": {
+      "type": "array",
+      "description": "Card names exactly as listed in the source. Use ['ALL'] if the source says all cards.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "merchant_brand": {
+      "type": "string"
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "channel": {
+      "enum": [
+        "ONLINE",
+        "OFFLINE",
+        "ONLINE_AND_OFFLINE",
+        "NOT_STATED"
+      ]
+    },
+    "rails": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "POS",
+          "ECOM",
+          "UPI_CC",
+          "INTL"
+        ]
+      }
+    },
+    "payment_mode": {
+      "enum": [
+        "FS",
+        "EMI",
+        "ANY"
+      ],
+      "description": "ANY when the source does not tag the offer as Full Swipe or EMI-only"
+    },
+    "emi_tenures_months": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "benefit": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "INSTANT_DISCOUNT",
+            "CASHBACK",
+            "REWARD_MULTIPLIER",
+            "NO_COST_EMI"
+          ]
+        },
+        "rate_pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "flat_inr": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "min_txn_inr": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "max_cap_inr": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "usage_limit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "with_no_cost_emi": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "stackable_with_base_cvp": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "validity": {
+      "type": "object",
+      "required": [
+        "start_date"
+      ],
+      "properties": {
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "null when the source does not state a start date"
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "days_of_week": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "MON",
+              "TUE",
+              "WED",
+              "THU",
+              "FRI",
+              "SAT",
+              "SUN",
+              "ALL"
+            ]
+          }
+        }
+      }
+    },
+    "conditions": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "extraction_confidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "description": "LOW when the merchant name comes from a logo or the layout was ambiguous"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "document",
+          "locator",
+          "retrieved_on"
+        ],
+        "properties": {
+          "document": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "retrieved_on": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}

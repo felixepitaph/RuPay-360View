@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RuPay 360° — Network Portfolio Intelligence (V2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* =========================================================================
+       DESIGN TOKENS: DARK TERMINAL (V1.1) & LIGHT EDITORIAL (STRIPE / MERCURY)
+       ========================================================================= */
+    :root, [data-theme="dark"] {
+      --bg-canvas: #070810;
+      --bg-panel: #0c0e18;
+      --bg-surface: #10131e;
+      --bg-card: #141826;
+      --bg-hover: #1b2136;
+      --bg-input: #0e111d;
+      --border: #1b1f38;
+      --border-hi: #2d3559;
+      --text: #ebedf4;
+      --text-2: #c2c8dc;
+      --muted: #868da8;
+      --dim: #535a7a;
+      --accent: #635bff;
+      --accent-2: #8b6aff;
+      --accent-bg: rgba(99, 91, 255, 0.16);
+      --accent-bd: rgba(99, 91, 255, 0.45);
+      --green: #3ecf8e;
+      --green-bg: rgba(62, 207, 142, 0.14);
+      --green-bd: rgba(62, 207, 142, 0.34);
+      --amber: #ffb224;
+      --amber-bg: rgba(255, 178, 36, 0.14);
+      --amber-bd: rgba(255, 178, 36, 0.34);
+      --red: #ff6166;
+      --red-bg: rgba(255, 97, 102, 0.14);
+      --red-bd: rgba(255, 97, 102, 0.34);
+      --c1: #635bff; --c2: #38bdf8; --c3: #a78bfa; --c4: #f472b6; --c5: #fb923c; --c6: #64748b;
+      --grid: rgba(134, 141, 168, 0.14);
+      --dot: rgba(99, 91, 255, 0.08);
+      --shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.55);
+      --tip-bg: rgba(12, 14, 24, 0.96);
+    }
+
+    [data-theme="light"] {
+      --bg-canvas: #f8fafc;
+      --bg-panel: #ffffff;
+      --bg-surface: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-hover: #f8fafc;
+      --bg-input: #f8fafc;
+      --border: #e2e8f0;
+      --border-hi: #cbd5e1;
+      --text: #0f172a;
+      --text-2: #334155;
+      --muted: #64748b;
+      --dim: #94a3b8;
+      --accent: #4f46e5;
+      --accent-2: #6366f1;
+      --accent-bg: rgba(79, 70, 229, 0.09);
+      --accent-bd: rgba(79, 70, 229, 0.32);
+      --green: #059669;
+      --green-bg: rgba(5, 150, 105, 0.10);
+      --green-bd: rgba(5, 150, 105, 0.28);
+      --amber: #d97706;
+      --amber-bg: rgba(217, 119, 6, 0.10);
+      --amber-bd: rgba(217, 119, 6, 0.30);
+      --red: #dc2626;
+      --red-bg: rgba(220, 38, 38, 0.10);
+      --red-bd: rgba(220, 38, 38, 0.28);
+      --c1: #4f46e5; --c2: #0284c7; --c3: #7c3aed; --c4: #db2777; --c5: #ea580c; --c6: #64748b;
+      --grid: rgba(15, 23, 42, 0.08);
+      --dot: rgba(79, 70, 229, 0.04);
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --tip-bg: rgba(255, 255, 255, 0.98);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-canvas);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    .canvas-dots {
+      background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+    .tabular { font-variant-numeric: tabular-nums; }
+
+    /* Cards & Surfaces */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .surface {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    /* Collapsible Sidebar (230px <-> 60px) */
+    .sidebar {
+      width: 230px;
+      background: var(--bg-panel);
+      border-right: 1px solid var(--border);
+      transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
+    }
+    .sidebar.collapsed { width: 60px; }
+    .sidebar.collapsed .sb-hide { display: none !important; }
+    .sidebar.collapsed .nav-btn { justify-content: center; padding-left: 0; padding-right: 0; }
+
+    .nav-btn {
+      color: var(--muted);
+      border: 1px solid transparent;
+      border-radius: 9px;
+      transition: all 0.14s ease;
+    }
+    .nav-btn:hover { background: var(--bg-hover); color: var(--text); }
+    .nav-btn.active {
+      background: var(--accent-bg);
+      color: var(--text);
+      border-color: var(--accent-bd);
+      font-weight: 600;
+    }
+    .nav-btn.active svg { color: var(--accent); }
+
+    /* Pills & Cascading Filters */
+    .pill-accent { background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-bd); }
+    .pill-green  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-bd); }
+    .pill-amber  { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-bd); }
+    .pill-red    { background: var(--red-bg);    color: var(--red);    border: 1px solid var(--red-bd); }
+    .pill-muted  { background: var(--bg-surface); color: var(--muted); border: 1px solid var(--border); }
+
+    .chip {
+      padding: 4px 9px; border-radius: 7px; font-size: 11px; font-weight: 500;
+      border: 1px solid var(--border); background: var(--bg-input); color: var(--muted);
+      cursor: pointer; transition: all 0.12s ease; white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .chip:hover { border-color: var(--border-hi); color: var(--text); }
+    .chip.on { background: var(--accent-bg); border-color: var(--accent-bd); color: var(--accent); font-weight: 600; }
+    .chip.off { opacity: 0.38; pointer-events: none; }
+
+    .sub-box {
+      border-left: 2.5px solid var(--accent);
+      background: var(--accent-bg);
+      border-radius: 0 8px 8px 0;
+      padding: 3px 8px;
+      display: inline-flex; align-items: center; gap: 5px; flex-wrap: wrap;
+      transition: opacity 0.15s ease;
+    }
+    .sub-box.disabled {
+      border-left-color: var(--border-hi);
+      background: var(--bg-surface);
+      opacity: 0.45;
+    }
+
+    .seg {
+      background: var(--bg-surface); border: 1px solid var(--border);
+      border-radius: 9px; padding: 3px; display: inline-flex; gap: 2px; flex-wrap: wrap;
+    }
+    .seg button {
+      padding: 5px 11px; border-radius: 6px; font-size: 11.5px; font-weight: 500;
+      color: var(--muted); cursor: pointer; transition: all 0.13s ease; white-space: nowrap;
+    }
+    .seg button:hover { color: var(--text); }
+    .seg button.active {
+      background: var(--bg-card); color: var(--text); font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+    }
+
+    /* Inputs & Sliders */
+    .inp {
+      background: var(--bg-input); border: 1px solid var(--border); color: var(--text);
+      border-radius: 7px; font-size: 12px; padding: 5px 8px;
+    }
+    .inp:focus { outline: none; border-color: var(--accent); }
+    .inp:disabled { opacity: 0.48; cursor: not-allowed; }
+    input[type="range"].sl {
+      -webkit-appearance: none; appearance: none; width: 100%; height: 6px;
+      border-radius: 99px; background: var(--border-hi); outline: none; cursor: pointer;
+    }
+    input[type="range"].sl::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none; width: 15px; height: 15px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+    }
+
+    /* Tables & Heatmaps */
+    table.ft { width: 100%; border-collapse: collapse; }
+    table.ft th {
+      color: var(--muted); font-size: 10px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.04em; border-bottom: 1px solid var(--border); padding: 8px 9px; white-space: nowrap;
+    }
+    table.ft td { border-bottom: 1px solid var(--border); padding: 8px 9px; font-size: 12px; vertical-align: middle; }
+    table.ft tbody tr:hover { background: var(--bg-hover); }
+
+    .h-cell { border-radius: 5px; transition: transform 0.1s ease; cursor: pointer; }
+    .h-cell:hover { transform: scale(1.06); box-shadow: 0 0 0 1.5px var(--text); }
+    .h-mid { box-shadow: 0 0 0 2px var(--accent); font-weight: 700; }
+
+    .svg-hit { cursor: pointer; transition: opacity 0.12s ease; }
+    .svg-hit:hover { opacity: 0.85; }
+
+    #tip {
+      position: fixed; z-index: 90; pointer-events: none; opacity: 0;
+      background: var(--tip-bg); border: 1px solid var(--border-hi); border-radius: 9px;
+      padding: 8px 11px; font-size: 11px; max-width: 270px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.4); transition: opacity 0.1s ease;
+    }
+    #tip.show { opacity: 1; }
+
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 99px; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col lg:flex-row">
+
+  <!-- MOBILE SIDEBAR BACKDROP -->
+  <div id="mobMask" class="fixed inset-0 bg-black/60 z-30 hidden lg:hidden" onclick="toggleMob(false)"></div>
+
+  <!-- =========================================================================
+       COLLAPSIBLE SIDEBAR: 3 SCOPED WORKSPACES
+       ========================================================================= -->
+  <aside id="sidebar" class="sidebar fixed lg:sticky top-0 left-0 h-screen z-40 flex flex-col justify-between p-2.5 -translate-x-full lg:translate-x-0 overflow-y-auto shrink-0">
+    <div>
+      <!-- Brand Header -->
+      <div class="flex items-center justify-between px-1.5 py-2 mb-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm shrink-0"
+               style="background: linear-gradient(135deg, var(--accent), var(--accent-2));">R°</div>
+          <div class="sb-hide truncate">
+            <div class="text-sm font-bold leading-tight">RuPay 360°</div>
+            <div class="text-[10px]" style="color: var(--muted);">Network Intelligence V2</div>
+          </div>
+        </div>
+        <button class="lg:hidden p-1" style="color: var(--muted);" onclick="toggleMob(false)" aria-label="Close">✕</button>
+      </div>
+
+      <!-- WORKSPACE 1 -->
+      <div class="sb-hide text-[9px] font-bold uppercase tracking-wider px-2 pt-1 pb-1.5" style="color: var(--dim);">1 · Telemetry &amp; Economics</div>
+      <div class="space-y-1 mb-3">
+        <button class="nav-btn active w-full flex items-center gap-2.5 px-2.5 py-2 text-[12.5px] text-left" data-view="command" title="Command Center (Workspace 1)" onclick="go('command')">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          <span class="sb-hide truncate">Command Center</span>
+        </button>
+        <button class="nav-btn w-full flex items-center gap-2.5 px-2.5 py-2 text-[12.5px] text-left" data-view="economics" title="Card Economics (Workspace 1)" onclick="go('economics')">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/></svg>
+          <span class="sb-hide truncate">Card Economics</span>
+        </button>
+        <button class="nav-btn w-full flex items-center gap-2.5 px-2.5 py-2 text-[12.5px] text-left" data-view="wallet" title="Wallet Share (Workspace 1)" onclick="go('wallet')">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+          <span class="sb-hide truncate">Wallet Share</span>
+        </button>
+      </div>
+
+      <!-- WORKSPACE 2 -->
+      <div class="sb-hide text-[9px] font-bold uppercase tracking-wider px-2 pt-2 pb-1.5 border-t" style="color: var(--accent); border-color: var(--border);">2 · Proposition Control Plane</div>
+      <div class="space-y-1 mb-3">
+        <button class="nav-btn w-full flex items-center gap-2.5 px-2.5 py-2 text-[12.5px] text-left" data-view="proposition" title="Proposition Hub — Own Local Filters" onclick="go('proposition')">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span class="sb-hide truncate flex-1">Proposition Hub</span>
+          <span class="sb-hide mono text-[9px] px-1.5 py-0.5 rounded pill-accent">4</span>
+        </button>
+      </div>
+
+      <!-- WORKSPACE 3 -->
+      <div class="sb-hide text-[9px] font-bold uppercase tracking-wider px-2 pt-2 pb-1.5 border-t" style="color: var(--green); border-color: var(--border);">3 · Commercial Agreements</div>
+      <div class="space-y-1">
+        <button class="nav-btn w-full flex items-center gap-2.5 px-2.5 py-2 text-[12.5px] text-left" data-view="deal" title="Deal Performance — Own Project Switcher" onclick="go('deal')">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          <span class="sb-hide truncate flex-1">Deal Performance</span>
+          <span class="sb-hide mono text-[9px] px-1.5 py-0.5 rounded pill-green">6</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sidebar Architecture Footnote -->
+    <div class="sb-hide surface p-2.5 text-[10px] space-y-1">
+      <div class="font-semibold flex justify-between"><span>Workspace Isolation</span><span class="mono" style="color:var(--green)">ON</span></div>
+      <p style="color: var(--muted);" class="leading-relaxed">Telemetry filters stay inside WS 1. WS 2 &amp; WS 3 hold independent local controls.</p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN SHELL
+       ========================================================================= -->
+  <div class="flex-1 flex flex-col min-w-0 canvas-dots">
+    <!-- Top Header -->
+    <header class="sticky top-0 z-30 border-b px-4 py-2.5 flex flex-wrap items-center justify-between gap-2.5"
+            style="background: var(--bg-panel); border-color: var(--border);">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <button class="lg:hidden p-1.5 rounded-lg border" style="border-color: var(--border);" onclick="toggleMob(true)" aria-label="Menu">☰</button>
+        <button class="hidden lg:flex p-1.5 rounded-lg border items-center justify-center hover:opacity-80"
+                style="background: var(--bg-surface); border-color: var(--border); color: var(--text);"
+                onclick="toggleCollapse()" title="Collapse / Expand Sidebar (60px ↔ 230px)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+        </button>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 id="hdrTitle" class="text-sm lg:text-base font-bold tracking-tight">Command Center</h1>
+            <span id="hdrWs" class="text-[10px] font-semibold px-2 py-0.5 rounded-full pill-accent">WS 1 · Telemetry &amp; Economics</span>
+          </div>
+          <p id="hdrSub" class="text-[11px] truncate" style="color: var(--muted);">Macro portfolio health bound to CVP, MITC &amp; Offers</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="hidden sm:inline-flex items-center gap-1.5 text-[10.5px] px-2.5 py-1 rounded-full pill-muted">
+          <span class="w-1.5 h-1.5 rounded-full" style="background: var(--green);"></span>
+          Trino T+1 · 22 Nov 2026
+        </span>
+        <button id="themeBtn" onclick="toggleTheme()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-xs font-medium"
+                style="background: var(--bg-surface); border-color: var(--border); color: var(--text);">
+          <span id="themeTxt">☀ Light Editorial</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- PERSISTENT 3-TIER CASCADING FILTER BAR (VISIBLE IN WORKSPACE 1 ONLY) -->
+    <section id="ws1Filters" class="border-b px-4 py-3 space-y-2.5" style="background: var(--bg-surface); border-color: var(--border);"></section>
+
+    <!-- VIEW CONTENT -->
+    <main id="app" class="flex-1 p-4 max-w-[1640px] w-full mx-auto space-y-4"></main>
+  </div>
+
+  <div id="tip"></div>
+
+  <script>
+    /* =========================================================================
+       1. FORMATTERS & TOOLTIP HELPERS
+       ========================================================================= */
+    const F = {
+      cr: (v, d = 1) => `₹${Number(v).toLocaleString('en-IN', { minimumFractionDigits: d, maximumFractionDigits: d })} Cr`,
+      fR: (v, d = 3) => {
+        const a = Math.abs(v), s = v < 0 ? '-₹' : '₹';
+        if (a >= 1e7) return `${s}${(a / 1e7).toLocaleString('en-IN', { minimumFractionDigits: d, maximumFractionDigits: d })} Cr`;
+        if (a >= 1e5) return `${s}${(a / 1e5).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} L`;
+        return `${s}${Math.round(a).toLocaleString('en-IN')}`;
+      },
+      inr: (v) => `₹${Math.round(v).toLocaleString('en-IN')}`,
+      vol: (v) => {
+        if (v >= 1e7) return `${(v / 1e7).toFixed(2)} Cr`;
+        if (v >= 1e6) return `${(v / 1e6).toFixed(2)} Mn`;
+        if (v >= 1e5) return `${(v / 1e5).toFixed(2)} L`;
+        if (v >= 1e3) return `${(v / 1e3).toFixed(1)}K`;
+        return `${Math.round(v)}`;
+      },
+      pct: (v, d = 1) => `${Number(v).toFixed(d)}%`,
+      bps: (v, d = 2) => `${Number(v).toFixed(d)} bps`,
+      sgn: (v, u = '%', d = 1) => `${v >= 0 ? '+' : ''}${Number(v).toFixed(d)}${u}`
+    };
+
+    const tip = document.getElementById('tip');
+    function showTip(e, html) {
+      tip.innerHTML = html; tip.classList.add('show');
+      const x = e.clientX + 14, y = e.clientY + 14;
+      tip.style.left = `${Math.min(x, window.innerWidth - 280)}px`;
+      tip.style.top  = `${Math.min(y, window.innerHeight - 110)}px`;
+    }
+    function hideTip() { tip.classList.remove('show'); }
+
+    /* =========================================================================
+       2. CANONICAL DATASETS (TRINO TELEMETRY, PROPOSITION CATALOG, INTERCHANGE)
+       ========================================================================= */
+    const BANKS = ['HDFC Bank', 'SBI Card', 'Axis Bank', 'IDFC FIRST', 'ICICI Bank'];
+    const PROFILES = ['Mass', 'Mass Affluent', 'Affluent', 'Super Premium'];
+    const VARIANTS = ['Platinum', 'Select', 'EKAA'];
+
+    // Trino RuPay Portfolio BINs (drives Workspace 1 dynamically)
+    const TRINO_BINS = [
+      { id:'HDFC_NEU', bank:'HDFC Bank', name:'HDFC Tata Neu Infinity RuPay', bin:'65301510', profile:'Affluent', variant:'Select', collateral:'Unsecured', issuance:'Co-Brand', focus:'Discretionary',
+        cif:1840000, active:1214000, rails:{ POS:590, ECOM:510, UPI:1520, INTL:168 }, emiShare:0.12, txMn:{ POS:2.1, ECOM:1.5, UPI:15.1, INTL:0.14 },
+        upi:{ lte2k:33, gt2k:23, large:20, online:24 }, slabs:[14,24,38,16,8], icBps:158, wallet:{ thisCard:41.0, otherCard:22.0, savCur:37.0 } },
+      { id:'HDFC_EKAA', bank:'HDFC Bank', name:'RuPay EKAA Private Flagship', bin:'65309911', profile:'Super Premium', variant:'EKAA', collateral:'Unsecured', issuance:'Proprietary', focus:null,
+        cif:235000, active:194000, rails:{ POS:468, ECOM:392, UPI:486, INTL:284 }, emiShare:0.11, txMn:{ POS:0.78, ECOM:0.60, UPI:2.55, INTL:0.16 },
+        upi:{ lte2k:14, gt2k:26, large:32, online:28 }, slabs:[3,10,25,30,32], icBps:216, wallet:{ thisCard:49.4, otherCard:24.6, savCur:26.0 } },
+      { id:'SBI_SAVE', bank:'SBI Card', name:'SBI SimplySAVE RuPay', bin:'652868', profile:'Mass', variant:'Platinum', collateral:'Unsecured', issuance:'Proprietary', focus:null,
+        cif:2420000, active:1452000, rails:{ POS:710, ECOM:520, UPI:1140, INTL:64 }, emiShare:0.13, txMn:{ POS:2.9, ECOM:1.8, UPI:12.6, INTL:0.08 },
+        upi:{ lte2k:39, gt2k:21, large:22, online:18 }, slabs:[24,34,27,10,5], icBps:144, wallet:{ thisCard:33.0, otherCard:19.4, savCur:47.6 } },
+      { id:'AXIS_SM', bank:'Axis Bank', name:'Axis SuperMoney FD RuPay', bin:'653019', profile:'Mass', variant:'Platinum', collateral:'Secured', issuance:'Co-Brand', focus:'Discretionary',
+        cif:960000, active:710000, rails:{ POS:54, ECOM:118, UPI:810, INTL:9 }, emiShare:0.04, txMn:{ POS:0.32, ECOM:0.70, UPI:15.6, INTL:0.01 },
+        upi:{ lte2k:60, gt2k:16, large:11, online:13 }, slabs:[36,38,20,5,1], icBps:98, wallet:{ thisCard:43.2, otherCard:22.4, savCur:34.4 } },
+      { id:'IDFC_PWR', bank:'IDFC FIRST', name:'IDFC FIRST Power+ RuPay', bin:'653027', profile:'Mass Affluent', variant:'Select', collateral:'Unsecured', issuance:'Co-Brand', focus:'Non-Discretionary',
+        cif:860000, active:618000, rails:{ POS:428, ECOM:256, UPI:642, INTL:45 }, emiShare:0.14, txMn:{ POS:1.62, ECOM:0.96, UPI:6.70, INTL:0.04 },
+        upi:{ lte2k:28, gt2k:27, large:27, online:18 }, slabs:[15,29,35,14,7], icBps:169, wallet:{ thisCard:40.2, otherCard:18.8, savCur:41.0 } },
+      { id:'IDFC_WOW', bank:'IDFC FIRST', name:'IDFC FIRST WOW! FD RuPay', bin:'653028', profile:'Mass', variant:'Platinum', collateral:'Secured', issuance:'Proprietary', focus:null,
+        cif:640000, active:428000, rails:{ POS:128, ECOM:184, UPI:410, INTL:102 }, emiShare:0.06, txMn:{ POS:0.64, ECOM:0.86, UPI:6.10, INTL:0.10 },
+        upi:{ lte2k:44, gt2k:21, large:16, online:19 }, slabs:[32,39,22,5,2], icBps:142, wallet:{ thisCard:36.4, otherCard:10.6, savCur:53.0 } },
+      { id:'ICICI_CORAL', bank:'ICICI Bank', name:'ICICI Coral RuPay', bin:'653018', profile:'Mass Affluent', variant:'Select', collateral:'Unsecured', issuance:'Proprietary', focus:null,
+        cif:1620000, active:1020000, rails:{ POS:524, ECOM:486, UPI:912, INTL:92 }, emiShare:0.13, txMn:{ POS:2.05, ECOM:1.65, UPI:10.4, INTL:0.08 },
+        upi:{ lte2k:36, gt2k:22, large:22, online:20 }, slabs:[17,30,32,13,8], icBps:156, wallet:{ thisCard:38.2, otherCard:22.8, savCur:39.0 } }
+    ];
+
+    const MCCS = [
+      { code:'5411', name:'Grocery & Quick-Com', gmv:2960, mom:+11.4, mitc:'Eligible (5/5)', tone:'green',  w:[40,22,38] },
+      { code:'5399', name:'E-Com Marketplaces',  gmv:2785, mom:+10.2, mitc:'EMI Excluded (4/5)', tone:'amber', w:[41,27,32] },
+      { code:'5812', name:'Dining & Food',       gmv:2210, mom:+5.8,  mitc:'Accelerated', tone:'green', w:[39,27,34] },
+      { code:'5732', name:'Electronics (EMI)',   gmv:1740, mom:+12.8, mitc:'61% EMI Mix', tone:'accent', w:[43,26,31] },
+      { code:'4900', name:'Utilities & Telecom', gmv:1340, mom:-5.4,  mitc:'MITC Capped + 1% Fee', tone:'red', w:[26,18,56] },
+      { code:'5541', name:'Fuel Stations',       gmv:1080, mom:-2.8,  mitc:'MITC Excluded + 1% Fee', tone:'red', w:[32,20,48] },
+      { code:'6513', name:'Rent & Wallet Loads', gmv:640,  mom:-16.2, mitc:'MITC Excluded (5/5)', tone:'red', w:[16,12,72] }
+    ];
+
+    const MERCHANTS = [
+      { name:'Zepto',     cat:'Quick Commerce', gmv:742,  mom:+18.6, tag:'Issuer EMI',  tone:'green',  offer:'IDFC 10% EMI + ₹150 FS', w:[44,25,31], note:'Net-new Savings → Credit shift' },
+      { name:'Swiggy',    cat:'Food & Q-Com',   gmv:864,  mom:-1.8,  tag:'Visa/MC Offer',tone:'red',   offer:'MC 10% Weekend Pull',    w:[34,28,38], note:'Cross-card share loss to MC' },
+      { name:'Amazon',    cat:'E-Commerce',     gmv:1460, mom:+9.4,  tag:'Issuer EMI',  tone:'green',  offer:'ICICI 10% FS + 6M EMI',  w:[40,28,32], note:'Strong EMI basket lift' },
+      { name:'Croma',     cat:'Electronics',    gmv:486,  mom:+12.4, tag:'Issuer EMI',  tone:'green',  offer:'HDFC 10% 6M NC-EMI',     w:[44,26,30], note:'62% EMI mix on durables' },
+      { name:'Zomato',    cat:'Food & Dining',  gmv:818,  mom:+3.4,  tag:'Issuer FS',   tone:'amber',  offer:'₹150 Off >₹599 FS',      w:[37,25,38], note:'Steady repeat dining habit' },
+      { name:'BigBasket', cat:'Groceries',      gmv:548,  mom:+8.2,  tag:'RuPay Offer', tone:'accent', offer:'Tata Neu 5% + RuPay',    w:[48,20,32], note:'Highest co-brand retention' }
+    ];
+
+    const APPS = [
+      { app:'PhonePe', share:28.4, ats:712 }, { app:'Google Pay', share:22.6, ats:824 },
+      { app:'Paytm', share:12.1, ats:768 },   { app:'Tata Neu', share:11.4, ats:1185 },
+      { app:'CRED', share:8.9, ats:1490 },    { app:'Kiwi', share:7.8, ats:618 }
+    ];
+
+    const GEO_INDIA = [
+      { st:'Maharashtra', gmv:3180, share:22.4, ats:1580 }, { st:'Karnataka', gmv:2360, share:16.6, ats:1640 },
+      { st:'Delhi NCR', gmv:2090, share:14.7, ats:1720 },   { st:'Tamil Nadu', gmv:1590, share:11.2, ats:1460 },
+      { st:'Gujarat', gmv:1420, share:10.0, ats:1490 },     { st:'Telangana', gmv:1310, share:9.2, ats:1410 }
+    ];
+    const GEO_WORLD = [
+      { st:'United States', gmv:214, share:28.5, forex:'1.85%', note:'64% captured by ≤2% Forex cards' },
+      { st:'UAE / Dubai',   gmv:198, share:26.4, forex:'1.62%', note:'WOW! 0% Forex & EKAA 1.5% lead' },
+      { st:'Singapore',     gmv:112, share:14.9, forex:'1.78%', note:'Strong UPI cross-border + Select' },
+      { st:'United Kingdom',gmv:88,  share:11.7, forex:'2.05%', note:'MITC Forex-sensitive education/retail' },
+      { st:'Europe & APAC', gmv:138, share:18.5, forex:'1.72%', note:'Affluent leisure corridor' }
+    ];
+
+    const COHORTS = [
+      { m:'May 26', sz:'4.1 L', v:[100, 74.2, 66.8, 62.1, 59.4, 57.8, 56.5] },
+      { m:'Jul 26', sz:'4.7 L', v:[100, 76.4, 69.2, 64.9, 62.1, null, null] },
+      { m:'Sep 26', sz:'5.2 L', v:[100, 79.1, 72.0, null, null, null, null] },
+      { m:'Nov 26', sz:'5.9 L', v:[100, null, null, null, null, null, null] }
+    ];
+
+    // Dummy Configurable Interchange Rules
+    const IC_RULES = [
+      { id:'IC1', rail:'UPI CC (Small Off ≤₹2K)', mode:'FS',  mcc:'All MCCs',       plat:0,   sel:0,   ekaa:0,   sw:'₹0 (Zero-MDR)' },
+      { id:'IC2', rail:'UPI CC (Small Off >₹2K)', mode:'FS',  mcc:'Retail/Dining',  plat:110, sel:135, ekaa:155, sw:'12.0 bps' },
+      { id:'IC3', rail:'UPI CC (Large Offline)',  mode:'FS',  mcc:'Retail/Grocery', plat:140, sel:165, ekaa:190, sw:'14.5 bps' },
+      { id:'IC4', rail:'UPI CC (Online)',         mode:'FS',  mcc:'E-Com Standard', plat:150, sel:175, ekaa:205, sw:'15.0 bps' },
+      { id:'IC5', rail:'Domestic POS / E-Com',    mode:'FS',  mcc:'Standard Retail',plat:155, sel:185, ekaa:225, sw:'8 bps + ₹2.4' },
+      { id:'IC6', rail:'Domestic POS / E-Com',    mode:'EMI', mcc:'Durables/E-Com', plat:120, sel:135, ekaa:150, sw:'8 bps + ₹2.4' },
+      { id:'IC7', rail:'International',           mode:'FS',  mcc:'Cross-Border',   plat:185, sel:215, ekaa:250, sw:'37.5 bps (25%)' }
+    ];
+
+    const SLAB_D = [
+      { s:'0_100', v:28.4, f:1.8 }, { s:'100_1K', v:38.2, f:2.2 }, { s:'1K_2K', v:12.1, f:3.1 },
+      { s:'2K_5K', v:7.8,  f:6.9 }, { s:'5K_10K', v:2.6, f:5.3 },  { s:'10K_25K', v:1.1, f:5.0 },
+      { s:'25K_1L', v:0.6, f:7.2 }, { s:'1L_5L+', v:0.1, f:11.4 }
+    ];
+
+    // Workspace 2: 4 Flagship Comparison Cards (incl. Dual-Network Pair & Secured FD Card)
+    const PROP_CARDS = [
+      {
+        id:'NEU_RUPAY', pair:'HDFC_NEU_INF', network:'RuPay', bank:'HDFC Bank',
+        name:'HDFC Tata Neu Infinity', tierLbl:'RuPay Select', variant:'Select', profile:'Affluent',
+        collateral:'Unsecured', issuance:'Co-Brand', focus:'Discretionary', payModes:['FS','EMI'],
+        netLayer:'UPI CC Rail Enabled • RuPay Select 2 Dom Lounge/Qtr • Wellness/Golf',
+        issuerCvp:'5% Tata Brands (NeuPass) • 1.5% UPI via Neu App • 1.5% Retail POS/E-Com',
+        fee:1499, waiver:300000, upiPct:1.5, upiCapMo:500, onlinePct:1.5, posPct:1.5, mileThr:600000, mileVal:3000,
+        apr:'43.2%', forex:2.0, emiRewards:false, emiFee:299, fdLien:'N/A (Unsecured)',
+        exclMccs:'Rent (6513), Fuel (5541), Wallet (6540), Utility >₹50K (1% Fee)',
+        trinoSlabPcts:[14,24,38,16,8], icYieldPct:1.58
+      },
+      {
+        id:'NEU_VISA', pair:'HDFC_NEU_INF', network:'Visa', bank:'HDFC Bank',
+        name:'HDFC Tata Neu Infinity', tierLbl:'Visa Signature', variant:'Select', profile:'Affluent',
+        collateral:'Unsecured', issuance:'Co-Brand', focus:'Discretionary', payModes:['FS','EMI'],
+        netLayer:'No UPI CC Rail • Visa Signature Global Concierge • 4 Intl Priority Pass/Yr',
+        issuerCvp:'5% Tata Brands • 1.5% Retail POS/E-Com • 0% UPI Scan & Pay',
+        fee:1499, waiver:300000, upiPct:0.0, upiCapMo:0, onlinePct:1.5, posPct:1.5, mileThr:600000, mileVal:3000,
+        apr:'43.2%', forex:2.0, emiRewards:false, emiFee:299, fdLien:'N/A (Unsecured)',
+        exclMccs:'Rent (6513), Fuel (5541), Wallet (6540), Utility >₹50K (1% Fee)',
+        trinoSlabPcts:[10,20,40,20,10], icYieldPct:1.85
+      },
+      {
+        id:'IDFC_MC', pair:null, network:'Mastercard', bank:'IDFC FIRST',
+        name:'IDFC FIRST Select / Millennia', tierLbl:'Mastercard World', variant:'Select', profile:'Mass Affluent',
+        collateral:'Unsecured', issuance:'Proprietary', focus:null, payModes:['FS','EMI'],
+        netLayer:'No UPI CC Rail • Mastercard World Dining & Golf • 2 Dom Lounge/Qtr (₹20K Gate)',
+        issuerCvp:'Lifetime Free • 10X (>₹20K/mo ≈ 1.66%) • 3X Base • EMI Earns Rewards',
+        fee:0, waiver:0, upiPct:0.0, upiCapMo:0, onlinePct:1.5, posPct:1.2, mileThr:240000, mileVal:1800,
+        apr:'36.0%', forex:1.99, emiRewards:true, emiFee:199, fdLien:'N/A (Unsecured)',
+        exclMccs:'Rent (6513), Fuel (5541), Insurance (6300)',
+        trinoSlabPcts:[12,28,36,16,8], icYieldPct:1.78
+      },
+      {
+        id:'IDFC_WOW_RUPAY', pair:null, network:'RuPay', bank:'IDFC FIRST',
+        name:'IDFC FIRST WOW / SuperMoney', tierLbl:'RuPay Platinum', variant:'Platinum', profile:'Mass',
+        collateral:'Secured', issuance:'Proprietary', focus:null, payModes:['FS'],
+        netLayer:'UPI CC Native Virtual Floater • 0% Forex Markup • NTC Credit Builder',
+        issuerCvp:'Lifetime Free • 2.0% Promo UPI / 0.66% Base • Instant Digital Issuance',
+        fee:0, waiver:0, upiPct:2.0, upiCapMo:500, onlinePct:0.66, posPct:0.66, mileThr:0, mileVal:0,
+        apr:'35.0%', forex:0.0, emiRewards:true, emiFee:199, fdLien:'100% FD Lien (Min ₹10K FD)',
+        exclMccs:'Rent (6513), Fuel (5541), Wallet (6540)',
+        trinoSlabPcts:[32,39,22,5,2], icYieldPct:1.42
+      }
+    ];
+
+    // Offers Catalog (FS vs EMI separated)
+    const OFFERS = [
+      { id:'OF1', net:'RuPay', bank:'IDFC FIRST', merch:'Zepto', mode:'FS', title:'Flat ₹150 Instant Off on Zepto', min:1299, cap:150, valid:'Nov 1–30', basePct:2.0, offerPct:6.8, mitcPct:0.0, daily:[18,19,17,20,19,21,28,31,29,33,30,27], startIdx:6 },
+      { id:'OF2', net:'RuPay', bank:'IDFC FIRST', merch:'Zepto', mode:'EMI', title:'10% Off on 3M/6M Zepto EMI', min:3000, cap:1000, valid:'Nov 1–30', basePct:0.7, offerPct:10.0, mitcPct:2.4, daily:[9,10,9,11,10,10,16,18,19,17,18,16], startIdx:6 },
+      { id:'OF3', net:'RuPay', bank:'HDFC Bank',  merch:'Croma', mode:'EMI', title:'10% Off + 6M No-Cost EMI', min:15000, cap:3500, valid:'Nov 5–25', basePct:0.0, offerPct:10.0, mitcPct:1.1, daily:[14,13,15,14,16,15,23,26,25,28,24,22], startIdx:6 },
+      { id:'OF4', net:'Mastercard', bank:'All Banks', merch:'Swiggy', mode:'FS', title:'Mastercard 10% Weekend Dining', min:599, cap:200, valid:'Fri–Sun', basePct:1.2, offerPct:10.0, mitcPct:0.0, daily:[31,30,32,29,31,30,27,26,25,27,26,28], startIdx:6 },
+      { id:'OF5', net:'RuPay', bank:'All Banks', merch:'EazyDiner', mode:'FS', title:'RuPay Select/EKAA 25% Instant Off', min:1500, cap:1000, valid:'Nov 1–30', basePct:1.5, offerPct:20.0, mitcPct:0.0, daily:[11,12,11,13,12,12,17,19,20,18,21,19], startIdx:6 },
+      { id:'OF6', net:'Visa', bank:'All Banks', merch:'Croma', mode:'FS', title:'Visa Signature 7.5% Cashback', min:10000, cap:2000, valid:'Nov 10–30', basePct:1.5, offerPct:7.5, mitcPct:0.0, daily:[18,17,19,18,17,18,16,15,16,17,16,16], startIdx:6 }
+    ];
+
+    // 12 Variants for 3-Mode Telemetry Overlay
+    const OVERLAY_12 = [
+      { id:'V1', name:'HDFC Tata Neu Infinity RuPay', bank:'HDFC', ev:'MITC Utility 1% Fee', type:'MITC', tone:'red', pre:2910, post:2780, lift:-4.5, wD:-1.8, sp:[98,99,101,100,99,94,92,93,94,95], t0:[100,100,100,97,94,93,95] },
+      { id:'V2', name:'IDFC FIRST WOW! FD RuPay',     bank:'IDFC', ev:'UPI Floater Launch',  type:'CVP',  tone:'green', pre:740, post:874, lift:+18.1, wD:+6.4, sp:[80,83,86,88,92,99,104,109,114,118], t0:[97,99,100,106,112,116,118] },
+      { id:'V3', name:'Axis SuperMoney FD RuPay',     bank:'Axis', ev:'3% UPI Booster',      type:'Offer',tone:'green', pre:860, post:1017,lift:+18.3, wD:+5.4, sp:[74,78,82,86,91,98,105,112,116,119], t0:[96,98,100,107,114,117,119] },
+      { id:'V4', name:'YES Bank Kiwi Neon RuPay',     bank:'YES',  ev:'5% Milestone Tier',   type:'CVP',  tone:'green', pre:1120,post:1251,lift:+11.7, wD:+3.8, sp:[85,87,90,93,95,101,106,109,111,113], t0:[98,99,100,104,108,111,112] },
+      { id:'V5', name:'IDFC FIRST Power+ RuPay',      bank:'IDFC', ev:'Zepto EMI Promo',     type:'Offer',tone:'amber', pre:1410,post:1535,lift:+8.9,  wD:+2.9, sp:[92,94,95,97,98,104,108,107,106,108], t0:[99,100,100,105,109,108,109] },
+      { id:'V6', name:'ICICI Coral RuPay',            bank:'ICICI',ev:'Amazon EMI Fest',     type:'Offer',tone:'amber', pre:2090,post:2252,lift:+7.8,  wD:+2.4, sp:[93,94,96,97,99,106,108,106,105,106], t0:[99,100,100,106,108,106,107] },
+      { id:'V7', name:'RuPay EKAA Private Flagship',  bank:'HDFC', ev:'EKAA 1.5% Forex',     type:'CVP',  tone:'green', pre:1520,post:1792,lift:+17.9, wD:+5.2, sp:[82,85,88,91,95,103,109,113,116,118], t0:[98,99,100,106,112,116,118] },
+      { id:'V8', name:'SBI SimplySAVE RuPay',         bank:'SBI',  ev:'Flipkart 10% FS',     type:'Offer',tone:'amber', pre:2560,post:2729,lift:+6.6,  wD:+2.1, sp:[91,93,94,96,98,104,106,105,104,105], t0:[99,100,100,104,107,106,106] },
+      { id:'V9', name:'Kotak Myntra RuPay',           bank:'Kotak',ev:'Myntra 7.5% Stack',   type:'Offer',tone:'amber', pre:960, post:1058,lift:+10.2, wD:+3.3, sp:[89,91,93,95,97,104,108,109,108,109], t0:[98,99,100,105,109,110,110] },
+      { id:'V10',name:'HDFC Millennia MC (Comp)',     bank:'HDFC', ev:'Lounge ₹1L Gate',     type:'MITC', tone:'red',   pre:1850,post:1804,lift:-2.5,  wD:-0.9, sp:[100,100,101,100,99,97,96,97,97,98], t0:[100,100,100,98,96,97,97] },
+      { id:'V11',name:'ICICI Sapphiro MC (Comp)',     bank:'ICICI',ev:'Lounge ₹75K Gate',    type:'MITC', tone:'red',   pre:1240,post:1185,lift:-4.4,  wD:-1.5, sp:[101,100,100,99,98,95,94,95,95,96], t0:[100,100,100,97,94,95,96] },
+      { id:'V12',name:'Axis Magnus MC (Comp)',        bank:'Axis', ev:'Miles Transfer Cap',  type:'MITC', tone:'red',   pre:1940,post:1835,lift:-5.4,  wD:-2.6, sp:[103,102,101,100,98,95,93,94,94,95], t0:[101,100,100,96,93,94,95] }
+    ];
+
+    /* =========================================================================
+       3. PURE V1.1 DEAL MODEL ENGINE (EXACT SECTION 11 REFERENCE PARITY)
+       ========================================================================= */
+    const SEASON_PRESETS = {
+      flat:    Array(12).fill(1 / 12),
+      festive: [0.068,0.072,0.074,0.075,0.078,0.095,0.125,0.115,0.088,0.072,0.068,0.070],
+      q4:      [0.072,0.074,0.076,0.076,0.078,0.080,0.082,0.084,0.086,0.092,0.096,0.104],
+      ramp:    [0.055,0.060,0.066,0.072,0.078,0.083,0.088,0.092,0.096,0.100,0.104,0.106]
+    };
+
+    function mkDeal(key) {
+      const c = key === 'ISSUER_C';
+      return {
+        key,
+        name: c ? 'Issuer C — Co-Brand Renewal' : 'Issuer B — FY27 Multi-Variant Deal',
+        v: {
+          name: c ? 'Co-Brand Select UPI' : 'Default V1.1 Variant',
+          years: 5, cardFee: c ? 85 : 100,
+          cif: c ? [80000,165000,260000,360000,460000] : [60000,120000,180000,240000,300000],
+          issuances: c ? [80000,135000,190000,245000,300000] : [60000,105000,150000,195000,240000],
+          actCC: [0.30,0.35,0.40,0.45,0.50], actUPI: c ? [0.22,0.28,0.34,0.40,0.46] : [0.15,0.21,0.27,0.33,0.39],
+          txCC: [4,5,6,7,8], txUPI: c ? [8,10,12,14,16] : [6,8,10,12,14],
+          atsCC: [3000,3400,3800,4200,4600], atsUPI: [800,950,1100,1250,1400],
+          intlPct: [0.05,0.06,0.07,0.08,0.09], season: [...SEASON_PRESETS.flat]
+        },
+        cfg: { rvp:0.0008, rff:2.4, ifp:0.015, intlRevShare:0.25, iip:0.002, imip:0.001, mcb:0.10, msb:0.0001, upf: c ? 7500000 : 5000000, bpF:6, bpC:14, milestoneRule:'cif' },
+        slV: [{ thr:0, fb:1.2, pb:0.00020 }, { thr:1e6, fb:1.4, pb:0.00025 }, { thr:2e6, fb:1.6, pb:0.00030 }, { thr:4e6, fb:1.8, pb:0.00035 }],
+        slC: [{ thr:0, pb:0.50 }, { thr:1e6, pb:0.60 }, { thr:2e6, pb:0.65 }, { thr:3e6, pb:0.70 }],
+        pm:  { cif:1, volume:1, activation:1, ats:1, intl:1 }
+      };
+    }
+
+    function distM(arr, sn, type) {
+      const t = sn.reduce((a, b) => a + b, 0) || 1, out = [];
+      for (let y = 0; y < arr.length; y++) for (let i = 0; i < 12; i++) out.push(type === 'sum' ? arr[y] * sn[i] / t : arr[y] * sn[i] / (t / 12));
+      return out;
+    }
+
+    function deriveAttrition(v) {
+      const iss = distM(v.issuances, v.season, 'sum'), rates = [];
+      let open = 0;
+      for (let y = 0; y < v.years; y++) {
+        let lo = 0, hi = 0.15;
+        for (let k = 0; k < 50; k++) {
+          const mid = (lo + hi) / 2; let c = open;
+          for (let m = 0; m < 12; m++) c = Math.max(0, c + iss[y*12+m] - mid * (c + iss[y*12+m]));
+          if (c > v.cif[y]) lo = mid; else hi = mid;
+        }
+        const r = Math.max(0, Math.min(0.15, (lo + hi) / 2)); rates.push(r);
+        let c = open; for (let m = 0; m < 12; m++) c = Math.max(0, c + iss[y*12+m] - r * (c + iss[y*12+m]));
+        open = c;
+      }
+      return rates;
+    }
+
+    function runDeal(deal, pmOv = null, actuals = null) {
+      const pm = pmOv || deal.pm, cfg = deal.cfg, v = deal.v, n = v.years * 12;
+      const issB = distM(v.issuances, v.season, 'sum'), acCB = distM(v.actCC, v.season, 'avg'), acUB = distM(v.actUPI, v.season, 'avg');
+      const tCB = distM(v.txCC, v.season, 'avg'), tUB = distM(v.txUPI, v.season, 'avg');
+      const aCB = distM(v.atsCC, v.season, 'avg'), aUB = distM(v.atsUPI, v.season, 'avg'), ipB = distM(v.intlPct, v.season, 'avg');
+      const rates = deriveAttrition(v);
+
+      const months = []; let prev = 0;
+      for (let m = 0; m < n; m++) {
+        const y = Math.floor(m / 12), act = actuals && actuals[m];
+        let cif, iss, xCC, xUP, sCC, sUP, tS, tX, iS;
+        if (act) {
+          ({ cif, iss, xCC, xUP, sCC, sUP, iS } = act); tS = sCC + sUP; tX = xCC + xUP;
+        } else {
+          iss = issB[m] * pm.cif;
+          const acC = Math.min(1, acCB[m] * pm.activation), acU = Math.min(1, acUB[m] * pm.activation);
+          const a = rates[y];
+          cif = Math.max(0, prev + iss - a * prev - a * iss);
+          xCC = cif * acC * tCB[m] * pm.volume; xUP = cif * acU * tUB[m] * pm.volume;
+          sCC = xCC * aCB[m] * pm.ats; sUP = xUP * aUB[m] * pm.ats;
+          tS = sCC + sUP; tX = xCC + xUP; iS = tS * Math.min(1, ipB[m] * pm.intl);
+        }
+        const cf = ((m + 1) % 3 === 0) ? cif * v.cardFee : 0;
+        const revVal = tS * cfg.rvp, revVol = tX * cfg.rff, revCard = cf, revIntl = iS * cfg.ifp * cfg.intlRevShare;
+        const revTot = revVal + revVol + revCard + revIntl;
+        let vS = deal.slV[0]; for (const s of deal.slV) if (tX >= s.thr) vS = s;
+        let cS = deal.slC[0]; for (const s of deal.slC) if (cif >= s.thr) cS = s;
+        const incVol = vS.fb * tX + vS.pb * tS, incCard = cf * cS.pb, incIntl = iS * cfg.iip;
+        prev = cif;
+        months.push({ m, y, cif, iss, xCC, xUP, sCC, sUP, tS, tX, iS, cf, revVal, revVol, revCard, revIntl, revTot, incVol, incCard, incIntl, vS, cS, isAct: !!act });
+      }
+
+      // Baseline year spends for cif_spends rule
+      let bYrSp = null;
+      if (cfg.milestoneRule === 'cif_spends') {
+        const b = runDeal({ ...deal, cfg: { ...cfg, milestoneRule: 'cif' } }, { cif:1, volume:1, activation:1, ats:1, intl:1 }, null);
+        bYrSp = b.years.map(x => x.spends);
+      }
+
+      const years = [];
+      for (let y = 0; y < v.years; y++) {
+        const ym = months.slice(y * 12, y * 12 + 12);
+        const endCif = ym[11].cif, tgtCif = v.cif[y];
+        const spends = ym.reduce((s, r) => s + r.tS, 0), cf = ym.reduce((s, r) => s + r.cf, 0), iS = ym.reduce((s, r) => s + r.iS, 0);
+        const cifPass = endCif >= 0.95 * tgtCif, spPass = !bYrSp || spends >= 0.95 * bYrSp[y];
+        const pass = cfg.milestoneRule === 'cif_spends' ? (cifPass && spPass) : cifPass;
+        const mile = pass ? (cf * cfg.mcb + spends * cfg.msb + iS * cfg.imip) : 0;
+        const rev = ym.reduce((s, r) => s + r.revTot, 0);
+        const inc = ym.reduce((s, r) => s + r.incVol + r.incCard + r.incIntl, 0) + mile;
+        years.push({ y, endCif, tgtCif, spends, cf, iS, rev, inc, mile, net: rev - inc, pass, lastTx: ym[11].tX, lastCif: ym[11].cif, vS: ym[11].vS, cS: ym[11].cS });
+      }
+
+      const totSp = months.reduce((s, r) => s + r.tS, 0);
+      const revVal = months.reduce((s, r) => s + r.revVal, 0), revVol = months.reduce((s, r) => s + r.revVol, 0);
+      const revCard = months.reduce((s, r) => s + r.revCard, 0), revIntl = months.reduce((s, r) => s + r.revIntl, 0);
+      const totRev = revVal + revVol + revCard + revIntl;
+      const incVol = months.reduce((s, r) => s + r.incVol, 0), incCard = months.reduce((s, r) => s + r.incCard, 0);
+      const incIntl = months.reduce((s, r) => s + r.incIntl, 0), incMile = years.reduce((s, r) => s + r.mile, 0);
+      const totInc = incVol + incCard + incIntl + incMile + cfg.upf;
+      const netRev = totRev - totInc;
+      return {
+        months, years, rates, totSp, revVal, revVol, revCard, revIntl, totRev,
+        incVol, incCard, incIntl, incMile, totInc, netRev,
+        netBps: totSp ? (netRev / totSp) * 10000 : 0,
+        grossBps: totSp ? (totRev / totSp) * 10000 : 0,
+        incBps: totSp ? (totInc / totSp) * 10000 : 0,
+        eoyCif: months[n - 1].cif
+      };
+    }
+
+    function mkActuals18(deal) {
+      const b = runDeal(deal, { cif:1, volume:1, activation:1, ats:1, intl:1 }, null).months, out = {};
+      for (let m = 0; m < 18; m++) {
+        const r = b[m], cM = m < 12 ? 0.985 : 0.97, ccM = 0.92, upM = 1.14;
+        const sCC = r.sCC * ccM * 0.96, sUP = r.sUP * upM * 0.94;
+        out[m] = { cif: Math.round(r.cif * cM), iss: Math.round(r.iss * cM), xCC: r.xCC * ccM, xUP: r.xUP * upM, sCC, sUP, iS: (sCC + sUP) * (r.iS / (r.tS || 1)) * 0.96 };
+      }
+      return out;
+    }
+
+    /* =========================================================================
+       4. APPLICATION STATE
+       ========================================================================= */
+    const S = {
+      theme: 'dark', collapsed: false, view: 'command', openKpi: null,
+      // Workspace 1 — 3-Tier Cascading Filters
+      f1: {
+        banks: [], profiles: [], variants: [], collateral: 'All',
+        issuance: 'All', focus: 'All',
+        rails: ['POS', 'ECOM', 'UPI', 'INTL'], upiTier: 'All',
+        payMode: 'All' // All | FS | EMI
+      },
+      geoMode: 'india',
+      econView: 'rails', // rails | upi2x2
+      walletDrill: 'card', // card | mcc | merchant
+      // Workspace 2 — Proposition Hub (Own Local Filters)
+      propSub: 'matrix', // matrix | sim | offers | overlay
+      fp: { nets: ['RuPay', 'Visa', 'Mastercard'], banks: [], profiles: [], variants: [], collateral: 'All', issuance: 'All', focus: 'All', payMode: 'All' },
+      diffOnly: false,
+      simCards: ['NEU_RUPAY', 'IDFC_MC', 'IDFC_WOW_RUPAY'],
+      sim: { upi: 12000, online: 10000, pos: 8000, excl: 5000, intl: 3000, emi: 6000, offersOn: true },
+      offNet: 'All', offMode: 'All', offMerch: 'All', activeOffId: 'OF2',
+      ovMode: 'matrix', // pins | matrix | t0
+      ovSort: 'lift', ovPinId: 'V1',
+      // Workspace 3 — Deal Performance (Own Project Switcher)
+      dealKey: 'ISSUER_B', dealRole: 'A', dealSub: 'overview',
+      dealProjMode: 'yearly', dealSeason: 'flat',
+      dealRefMode: 'run_rate', dealManual: { cif: 1, volume: 1, activation: 1, ats: 1, intl: 1 },
+      deal: mkDeal('ISSUER_B'), dealAct: null
+    };
+    S.dealAct = mkActuals18(S.deal);
+
+    /* =========================================================================
+       5. SHARED UI COMPONENTS & SVG HELPERS
+       ========================================================================= */
+    function kpiCard(id, label, val, sub, delta, good, accent, formula, rows) {
+      const open = S.openKpi === id;
+      return `
+        <div class="card p-3 relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-[2px]" style="background:${accent}"></div>
+          <div class="flex items-center justify-between gap-1 mb-1">
+            <span class="text-[10.5px] font-medium truncate" style="color:var(--muted)">${label}</span>
+            <button onclick="S.openKpi=S.openKpi==='${id}'?null:'${id}'; render();" title="Formula Breakdown"
+                    class="w-4 h-4 rounded-full border text-[9px] font-bold flex items-center justify-center shrink-0 ${open?'pill-accent':''}"
+                    style="border-color:var(--border-hi); color:${open?'var(--accent)':'var(--muted)'}">?</button>
+          </div>
+          <div class="flex items-baseline justify-between gap-1">
+            <div class="mono text-base font-bold">${val}</div>
+            ${delta ? `<span class="mono text-[9.5px] px-1.5 py-0.5 rounded ${good?'pill-green':'pill-red'}">${delta}</span>` : ''}
+          </div>
+          <div class="text-[10px] mt-0.5 truncate" style="color:var(--dim)">${sub}</div>
+          ${open ? `
+            <div class="mt-2 pt-2 border-t text-[10px] space-y-1" style="border-color:var(--border)">
+              <div class="mono text-[9px] p-1.5 rounded border" style="background:var(--bg-surface);border-color:var(--border);color:var(--accent)">${formula}</div>
+              ${rows.map(r => `<div class="flex justify-between"><span style="color:var(--muted)">${r[0]}</span><span class="mono font-medium">${r[1]}</span></div>`).join('')}
+            </div>` : ''}
+        </div>`;
+    }
+
+    function svgSpark(vals, tone = 'green') {
+      const W = 112, H = 26, p = 3, mn = Math.min(...vals) * 0.97, mx = Math.max(...vals) * 1.03, sp = (mx - mn) || 1;
+      const pts = vals.map((v, i) => [p + (i / (vals.length - 1)) * (W - p * 2), p + (1 - (v - mn) / sp) * (H - p * 2 - 4)]);
+      const ex = pts[5][0], c = `var(--${tone})`;
+      return `<svg viewBox="0 0 ${W} ${H}" class="w-28 h-7 block">
+        <line x1="${ex.toFixed(1)}" y1="2" x2="${ex.toFixed(1)}" y2="${H-4}" stroke="${c}" stroke-dasharray="2,2"/>
+        <polyline fill="none" stroke="var(--accent)" stroke-width="1.6" points="${pts.map(a=>a.map(n=>n.toFixed(1)).join(',')).join(' ')}"/>
+        <circle cx="${ex.toFixed(1)}" cy="${H-2.5}" r="2.5" fill="${c}"/>
+      </svg>`;
+    }
+
+    /* =========================================================================
+       6. WORKSPACE 1 FILTER ENGINE & 3-TIER CASCADING FILTER BAR
+       ========================================================================= */
+    function computeWS1() {
+      const f = S.f1;
+      const matched = TRINO_BINS.filter(b => {
+        if (f.banks.length && !f.banks.includes(b.bank)) return false;
+        if (f.profiles.length && !f.profiles.includes(b.profile)) return false;
+        if (f.variants.length && !f.variants.includes(b.variant)) return false;
+        if (f.collateral !== 'All' && b.collateral !== f.collateral) return false;
+        if (f.issuance !== 'All' && b.issuance !== f.issuance) return false;
+        if (f.issuance === 'Co-Brand' && f.focus !== 'All' && b.focus !== f.focus) return false;
+        return true;
+      });
+
+      const baseTot = TRINO_BINS.reduce((s, b) => s + b.rails.POS + b.rails.ECOM + b.rails.UPI + b.rails.INTL, 0);
+      let cif = 0, active = 0, gmv = 0, txMn = 0;
+      const rTot = { POS: 0, ECOM: 0, UPI: 0, INTL: 0 };
+      const u2x2 = { lte2k: 0, gt2k: 0, large: 0, online: 0 };
+      const slabAcc = [0, 0, 0, 0, 0];
+
+      matched.forEach(b => {
+        cif += b.cif; active += b.active;
+        b.slabs.forEach((p, i) => slabAcc[i] += p * b.active);
+        const modeMult = f.payMode === 'All' ? 1 : (f.payMode === 'EMI' ? b.emiShare : (1 - b.emiShare));
+        f.rails.forEach(r => {
+          let rv = b.rails[r] * modeMult, rt = b.txMn[r] * modeMult;
+          if (r === 'UPI' && f.upiTier !== 'All') {
+            const sh = b.upi[f.upiTier] / 100;
+            rv *= sh; rt *= sh;
+          }
+          rTot[r] += rv; gmv += rv; txMn += rt;
+        });
+        const uG = f.rails.includes('UPI') ? b.rails.UPI * modeMult : 0;
+        u2x2.lte2k  += uG * b.upi.lte2k / 100;
+        u2x2.gt2k   += uG * b.upi.gt2k / 100;
+        u2x2.large  += uG * b.upi.large / 100;
+        u2x2.online += uG * b.upi.online / 100;
+      });
+
+      return {
+        matched, cif, active, actPct: cif ? (active / cif) * 100 : 0, gmv, txMn,
+        ats: txMn ? (gmv * 1e7) / (txMn * 1e6) : 0,
+        tpac: active ? (txMn * 1e6) / active : 0,
+        spac: active ? (gmv * 1e7) / active : 0,
+        rTot, u2x2, scale: baseTot ? gmv / baseTot : 0,
+        slabs: slabAcc.map(x => active ? +(x / active).toFixed(1) : 0)
+      };
+    }
+
+    function renderWS1Filters() {
+      const box = document.getElementById('ws1Filters');
+      if (!['command', 'economics', 'wallet'].includes(S.view)) { box.classList.add('hidden'); return; }
+      box.classList.remove('hidden');
+      const f = S.f1;
+      const coOn = f.issuance === 'Co-Brand';
+      const upiOn = f.rails.includes('UPI');
+      const isUniv = !f.banks.length && !f.profiles.length && !f.variants.length && f.collateral === 'All' && f.issuance === 'All' && f.rails.length === 4 && f.upiTier === 'All' && f.payMode === 'All';
+
+      const crumbs = [];
+      crumbs.push(f.banks.length ? f.banks.join(', ') : 'All Banks');
+      if (f.profiles.length) crumbs.push(`Profile: ${f.profiles.join('/')}`);
+      if (f.variants.length) crumbs.push(`Variant: ${f.variants.join('/')}`);
+      if (f.collateral !== 'All') crumbs.push(f.collateral === 'Secured' ? 'Secured (FD-Backed)' : 'Unsecured');
+      if (f.issuance !== 'All') crumbs.push(coOn && f.focus !== 'All' ? `Co-Brand ↳ ${f.focus}` : f.issuance);
+      if (f.rails.length < 4 || (upiOn && f.upiTier !== 'All')) {
+        crumbs.push(`Rails: ${f.rails.join('/')}${upiOn && f.upiTier !== 'All' ? ` ↳ ${f.upiTier}` : ''}`);
+      }
+      if (f.payMode !== 'All') crumbs.push(`Mode: ${f.payMode === 'FS' ? 'Regular (Full Swipe)' : 'EMI Only'}`);
+
+      box.innerHTML = `
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-2.5">
+          <!-- TIER 1: PORTFOLIO & CARD SCOPE -->
+          <div class="xl:col-span-7 p-2.5 rounded-xl border space-y-2" style="background:var(--bg-panel);border-color:var(--border)">
+            <div class="flex justify-between items-center">
+              <span class="text-[9.5px] font-bold uppercase tracking-wider" style="color:var(--accent)">Tier 1 · Portfolio &amp; Card Scope</span>
+              <span class="text-[10px]" style="color:var(--dim)">Multi-Select Parents + Cascading Child</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="text-[10px] font-semibold" style="color:var(--muted)">Banks:</span>
+              ${BANKS.map(b => `<button class="chip ${f.banks.includes(b)?'on':''}" onclick="togArr(S.f1.banks,'${b}')">${b}</button>`).join('')}
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="text-[10px] font-semibold" style="color:var(--muted)">Profile:</span>
+              ${PROFILES.map(p => `<button class="chip ${f.profiles.includes(p)?'on':''}" onclick="togArr(S.f1.profiles,'${p}')">${p}</button>`).join('')}
+              <span class="text-[10px] font-semibold ml-1" style="color:var(--muted)">Variant:</span>
+              ${VARIANTS.map(v => `<button class="chip ${f.variants.includes(v)?'on':''}" onclick="togArr(S.f1.variants,'${v}')">${v}</button>`).join('')}
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5 pt-1 border-t" style="border-color:var(--border)">
+              <span class="text-[10px] font-semibold" style="color:var(--muted)">Collateral:</span>
+              ${[['All','All'],['Unsecured','Unsecured'],['Secured','Secured / FD-Backed']].map(([k,l]) =>
+                `<button class="chip ${f.collateral===k?'on':''}" onclick="S.f1.collateral='${k}';render()">${l}</button>`).join('')}
+              <span class="text-[10px] font-semibold ml-1" style="color:var(--muted)">Issuance:</span>
+              ${['All','Proprietary','Co-Brand'].map(i =>
+                `<button class="chip ${f.issuance===i?'on':''}" onclick="S.f1.issuance='${i}';if('${i}'!=='Co-Brand')S.f1.focus='All';render()">${i}</button>`).join('')}
+              <div class="sub-box ${coOn?'':'disabled'}" title="${coOn?'Active Co-Brand child filter':'Select Co-Brand to enable child focus filter'}">
+                <span class="mono text-[10px] font-bold" style="color:${coOn?'var(--accent)':'var(--dim)'}">↳ Focus:</span>
+                ${['All','Discretionary','Non-Discretionary'].map(c =>
+                  `<button class="chip !py-0.5 !px-1.5 !text-[10px] ${coOn&&f.focus===c?'on':''} ${coOn?'':'off'}" onclick="S.f1.focus='${c}';render()">${c}</button>`).join('')}
+              </div>
+            </div>
+          </div>
+
+          <!-- TIER 2: TRANSACTION RAIL -->
+          <div class="xl:col-span-3 p-2.5 rounded-xl border space-y-2" style="background:var(--bg-panel);border-color:var(--border)">
+            <div class="text-[9.5px] font-bold uppercase tracking-wider" style="color:var(--c2)">Tier 2 · Transaction Rail</div>
+            <div class="flex flex-wrap gap-1">
+              ${[['POS','Domestic POS'],['ECOM','Domestic E-Com'],['UPI','UPI CC'],['INTL','International']].map(([k,l]) =>
+                `<button class="chip ${f.rails.includes(k)?'on':''}" onclick="togRail('${k}')">${l}</button>`).join('')}
+            </div>
+            <div class="sub-box w-full ${upiOn?'':'disabled'}">
+              <span class="mono text-[10px] font-bold" style="color:${upiOn?'var(--accent)':'var(--dim)'}">↳ UPI Merchant Tier:</span>
+              ${[['All','All'],['lte2k','Small Off ≤₹2K'],['gt2k','Small Off >₹2K'],['large','Large Off'],['online','Online']].map(([k,l]) =>
+                `<button class="chip !py-0.5 !px-1.5 !text-[10px] ${upiOn&&f.upiTier===k?'on':''} ${upiOn?'':'off'}" onclick="S.f1.upiTier='${k}';render()">${l}</button>`).join('')}
+            </div>
+          </div>
+
+          <!-- TIER 3: PAYMENT MODE -->
+          <div class="xl:col-span-2 p-2.5 rounded-xl border flex flex-col justify-between" style="background:var(--bg-panel);border-color:var(--border)">
+            <div class="text-[9.5px] font-bold uppercase tracking-wider mb-1.5" style="color:var(--c5)">Tier 3 · Payment Mode</div>
+            <div class="flex flex-wrap gap-1">
+              ${[['All','All'],['FS','Regular (Full Swipe)'],['EMI','EMI']].map(([k,l]) =>
+                `<button class="chip ${f.payMode===k?'on':''}" onclick="S.f1.payMode='${k}';render()">${l}</button>`).join('')}
+            </div>
+            <div class="text-[10px] mt-2" style="color:var(--dim)">Orthogonal to POS / E-Com rails</div>
+          </div>
+        </div>
+
+        <!-- ACTIVE SCOPE BREADCRUMB -->
+        <div class="flex flex-wrap items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg border text-[11px]"
+             style="background:var(--bg-panel);border-color:var(--border)">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="text-[9.5px] font-bold uppercase tracking-wider" style="color:var(--dim)">Active Scope:</span>
+            ${isUniv
+              ? `<span class="px-2 py-0.5 rounded pill-green text-[10.5px] font-semibold">Universal View — All 5 Banks · All Rails · FS + EMI</span>`
+              : crumbs.map(c => `<span class="px-2 py-0.5 rounded pill-muted text-[10.5px]">${c}</span>`).join('<span style="color:var(--dim)">·</span>')}
+          </div>
+          <button onclick="resetWS1()" class="px-2.5 py-1 rounded-md text-[11px] font-semibold ${isUniv?'opacity-40':'pill-accent'}">↺ Reset to Universal View</button>
+        </div>
+      `;
+    }
+
+    function togArr(arr, v) { const i = arr.indexOf(v); if (i < 0) arr.push(v); else arr.splice(i, 1); render(); }
+    function togRail(r) {
+      const a = S.f1.rails;
+      if (a.includes(r)) { if (a.length === 1) return; S.f1.rails = a.filter(x => x !== r); }
+      else S.f1.rails = [...a, r];
+      render();
+    }
+    function resetWS1() {
+      S.f1 = { banks:[], profiles:[], variants:[], collateral:'All', issuance:'All', focus:'All', rails:['POS','ECOM','UPI','INTL'], upiTier:'All', payMode:'All' };
+      render();
+    }
+
+    /* =========================================================================
+       7. WORKSPACE 1 VIEWS (COMMAND CENTER, CARD ECONOMICS, WALLET SHARE)
+       ========================================================================= */
+    function renderCommand(sc) {
+      const k = Math.max(0.05, sc.scale);
+      const kpis = `
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2.5">
+          ${kpiCard('c1','CIF (Cards-in-Force)', F.vol(sc.cif), `${sc.matched.length} matched BINs`, '+4.8%', true, 'var(--c1)', 'SUM(eoy_cif) FROM dim_card_bin_master', [['Unsecured', F.vol(sc.matched.filter(b=>b.collateral==='Unsecured').reduce((s,b)=>s+b.cif,0))],['Secured FD', F.vol(sc.matched.filter(b=>b.collateral==='Secured').reduce((s,b)=>s+b.cif,0))]])}
+          ${kpiCard('c2','Active Cards (30D %)', F.vol(sc.active), `${F.pct(sc.actPct)} active rate`, '+1.6pp', true, 'var(--c2)', 'COUNT(DISTINCT pan) / SUM(cif)', [['30D Active', F.vol(sc.active)],['Active Rate', F.pct(sc.actPct,2)]])}
+          ${kpiCard('c3','GMV (₹ Cr)', F.cr(sc.gmv, 0), `Mode: ${S.f1.payMode}`, '+8.4%', true, 'var(--accent)', 'SUM(amt)/1e7 FROM agg_daily_bin_rail_mcc', [['UPI CC', F.cr(sc.rTot.UPI,0)],['POS+E-Com', F.cr(sc.rTot.POS+sc.rTot.ECOM,0)],['Intl', F.cr(sc.rTot.INTL,0)]])}
+          ${kpiCard('c4','TPAC (Txns/Active)', sc.tpac.toFixed(2), `${sc.txMn.toFixed(1)} Mn txns`, '+0.62', true, 'var(--c3)', 'COUNT(rrn) / COUNT(DISTINCT pan)', [['Monthly Txns', `${sc.txMn.toFixed(2)} Mn`]])}
+          ${kpiCard('c5','SPAC (Spend/Active)', F.inr(sc.spac), 'Monthly velocity', '+4.1%', true, 'var(--c5)', 'SUM(amt) / COUNT(DISTINCT pan)', [['Annualized', F.inr(sc.spac*12)]])}
+          ${kpiCard('c6','ATS (Avg Ticket)', F.inr(sc.ats), 'Blended ticket size', '-1.2%', false, 'var(--green)', 'SUM(amt) / COUNT(rrn)', [['Mode', S.f1.payMode],['Rails', S.f1.rails.join('/')]])}
+        </div>`;
+
+      if (!sc.matched.length) {
+        return kpis + `<div class="card p-8 text-center text-sm" style="color:var(--muted)">No BINs match this filter slice. Click <b>Reset to Universal View</b> above.</div>`;
+      }
+
+      const maxMcc = MCCS[0].gmv * k;
+      const slabLabels = ['<₹5K', '₹5K–₹15K', '₹15K–₹50K', '₹50K–₹1L', '>₹1L'];
+      const slabHint = ['Entry / FD', 'Waiver Gate', 'Core CVP', 'Lounge Gate', 'EKAA / HNI'];
+
+      return kpis + `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <!-- (a) MCC Spends + MITC Exclusion Badges -->
+          <div class="card p-4 lg:col-span-6">
+            <div class="flex justify-between items-center mb-3">
+              <div><h2 class="text-sm font-semibold">MCC-Level Spends + MITC Exclusion Flags</h2><p class="text-[11px]" style="color:var(--muted)">Joins Trino <span class="mono">mcc</span> directly to MITC policy exclusions</p></div>
+              <span class="text-[10px] px-2 py-0.5 rounded pill-red font-semibold">MITC Bound</span>
+            </div>
+            <div class="space-y-2">
+              ${MCCS.map(m => {
+                const v = m.gmv * k, w = (v / maxMcc) * 100;
+                const pc = m.tone === 'red' ? 'pill-red' : (m.tone === 'amber' ? 'pill-amber' : (m.tone === 'accent' ? 'pill-accent' : 'pill-green'));
+                return `<div>
+                  <div class="flex justify-between items-center text-xs mb-1 gap-1.5">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                      <span class="mono text-[10px] px-1.5 py-0.5 rounded pill-muted">${m.code}</span>
+                      <span class="font-medium truncate">${m.name}</span>
+                      <span class="text-[9.5px] px-1.5 py-0.5 rounded font-semibold shrink-0 ${pc}">${m.mitc}</span>
+                    </div>
+                    <div class="mono shrink-0"><b>${F.cr(v,0)}</b> <span class="text-[10.5px]" style="color:${m.mom>=0?'var(--green)':'var(--red)'}">${F.sgn(m.mom)}</span></div>
+                  </div>
+                  <div class="h-1.5 rounded-full overflow-hidden" style="background:var(--border)"><div class="h-full rounded-full" style="width:${w}%;background:${m.tone==='red'?'var(--red)':'var(--c1)'}"></div></div>
+                </div>`;
+              }).join('')}
+            </div>
+          </div>
+
+          <!-- (b) Top Merchants + Active Offer Correlation -->
+          <div class="card p-4 lg:col-span-6">
+            <div class="flex justify-between items-center mb-3">
+              <div><h2 class="text-sm font-semibold">Top Merchants + Active Offer Correlation</h2><p class="text-[11px]" style="color:var(--muted)">Powered by <span class="mono">st.payeemerchantbrand</span> × Offers Catalog</p></div>
+              <button onclick="go('proposition','offers')" class="text-[11px] font-semibold" style="color:var(--accent)">Open Offers Hub →</button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="ft">
+                <thead><tr><th class="text-left">Merchant</th><th class="text-right">GMV</th><th class="text-right">MoM Δ</th><th class="text-left">Active Offer Tag</th></tr></thead>
+                <tbody>
+                  ${MERCHANTS.map(m => `
+                    <tr>
+                      <td><div class="font-semibold">${m.name}</div><div class="text-[10px]" style="color:var(--dim)">${m.cat}</div></td>
+                      <td class="mono text-right font-semibold">${F.cr(m.gmv*k,0)}</td>
+                      <td class="mono text-right font-semibold" style="color:${m.mom>=0?'var(--green)':'var(--red)'}">${F.sgn(m.mom)}</td>
+                      <td>
+                        <span class="text-[9.5px] font-semibold px-1.5 py-0.5 rounded pill-${m.tone}">${m.tag}</span>
+                        <div class="text-[10px] mt-0.5" style="color:var(--muted)">${m.offer}</div>
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- (c) Spend-Based User Slabs + (d) Geo Toggle + Churn Strip + App Spends -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div class="card p-4 lg:col-span-4 space-y-3">
+            <div>
+              <h2 class="text-sm font-semibold">Spend-Based User Slabs (Monthly / User)</h2>
+              <p class="text-[11px]" style="color:var(--muted)">Maps directly into the Proposition Spend Simulator</p>
+            </div>
+            <div class="space-y-2">
+              ${slabLabels.map((lbl, i) => `
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span><b class="mono">${lbl}</b> <span class="text-[10px]" style="color:var(--dim)">${slabHint[i]}</span></span>
+                    <span class="mono font-semibold">${sc.slabs[i]}% users</span>
+                  </div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background:var(--border)"><div class="h-full rounded-full" style="width:${Math.min(100,sc.slabs[i]*2.2)}%;background:var(--c1)"></div></div>
+                </div>`).join('')}
+            </div>
+            <div class="pt-2 border-t" style="border-color:var(--border)">
+              <div class="text-xs font-semibold mb-2">App-Level UPI Spends (<span class="mono">payer_psp_bank</span>)</div>
+              <div class="grid grid-cols-2 gap-1.5">
+                ${APPS.map(a => `<div class="surface px-2.5 py-1.5 flex justify-between items-center text-[11px]"><span class="font-medium">${a.app}</span><span class="mono font-semibold" style="color:var(--accent)">${a.share}%</span></div>`).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-4 lg:col-span-4 space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <div><h2 class="text-sm font-semibold">Geography Spends</h2><p class="text-[11px]" style="color:var(--muted)">Domestic States vs Intl Forex Corridors</p></div>
+              <div class="seg">
+                <button class="${S.geoMode==='india'?'active':''}" onclick="S.geoMode='india';render()">India</button>
+                <button class="${S.geoMode==='world'?'active':''}" onclick="S.geoMode='world';render()">World</button>
+              </div>
+            </div>
+            ${S.geoMode === 'india' ? `
+              <div class="space-y-2">
+                ${GEO_INDIA.map(g => `
+                  <div class="surface p-2 flex justify-between items-center text-xs">
+                    <div><div class="font-semibold">${g.st}</div><div class="text-[10px] mono" style="color:var(--dim)">ATS ${F.inr(g.ats)}</div></div>
+                    <div class="text-right mono"><div class="font-bold">${F.cr(g.gmv*k,0)}</div><div class="text-[10px]" style="color:var(--accent)">${g.share}%</div></div>
+                  </div>`).join('')}
+              </div>
+            ` : `
+              <div class="space-y-2">
+                ${GEO_WORLD.map(g => `
+                  <div class="surface p-2 flex justify-between items-center text-xs gap-2">
+                    <div class="min-w-0"><div class="font-semibold">${g.st} <span class="mono text-[9.5px] px-1 rounded pill-amber">Forex ${g.forex}</span></div><div class="text-[10px] truncate" style="color:var(--dim)">${g.note}</div></div>
+                    <div class="text-right mono shrink-0"><div class="font-bold">${F.cr(g.gmv*k,1)}</div><div class="text-[10px]" style="color:var(--c2)">${g.share}%</div></div>
+                  </div>`).join('')}
+              </div>
+            `}
+          </div>
+
+          <div class="card p-4 lg:col-span-4 space-y-3">
+            <div>
+              <h2 class="text-sm font-semibold">Monthly User Churn &amp; Retention Cohort</h2>
+              <p class="text-[11px]" style="color:var(--muted)">M0 → M6 active card retention heatmap (%)</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="ft text-center">
+                <thead><tr><th class="text-left">Cohort</th><th>M0</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th>M6</th></tr></thead>
+                <tbody>
+                  ${COHORTS.map(c => {
+                    const cols = [c.v[0], c.v[1], c.v[2], c.v[3], c.v[4], c.v[6]];
+                    return `<tr>
+                      <td class="text-left font-semibold text-[11px] whitespace-nowrap">${c.m}<div class="mono text-[9.5px]" style="color:var(--dim)">${c.sz}</div></td>
+                      ${cols.map(v => `<td class="p-0.5"><div class="py-1.5 rounded mono text-[10.5px] font-semibold" style="${v!==null?`background:rgba(99,91,255,${Math.max(0.14,((v-45)/55)*0.55).toFixed(2)})`:''}">${v!==null?v.toFixed(0)+'%':'—'}</div></td>`).join('')}
+                    </tr>`;
+                  }).join('')}
+                </tbody>
+              </table>
+            </div>
+            <div class="surface p-2.5 text-[11px] leading-relaxed" style="color:var(--muted)">
+              <b style="color:var(--text)">Insight:</b> Secured FD-backed RuPay cohorts show <b>8.4pp higher M1 drop</b> than Unsecured cards, recovering after UPI auto-pay &amp; offer nudges in M2.
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderEconomics(sc) {
+      const uTot = (sc.u2x2.lte2k + sc.u2x2.gt2k + sc.u2x2.large + sc.u2x2.online) || 1;
+      const pLte = (sc.u2x2.lte2k / uTot) * 100, pGt = (sc.u2x2.gt2k / uTot) * 100;
+      const pLrg = (sc.u2x2.large / uTot) * 100, pOnl = (sc.u2x2.online / uTot) * 100;
+      const avgIc = IC_RULES.reduce((s, r) => s + (r.plat + r.sel + r.ekaa) / 3, 0) / IC_RULES.length;
+
+      // Ticket Cliff SVG
+      const W = 540, H = 180, pL = 36, pR = 26, pT = 20, pB = 30, pw = W - pL - pR, ph = H - pT - pB;
+      const step = pw / SLAB_D.length, bw = step * 0.56, maxV = 42;
+      const xCliff = pL + step * 3;
+      const failPts = [];
+      let barsSvg = `<line x1="${xCliff}" y1="${pT-6}" x2="${xCliff}" y2="${pT+ph}" stroke="var(--red)" stroke-dasharray="4,3" stroke-width="1.5"/>
+                     <text x="${xCliff+4}" y="${pT+3}" fill="var(--red)" font-size="9" font-weight="700">₹2,000 MDR Cliff</text>`;
+      SLAB_D.forEach((d, i) => {
+        const cx = pL + i * step + step / 2, bh = (d.v / maxV) * ph, by = pT + ph - bh;
+        const fy = pT + ph - (d.f / 14) * ph; failPts.push(`${cx.toFixed(1)},${fy.toFixed(1)}`);
+        const tipH = `<b>SLAB_D: ${d.s}</b><br/>Vol: <span class='mono'>${d.v} Mn</span> · Fail: <span class='mono' style='color:var(--red)'>${d.f}%</span>`;
+        barsSvg += `<rect x="${(cx-bw/2).toFixed(1)}" y="${by.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(2,bh).toFixed(1)}" rx="3" fill="${i<3?'var(--c6)':'var(--c1)'}" class="svg-hit" onmousemove="showTip(event,&quot;${tipH}&quot;)" onmouseleave="hideTip()"/>`;
+        barsSvg += `<text x="${cx.toFixed(1)}" y="${H-10}" text-anchor="middle" fill="var(--muted)" font-size="8.5">${d.s}</text>`;
+      });
+      barsSvg += `<polyline fill="none" stroke="var(--red)" stroke-width="2" points="${failPts.join(' ')}"/>`;
+
+      return `
+        <div class="flex flex-wrap justify-between items-center gap-2">
+          <div class="seg">
+            <button class="${S.econView==='rails'?'active':''}" onclick="S.econView='rails';render()">All Rails Overview &amp; Interchange Rules</button>
+            <button class="${S.econView==='upi2x2'?'active':''}" onclick="S.econView='upi2x2';render()">UPI 2×2 Merchant Matrix &amp; Ticket Cliffs</button>
+          </div>
+          <span class="mono text-[10.5px] px-2.5 py-1 rounded pill-amber font-semibold">[DUMMY PLACEHOLDER RULES] · Blended IC ~${avgIc.toFixed(1)} bps</span>
+        </div>
+
+        ${S.econView === 'upi2x2' ? `
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="card p-4 lg:col-span-6 space-y-3">
+              <div><h2 class="text-sm font-semibold">UPI 2×2 Merchant Matrix (Small/Large × Offline/Online)</h2><p class="text-[11px]" style="color:var(--muted)">Separates Zero-MDR micro-spend (≤₹2K Small Offline) from monetizable pool</p></div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="surface p-3 space-y-2">
+                  <div class="flex justify-between text-xs font-bold"><span>Small × Offline</span><span class="mono">${(pLte+pGt).toFixed(1)}%</span></div>
+                  <div class="p-2 rounded-lg pill-red text-[11px]"><div class="flex justify-between font-bold"><span>≤ ₹2,000 (Zero-MDR)</span><span class="mono">${pLte.toFixed(1)}%</span></div><div class="mono text-[10px]">${F.cr(sc.u2x2.lte2k,0)} · IC 0 bps</div></div>
+                  <div class="p-2 rounded-lg pill-green text-[11px]"><div class="flex justify-between font-bold"><span>&gt; ₹2,000 (Monetizable)</span><span class="mono">${pGt.toFixed(1)}%</span></div><div class="mono text-[10px]">${F.cr(sc.u2x2.gt2k,0)} · IC ${IC_RULES[1].plat}–${IC_RULES[1].ekaa} bps</div></div>
+                </div>
+                <div class="surface p-3 flex flex-col justify-between">
+                  <div class="flex justify-between items-center"><span class="text-xs font-bold">Large × Offline</span><span class="text-[10px] px-1.5 py-0.5 rounded pill-green">Monetizable</span></div>
+                  <div class="my-2"><div class="mono text-2xl font-bold">${pLrg.toFixed(1)}%</div><div class="mono text-xs" style="color:var(--muted)">${F.cr(sc.u2x2.large,0)}</div></div>
+                  <div class="mono text-[10.5px]">IC ${IC_RULES[2].plat}–${IC_RULES[2].ekaa} bps · DMart / Retail</div>
+                </div>
+                <div class="surface p-3 sm:col-span-2 flex justify-between items-center">
+                  <div><div class="text-xs font-bold">Online (Small &amp; Large E-Com / In-App UPI)</div><div class="text-[11px]" style="color:var(--muted)">Highest UPI interchange yield across all variants</div></div>
+                  <div class="text-right mono"><div class="text-xl font-bold" style="color:var(--accent)">${pOnl.toFixed(1)}%</div><div class="text-xs">${F.cr(sc.u2x2.online,0)}</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4 lg:col-span-6">
+              <div class="flex justify-between items-center mb-2">
+                <div><h2 class="text-sm font-semibold">SLAB_D Ticket Cliffs &amp; Failure Rate Overlay</h2><p class="text-[11px]" style="color:var(--muted)">Bars: Volume (Mn) · Red Line: Failure % (spikes right above ₹2K)</p></div>
+                <span class="text-[10px] px-2 py-0.5 rounded pill-red font-semibold">U16 Merchant Blocks</span>
+              </div>
+              <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto block">${barsSvg}</svg>
+            </div>
+          </div>
+        ` : `
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            ${kpiCard('e1','Monetizable UPI Share', F.pct(100-pLte), `Zero-MDR ≤₹2K: ${F.pct(pLte)}`, pLte<40?'Healthy':'High Drag', pLte<40, 'var(--c2)', '1 - (small_offline_lte_2k / total_upi)', [['Monetizable', F.cr(uTot-sc.u2x2.lte2k,0)]])}
+            ${kpiCard('e2','Domestic POS + E-Com', F.cr(sc.rTot.POS+sc.rTot.ECOM,0), 'Core interchange engine', '155–225 bps', true, 'var(--c1)', 'POS + ECOM GMV in active scope', [['POS', F.cr(sc.rTot.POS,0)],['E-Com', F.cr(sc.rTot.ECOM,0)]])}
+            ${kpiCard('e3','International Rail', F.cr(sc.rTot.INTL,0), 'Cross-border + 25% share', '185–250 bps', true, 'var(--c4)', 'INTL GMV × (ifp × intlRevShare)', [['Network Share', '37.5 bps']])}
+            ${kpiCard('e4','Blended Dummy IC', F.bps(avgIc,1), 'Editable rate table below', '[DUMMY]', true, 'var(--amber)', 'Mean(Platinum, Select, EKAA) across rules', [['Config Source', 'dim_interchange_rules']])}
+          </div>
+        `}
+
+        <!-- CONFIGURABLE DUMMY INTERCHANGE RATE CARD -->
+        <div class="card overflow-hidden">
+          <div class="p-4 border-b flex flex-wrap justify-between items-center gap-2" style="border-color:var(--border)">
+            <div>
+              <h2 class="text-sm font-semibold">Configurable Card Interchange Rate Card <span class="mono text-[10px] px-2 py-0.5 rounded pill-amber ml-1">[DUMMY PLACEHOLDER RULES]</span></h2>
+              <p class="text-[11px]" style="color:var(--muted)">Edit any BPS cell live to test sensitivity — production swaps this isolated JSON with internal Trino rate tables</p>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="ft">
+              <thead><tr><th class="text-left">Rail / UPI Tier</th><th>Mode</th><th class="text-left">MCC Bucket</th><th class="text-right">Platinum (bps)</th><th class="text-right">Select (bps)</th><th class="text-right">EKAA (bps)</th><th class="text-right">Network Switch Fee</th></tr></thead>
+              <tbody>
+                ${IC_RULES.map((r, i) => `
+                  <tr>
+                    <td class="font-semibold">${r.rail}</td>
+                    <td class="text-center"><span class="mono text-[10px] px-1.5 py-0.5 rounded ${r.mode==='EMI'?'pill-amber':'pill-muted'}">${r.mode}</span></td>
+                    <td style="color:var(--muted)">${r.mcc}</td>
+                    ${['plat','sel','ekaa'].map(k => `<td class="text-right"><input type="number" class="inp mono w-16 text-right !py-1" value="${r[k]}" onchange="IC_RULES[${i}].${k}=Number(this.value)||0;render()"/></td>`).join('')}
+                    <td class="mono text-right" style="color:var(--accent)">${r.sw}</td>
+                  </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderWallet(sc) {
+      const items = S.walletDrill === 'card'
+        ? sc.matched.map(b => ({ lbl: b.name, sub: `${b.bank} · ${b.collateral}`, tc: b.wallet.thisCard, oc: b.wallet.otherCard, sc: b.wallet.savCur, note: b.wallet.savCur > 45 ? 'High Savings conversion headroom' : 'Strong Top-of-Wallet retention' }))
+        : S.walletDrill === 'mcc'
+          ? MCCS.map(m => ({ lbl: `${m.code} · ${m.name}`, sub: m.mitc, tc: m.w[0], oc: m.w[1], sc: m.w[2], note: m.tone==='red' ? 'MITC exclusion pushing users to Savings UPI' : 'Active credit share growing' }))
+          : MERCHANTS.map(m => ({ lbl: m.name, sub: `${m.tag}: ${m.offer}`, tc: m.w[0], oc: m.w[1], sc: m.w[2], note: m.note }));
+
+      return `
+        <div class="card p-4 space-y-4">
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <div>
+              <h2 class="text-sm font-semibold">Multi-Rail Wallet Share Decomposition</h2>
+              <p class="text-[11px]" style="color:var(--muted)">This Card (POS + E-Com + UPI) vs. Other Cards vs. Savings/Current UPI — separates net-new credit conversion from cannibalization</p>
+            </div>
+            <div class="seg">
+              <button class="${S.walletDrill==='card'?'active':''}" onclick="S.walletDrill='card';render()">By Card / Bank</button>
+              <button class="${S.walletDrill==='mcc'?'active':''}" onclick="S.walletDrill='mcc';render()">By MCC (MITC)</button>
+              <button class="${S.walletDrill==='merchant'?'active':''}" onclick="S.walletDrill='merchant';render()">By Top Merchants (Offers)</button>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-4 text-[11px]" style="color:var(--muted)">
+            <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:var(--c1)"></span>This Card (POS + E-Com + UPI)</span>
+            <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:var(--c5)"></span>Other Credit Cards (Cannibalization)</span>
+            <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:var(--c6)"></span>Savings / Current UPI (Conversion Headroom)</span>
+          </div>
+          <div class="space-y-3">
+            ${items.map(it => `
+              <div class="surface p-3 space-y-1.5">
+                <div class="flex flex-wrap justify-between items-center gap-2 text-xs">
+                  <div><span class="font-bold">${it.lbl}</span> <span class="text-[10.5px] ml-1" style="color:var(--muted)">${it.sub}</span></div>
+                  <span class="text-[10.5px] px-2 py-0.5 rounded pill-muted">${it.note}</span>
+                </div>
+                <div class="h-5 rounded-md overflow-hidden flex text-[10px] mono font-bold text-white">
+                  <div style="width:${it.tc}%;background:var(--c1)" class="flex items-center justify-center">${it.tc.toFixed(1)}%</div>
+                  <div style="width:${it.oc}%;background:var(--c5)" class="flex items-center justify-center">${it.oc.toFixed(1)}%</div>
+                  <div style="width:${it.sc}%;background:var(--c6)" class="flex items-center justify-center">${it.sc.toFixed(1)}%</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    /* =========================================================================
+       8. WORKSPACE 2: PROPOSITION HUB (OWN LOCAL FILTERS + 4 SUB-TABS)
+       ========================================================================= */
+    function getFilteredPropCards() {
+      const f = S.fp;
+      return PROP_CARDS.filter(c => {
+        if (!f.nets.includes(c.network)) return false;
+        if (f.banks.length && !f.banks.includes(c.bank)) return false;
+        if (f.profiles.length && !f.profiles.includes(c.profile)) return false;
+        if (f.variants.length && !f.variants.includes(c.variant)) return false;
+        if (f.collateral !== 'All' && c.collateral !== f.collateral) return false;
+        if (f.issuance !== 'All' && c.issuance !== f.issuance) return false;
+        if (f.issuance === 'Co-Brand' && f.focus !== 'All' && c.focus !== f.focus) return false;
+        if (f.payMode !== 'All' && !c.payModes.includes(f.payMode)) return false;
+        return true;
+      });
+    }
+
+    function simCard(c) {
+      const m = S.sim;
+      const totMo = m.upi + m.online + m.pos + m.excl + m.intl + m.emi, totYr = totMo * 12;
+      const upiEarn = Math.min(m.upi * (c.upiPct / 100), c.upiCapMo) * 12;
+      const baseEarn = upiEarn + (m.online * c.onlinePct / 100 + m.pos * c.posPct / 100 + m.intl * c.posPct / 100) * 12 + (c.emiRewards ? m.emi * (c.posPct / 100) * 12 : 0);
+      const mileBonus = (c.mileThr > 0 && (totYr - m.excl * 12) >= c.mileThr) ? c.mileVal : 0;
+      const offerBoost = m.offersOn ? ((c.network === 'RuPay' ? 0.042 : 0.028) * (m.online + m.emi) * 12) : 0;
+      const effFee = (c.waiver > 0 && (totYr - m.excl * 12) >= c.waiver) ? 0 : c.fee;
+      const forexCost = (m.intl * 12) * (c.forex / 100);
+      const exclFee = (m.excl * 12) * 0.01;
+      const emiProc = m.emi > 0 ? c.emiFee * 4 : 0;
+      const friction = effFee + forexCost + exclFee + emiProc;
+      const netVal = baseEarn + mileBonus + offerBoost - friction;
+      const netYield = totYr ? (netVal / totYr) * 100 : 0;
+      const slabIdx = totMo < 5000 ? 0 : totMo < 15000 ? 1 : totMo < 50000 ? 2 : totMo < 100000 ? 3 : 4;
+      const slabNames = ['Slab 1 (<₹5K/mo)', 'Slab 2 (₹5K–₹15K/mo)', 'Slab 3 (₹15K–₹50K/mo)', 'Slab 4 (₹50K–₹1L/mo)', 'Slab 5 (>₹1L/mo)'];
+      return { totMo, totYr, baseEarn, mileBonus, offerBoost, friction, effFee, forexCost, emiProc, netVal, netYield, slabIdx, slabName: slabNames[slabIdx], portPct: c.trinoSlabPcts[slabIdx] };
+    }
+
+    function renderProposition() {
+      const f = S.fp, coOn = f.issuance === 'Co-Brand';
+      const localBar = `
+        <div class="card p-3 space-y-2">
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider" style="color:var(--accent)">Proposition Control Plane · Independent Local Filters (Cross-Network)</span>
+            <button onclick="S.fp={nets:['RuPay','Visa','Mastercard'],banks:[],profiles:[],variants:[],collateral:'All',issuance:'All',focus:'All',payMode:'All'};render()" class="text-[11px] font-semibold" style="color:var(--accent)">↺ Reset Local Filters</button>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="text-[10px] font-semibold" style="color:var(--muted)">Network:</span>
+            ${['RuPay','Visa','Mastercard'].map(n => `<button class="chip ${f.nets.includes(n)?'on':''}" onclick="togArr(S.fp.nets,'${n}')">${n}</button>`).join('')}
+            <span class="text-[10px] font-semibold ml-1" style="color:var(--muted)">Banks:</span>
+            ${['HDFC Bank','IDFC FIRST'].map(b => `<button class="chip ${f.banks.includes(b)?'on':''}" onclick="togArr(S.fp.banks,'${b}')">${b}</button>`).join('')}
+            <span class="text-[10px] font-semibold ml-1" style="color:var(--muted)">Collateral:</span>
+            ${[['All','All'],['Unsecured','Unsecured'],['Secured','Secured / FD-Backed']].map(([k,l]) => `<button class="chip ${f.collateral===k?'on':''}" onclick="S.fp.collateral='${k}';render()">${l}</button>`).join('')}
+            <span class="text-[10px] font-semibold ml-1" style="color:var(--muted)">Issuance:</span>
+            ${['All','Proprietary','Co-Brand'].map(i => `<button class="chip ${f.issuance===i?'on':''}" onclick="S.fp.issuance='${i}';if('${i}'!=='Co-Brand')S.fp.focus='All';render()">${i}</button>`).join('')}
+            <div class="sub-box ${coOn?'':'disabled'}">
+              <span class="mono text-[10px] font-bold" style="color:${coOn?'var(--accent)':'var(--dim)'}">↳ Focus:</span>
+              ${['All','Discretionary','Non-Discretionary'].map(c => `<button class="chip !py-0.5 !px-1.5 !text-[10px] ${coOn&&f.focus===c?'on':''} ${coOn?'':'off'}" onclick="S.fp.focus='${c}';render()">${c}</button>`).join('')}
+            </div>
+            <span class="text-[10px] font-semibold ml-1" style="color:var(--muted)">Mode:</span>
+            ${[['All','All'],['FS','FS'],['EMI','EMI']].map(([k,l]) => `<button class="chip ${f.payMode===k?'on':''}" onclick="S.fp.payMode='${k}';render()">${l}</button>`).join('')}
+          </div>
+        </div>
+      `;
+
+      const subNav = `
+        <div class="flex flex-wrap justify-between items-center gap-2">
+          <div class="seg">
+            ${[['matrix','A. Cross-Network CVP & MITC Matrix'],['sim','B. Spend & Reward Simulator'],['offers','C. Synergized Offers (FS vs EMI)'],['overlay','D. 3-Mode Telemetry Overlay (16 Variants)']].map(([k,l]) =>
+              `<button class="${S.propSub===k?'active':''}" onclick="S.propSub='${k}';render()">${l}</button>`).join('')}
+          </div>
+        </div>
+      `;
+
+      let content = '';
+      if (S.propSub === 'matrix') {
+        const cards = getFilteredPropCards();
+        const bands = [
+          { band: 'Network-Funded Layer', col: 'var(--accent)', rows: [
+            { k: 'Network & Equivalent Tier', fn: c => `<b>${c.network}</b> · ${c.tierLbl}` },
+            { k: 'UPI CC & Network Perks',    fn: c => c.netLayer }
+          ]},
+          { band: 'Issuer CVP & Rewards', col: 'var(--green)', rows: [
+            { k: 'Segment · Collateral · Issuance', fn: c => `${c.profile} · <b>${c.collateral}</b> · ${c.issuance}${c.focus?` ↳ ${c.focus}`:''}` },
+            { k: 'Core Reward Proposition',   fn: c => c.issuerCvp },
+            { k: 'Annual Fee & Waiver',       fn: c => c.fee === 0 ? '<span class="pill-green px-1.5 py-0.5 rounded mono text-[10px]">Lifetime Free</span>' : `<span class="mono">${F.inr(c.fee)}</span> (Waived @ ${F.inr(c.waiver)})` },
+            { k: 'UPI Reward Rate & Cap',     fn: c => c.upiPct > 0 ? `<span class="mono font-bold" style="color:var(--green)">${c.upiPct}%</span> (Cap ₹${c.upiCapMo}/mo)` : '<span style="color:var(--red)">Not Supported</span>' }
+          ]},
+          { band: 'MITC Friction & Policy Strip', col: 'var(--amber)', rows: [
+            { k: 'APR (Revolver Cost)',       fn: c => `<span class="mono font-semibold">${c.apr}</span>` },
+            { k: 'Forex Markup %',            fn: c => `<span class="mono font-bold" style="color:${c.forex===0?'var(--green)':'var(--text)'}">${c.forex.toFixed(2)}%</span>` },
+            { k: 'EMI Earns Base Rewards?',   fn: c => c.emiRewards ? '<span class="pill-green px-1.5 py-0.5 rounded text-[10px] font-semibold">Yes</span>' : '<span class="pill-red px-1.5 py-0.5 rounded text-[10px] font-semibold">No (Blocked)</span>' },
+            { k: 'EMI Processing Fee',        fn: c => `<span class="mono">${F.inr(c.emiFee)}</span>` },
+            { k: 'FD Lien Ratio (Secured)',   fn: c => `<span class="mono text-[11px]">${c.fdLien}</span>` },
+            { k: 'Excluded / Surcharged MCCs',fn: c => `<span class="text-[11px]" style="color:var(--red)">${c.exclMccs}</span>` }
+          ]}
+        ];
+
+        content = `
+          <div class="card overflow-hidden">
+            <div class="p-4 border-b flex flex-wrap justify-between items-center gap-2" style="border-color:var(--border)">
+              <div>
+                <h2 class="text-sm font-semibold">Cross-Network CVP &amp; MITC Comparison Matrix (${cards.length} Cards)</h2>
+                <p class="text-[11px]" style="color:var(--muted)">Highlights Dual-Network Pairs (RuPay vs Visa on identical bank card) + Secured FD vs Unsecured rules</p>
+              </div>
+              <label class="flex items-center gap-2 text-xs cursor-pointer select-none px-2.5 py-1.5 rounded-lg border" style="background:var(--bg-surface);border-color:var(--border)">
+                <input type="checkbox" ${S.diffOnly?'checked':''} onchange="S.diffOnly=this.checked;render()" class="accent-indigo-500"/>
+                <span>Show Differences Only</span>
+              </label>
+            </div>
+            ${!cards.length ? `<div class="p-8 text-center text-sm" style="color:var(--muted)">No cards match local filters.</div>` : `
+              <div class="overflow-x-auto">
+                <table class="ft">
+                  <thead>
+                    <tr>
+                      <th class="text-left w-52">Dimension</th>
+                      ${cards.map(c => `
+                        <th class="text-left min-w-[210px]">
+                          <div class="flex items-center gap-1.5 mb-0.5">
+                            <span class="px-1.5 py-0.5 rounded text-[9.5px] font-bold ${c.network==='RuPay'?'pill-accent':(c.network==='Visa'?'pill-green':'pill-amber')}">${c.network}</span>
+                            ${c.pair ? `<span class="px-1.5 py-0.5 rounded text-[9px] pill-muted">Dual-Network Pair</span>` : ''}
+                            ${c.collateral==='Secured' ? `<span class="px-1.5 py-0.5 rounded text-[9px] pill-green">FD-Backed</span>` : ''}
+                          </div>
+                          <div class="text-xs font-bold normal-case" style="color:var(--text)">${c.name}</div>
+                        </th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${bands.map(b => {
+                      const rows = b.rows.filter(r => {
+                        if (!S.diffOnly || cards.length < 2) return true;
+                        const vals = cards.map(c => r.fn(c));
+                        return new Set(vals).size > 1;
+                      });
+                      if (!rows.length) return '';
+                      return `
+                        <tr><td colspan="${cards.length+1}" class="!py-1.5 text-[10px] font-bold uppercase tracking-wider" style="background:var(--bg-surface);color:${b.col}">${b.band}</td></tr>
+                        ${rows.map(r => `<tr><td class="font-medium text-xs" style="color:var(--muted)">${r.k}</td>${cards.map(c => `<td class="text-xs leading-snug">${r.fn(c)}</td>`).join('')}</tr>`).join('')}
+                      `;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            `}
+          </div>
+        `;
+      } else if (S.propSub === 'sim') {
+        const picked = PROP_CARDS.filter(c => S.simCards.includes(c.id));
+        const res = picked.map(c => ({ c, r: simCard(c) }));
+        const sliders = [
+          ['upi', 'UPI Scan & Pay (₹/mo)', 40000],
+          ['online', 'Online Shopping FS (₹/mo)', 40000],
+          ['pos', 'Offline POS Dining/Retail (₹/mo)', 40000],
+          ['excl', 'Fuel / Utilities / Rent (₹/mo — MITC Stress)', 25000],
+          ['intl', 'International Spend (₹/mo — Forex Stress)', 25000],
+          ['emi', 'EMI Purchases (₹/mo — EMI Policy Stress)', 30000]
+        ];
+        const totMo = S.sim.upi + S.sim.online + S.sim.pos + S.sim.excl + S.sim.intl + S.sim.emi;
+
+        content = `
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <!-- Spend Sliders -->
+            <div class="card p-4 lg:col-span-5 space-y-3">
+              <div class="flex justify-between items-center">
+                <div><h2 class="text-sm font-semibold">Persona Monthly Spend Inputs</h2><p class="text-[11px]" style="color:var(--muted)">Deterministic CVP + Offer − MITC engine</p></div>
+                <span class="mono text-xs font-bold px-2 py-1 rounded pill-accent">${F.inr(totMo)}/mo</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pb-2 border-b" style="border-color:var(--border)">
+                <span class="text-[10px] font-semibold w-full" style="color:var(--muted)">Select 2–3 Cards to Compare:</span>
+                ${PROP_CARDS.map(c => {
+                  const on = S.simCards.includes(c.id);
+                  return `<button class="chip ${on?'on':''}" onclick="togSimCard('${c.id}')">${c.network}: ${c.name.replace('HDFC ','').replace('IDFC FIRST ','')}</button>`;
+                }).join('')}
+              </div>
+              <div class="space-y-2.5">
+                ${sliders.map(([k, l, mx]) => `
+                  <div>
+                    <div class="flex justify-between text-xs mb-1"><span>${l}</span><span class="mono font-bold">${F.inr(S.sim[k])}</span></div>
+                    <input type="range" class="sl" min="0" max="${mx}" step="1000" value="${S.sim[k]}" oninput="S.sim.${k}=Number(this.value);render()"/>
+                  </div>`).join('')}
+              </div>
+              <label class="flex items-center gap-2 pt-2 border-t text-xs cursor-pointer" style="border-color:var(--border)">
+                <input type="checkbox" ${S.sim.offersOn?'checked':''} onchange="S.sim.offersOn=this.checked;render()" class="accent-indigo-500"/>
+                <span>Apply Active Merchant Offers (FS + EMI Boost)</span>
+              </label>
+            </div>
+
+            <!-- Live Comparison Results + Telemetry Reality Check -->
+            <div class="lg:col-span-7 space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-${Math.min(3, res.length || 1)} gap-3">
+                ${res.map(({ c, r }) => {
+                  const revDep = r.netYield > c.icYieldPct;
+                  return `
+                    <div class="card p-3.5 flex flex-col justify-between gap-2.5">
+                      <div>
+                        <div class="flex justify-between items-center gap-1 mb-1">
+                          <span class="text-[9.5px] font-bold px-1.5 py-0.5 rounded ${c.network==='RuPay'?'pill-accent':(c.network==='Visa'?'pill-green':'pill-amber')}">${c.network}</span>
+                          <span class="text-[9.5px] font-semibold px-1.5 py-0.5 rounded ${revDep?'pill-amber':'pill-green'}">${revDep?'Revolver-Dependent':'Interchange-Funded'}</span>
+                        </div>
+                        <div class="text-xs font-bold">${c.name}</div>
+                        <div class="mt-2 flex items-baseline justify-between">
+                          <span class="mono text-xl font-bold" style="color:${r.netVal>=0?'var(--green)':'var(--red)'}">${F.inr(r.netVal)}<span class="text-[10px] font-normal">/yr</span></span>
+                          <span class="mono text-xs font-bold px-1.5 py-0.5 rounded pill-accent">${r.netYield.toFixed(2)}% Net</span>
+                        </div>
+                      </div>
+                      <div class="space-y-1 text-[11px] pt-2 border-t" style="border-color:var(--border)">
+                        <div class="flex justify-between"><span style="color:var(--muted)">Base CVP Earn</span><span class="mono" style="color:var(--green)">+${F.inr(r.baseEarn)}</span></div>
+                        <div class="flex justify-between"><span style="color:var(--muted)">Milestone Bonus</span><span class="mono" style="color:var(--green)">+${F.inr(r.mileBonus)}</span></div>
+                        <div class="flex justify-between"><span style="color:var(--muted)">Active Offer Boost</span><span class="mono" style="color:var(--accent)">+${F.inr(r.offerBoost)}</span></div>
+                        <div class="flex justify-between"><span style="color:var(--muted)">MITC Friction Drag</span><span class="mono" style="color:var(--red)">-${F.inr(r.friction)}</span></div>
+                      </div>
+                      <div class="surface p-2 text-[10.5px] space-y-0.5">
+                        <div class="font-semibold" style="color:var(--accent)">Telemetry Reality Check</div>
+                        <div>Maps to <b>${r.slabName}</b></div>
+                        <div style="color:var(--muted)"><b>${r.portPct}%</b> of Trino users sit here · IC Yield <b>${c.icYieldPct.toFixed(2)}%</b> vs Net <b>${r.netYield.toFixed(2)}%</b></div>
+                      </div>
+                    </div>`;
+                }).join('')}
+              </div>
+              <div class="card p-3.5 text-xs leading-relaxed" style="color:var(--muted)">
+                <b style="color:var(--text)">How to read the Reality Check:</b> Whenever Simulated Customer Net Yield exceeds the Card's Blended Interchange Yield (from Card Economics), the issuer is subsidizing rewards via revolver APR or co-brand partner funding—flagging potential future <b>MITC devaluation risk</b>.
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (S.propSub === 'offers') {
+        const list = OFFERS.filter(o => (S.offNet === 'All' || o.net === S.offNet) && (S.offMode === 'All' || o.mode === S.offMode) && (S.offMerch === 'All' || o.merch === S.offMerch));
+        const act = OFFERS.find(o => o.id === S.activeOffId) || list[0] || OFFERS[0];
+        const W = 500, H = 155, pL = 34, pR = 12, pT = 18, pB = 24, pw = W - pL - pR, ph = H - pT - pB;
+        const maxD = Math.max(...act.daily) * 1.15, step = pw / act.daily.length, bw = step * 0.6;
+        const xSt = pL + act.startIdx * step;
+        let dSvg = `<rect x="${xSt}" y="${pT}" width="${pw - act.startIdx * step}" height="${ph}" fill="var(--accent)" fill-opacity="0.1"/>
+                    <line x1="${xSt}" y1="${pT}" x2="${xSt}" y2="${pT+ph}" stroke="var(--accent)" stroke-dasharray="3,3"/>
+                    <text x="${xSt+4}" y="${pT+10}" fill="var(--accent)" font-size="9" font-weight="700">Offer Live Window</text>`;
+        act.daily.forEach((v, i) => {
+          const cx = pL + i * step + step / 2, bh = (v / maxD) * ph, by = pT + ph - bh;
+          dSvg += `<rect x="${(cx-bw/2).toFixed(1)}" y="${by.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx="3" fill="${i>=act.startIdx?'var(--green)':'var(--c6)'}" opacity="0.88"/>`;
+          dSvg += `<text x="${cx.toFixed(1)}" y="${H-8}" text-anchor="middle" fill="var(--muted)" font-size="8.5">D${i-5>=0?'+'+(i-5):i-5}</text>`;
+        });
+
+        content = `
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="seg">
+              ${['All','RuPay','Visa','Mastercard'].map(n => `<button class="${S.offNet===n?'active':''}" onclick="S.offNet='${n}';render()">${n}</button>`).join('')}
+            </div>
+            <div class="seg">
+              ${[['All','FS + EMI'],['FS','Full Swipe (FS)'],['EMI','EMI Offers']].map(([k,l]) => `<button class="${S.offMode===k?'active':''}" onclick="S.offMode='${k}';render()">${l}</button>`).join('')}
+            </div>
+            <div class="seg">
+              ${['All','Zepto','Croma','Swiggy','EazyDiner'].map(m => `<button class="${S.offMerch===m?'active':''}" onclick="S.offMerch='${m}';render()">${m}</button>`).join('')}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              ${list.map(o => {
+                const eff = +(o.basePct + o.offerPct - o.mitcPct).toFixed(1), sel = o.id === act.id;
+                return `
+                  <div onclick="S.activeOffId='${o.id}';render()" class="card p-3.5 cursor-pointer transition space-y-2" style="${sel?'border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)':''}">
+                    <div class="flex justify-between items-center gap-1">
+                      <span class="text-[9.5px] font-bold px-1.5 py-0.5 rounded ${o.net==='RuPay'?'pill-accent':(o.net==='Visa'?'pill-green':'pill-amber')}">${o.net} · ${o.bank}</span>
+                      <span class="mono text-[9.5px] font-bold px-1.5 py-0.5 rounded ${o.mode==='EMI'?'pill-amber':'pill-green'}">${o.mode}</span>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold">${o.merch} — ${o.title}</div>
+                      <div class="mono text-[10px] mt-0.5" style="color:var(--muted)">Min ₹${o.min} · Cap ₹${o.cap} · ${o.valid}</div>
+                    </div>
+                    <div class="surface p-2 text-[10.5px] space-y-1">
+                      <div class="flex justify-between"><span>Synergized Stack</span><span class="mono font-bold" style="color:var(--green)">${eff}% Eff. Net</span></div>
+                      <div class="mono text-[9.5px]" style="color:var(--muted)">CVP +${o.basePct}% · Offer +${o.offerPct}% · MITC Fee −${o.mitcPct}%</div>
+                    </div>
+                  </div>`;
+              }).join('')}
+            </div>
+            <div class="card p-4 lg:col-span-5 flex flex-col justify-between gap-3">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-wider" style="color:var(--accent)">Daily Merchant Telemetry Link</div>
+                <h3 class="text-sm font-bold mt-0.5">${act.merch}: ${act.title}</h3>
+                <p class="text-[11px]" style="color:var(--muted)">Pre-offer (D-5..D-1) vs During-offer (D+1..D+6) Daily GMV (₹ Cr)</p>
+              </div>
+              <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto block">${dSvg}</svg>
+              <div class="surface p-2.5 text-xs flex justify-between">
+                <span>Mode: <b class="mono">${act.mode}</b></span>
+                <span>Pre Avg: <b class="mono">₹${(act.daily.slice(0,6).reduce((a,b)=>a+b,0)/6).toFixed(1)} Cr</b></span>
+                <span>Live Avg: <b class="mono" style="color:var(--green)">₹${(act.daily.slice(6).reduce((a,b)=>a+b,0)/6).toFixed(1)} Cr</b></span>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        // Sub-Tab D: 3-Mode Telemetry Overlay
+        const sorted = [...OVERLAY_12].sort((a, b) => S.ovSort === 'lift' ? b.lift - a.lift : b.wD - a.wD);
+        let ovBody = '';
+        if (S.ovMode === 'pins') {
+          const top3 = [OVERLAY_12[0], OVERLAY_12[1], OVERLAY_12[6]];
+          const cols = ['var(--c1)', 'var(--green)', 'var(--c2)'];
+          const W = 620, H = 205, pL = 44, pR = 14, pT = 22, pB = 26, pw = W - pL - pR, ph = H - pT - pB;
+          const xOf = i => pL + (i / 9) * pw, yOf = v => pT + ph - ((v - 70) / 55) * ph;
+          let s = '';
+          [80, 95, 110, 125].forEach(v => {
+            s += `<line x1="${pL}" y1="${yOf(v)}" x2="${W-pR}" y2="${yOf(v)}" stroke="var(--grid)" stroke-dasharray="3,3"/>
+                  <text x="${pL-6}" y="${yOf(v)+3}" text-anchor="end" fill="var(--dim)" font-size="9" class="mono">${v}</text>`;
+          });
+          // Event pin at index 5
+          const px = xOf(5);
+          s += `<line x1="${px}" y1="${pT}" x2="${px}" y2="${pT+ph}" stroke="var(--amber)" stroke-dasharray="4,3" stroke-width="1.5"/>`;
+          top3.forEach((v, idx) => {
+            const pts = v.sp.map((val, i) => `${xOf(i).toFixed(1)},${yOf(val).toFixed(1)}`).join(' ');
+            s += `<polyline fill="none" stroke="${cols[idx]}" stroke-width="2.2" points="${pts}"/>`;
+            s += `<circle cx="${px}" cy="${yOf(v.sp[5]).toFixed(1)}" r="4.5" fill="${cols[idx]}" stroke="#fff" stroke-width="1.5" class="svg-hit" onclick="S.ovPinId='${v.id}';render()"/>`;
+          });
+          const pObj = OVERLAY_12.find(x => x.id === S.ovPinId) || top3[0];
+          ovBody = `
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+              <div class="card p-4 lg:col-span-8">
+                <div class="flex justify-between items-center mb-2"><h3 class="text-sm font-semibold">Mode 1: Multi-Line + Clickable Event Pins (1–4 Variants)</h3><span class="text-[10.5px]" style="color:var(--muted)">Indexed Spend (Base=100)</span></div>
+                <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto block">${s}</svg>
+                <div class="flex flex-wrap gap-3 mt-2 text-[11px]">${top3.map((v,i)=>`<button onclick="S.ovPinId='${v.id}';render()" class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background:${cols[i]}"></span>${v.name}</button>`).join('')}</div>
+              </div>
+              <div class="card p-4 lg:col-span-4 space-y-2">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded pill-${pObj.tone}">${pObj.type} Event Pin</span>
+                <div class="text-sm font-bold">${pObj.name}</div>
+                <div class="text-xs" style="color:var(--muted)">${pObj.ev}</div>
+                <div class="grid grid-cols-2 gap-2 pt-2 mono text-xs">
+                  <div class="surface p-2"><div class="text-[10px]" style="color:var(--dim)">Pre-30D</div><b>${F.cr(pObj.pre,0)}</b></div>
+                  <div class="surface p-2"><div class="text-[10px]" style="color:var(--dim)">Post-30D</div><b>${F.cr(pObj.post,0)}</b></div>
+                  <div class="surface p-2"><div class="text-[10px]" style="color:var(--dim)">Net Lift</div><b style="color:${pObj.lift>=0?'var(--green)':'var(--red)'}">${F.sgn(pObj.lift)}</b></div>
+                  <div class="surface p-2"><div class="text-[10px]" style="color:var(--dim)">Wallet Δ</div><b style="color:${pObj.wD>=0?'var(--green)':'var(--red)'}">${F.sgn(pObj.wD,'pp')}</b></div>
+                </div>
+              </div>
+            </div>`;
+        } else if (S.ovMode === 'matrix') {
+          ovBody = `
+            <div class="card overflow-hidden">
+              <div class="p-3.5 border-b flex justify-between items-center" style="border-color:var(--border)">
+                <div><h3 class="text-sm font-semibold">Mode 2: Sparkline Anomaly Matrix (All 12 Variants — Solves Chart Clutter)</h3><p class="text-[11px]" style="color:var(--muted)">Synchronized sparklines with inline event ticks instead of 12 overlapping lines</p></div>
+                <div class="seg">
+                  <button class="${S.ovSort==='lift'?'active':''}" onclick="S.ovSort='lift';render()">Sort: Lift %</button>
+                  <button class="${S.ovSort==='wD'?'active':''}" onclick="S.ovSort='wD';render()">Sort: Wallet Δ</button>
+                </div>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="ft">
+                  <thead><tr><th class="text-left">Card Variant</th><th class="text-left">Catalyst Event</th><th>Sparkline + Tick</th><th class="text-right">Pre-30D</th><th class="text-right">Post-30D</th><th class="text-right">Lift %</th><th class="text-right">Wallet Δ</th></tr></thead>
+                  <tbody>
+                    ${sorted.map(v => `
+                      <tr>
+                        <td class="font-semibold">${v.name}</td>
+                        <td><span class="text-[9.5px] font-bold px-1.5 py-0.5 rounded pill-${v.tone}">${v.type}</span> <span class="text-[11px] ml-1" style="color:var(--muted)">${v.ev}</span></td>
+                        <td>${svgSpark(v.sp, v.tone)}</td>
+                        <td class="mono text-right">${F.cr(v.pre,0)}</td>
+                        <td class="mono text-right">${F.cr(v.post,0)}</td>
+                        <td class="mono text-right font-bold" style="color:${v.lift>=0?'var(--green)':'var(--red)'}">${F.sgn(v.lift)}</td>
+                        <td class="mono text-right font-semibold" style="color:${v.wD>=0?'var(--green)':'var(--red)'}">${F.sgn(v.wD,'pp')}</td>
+                      </tr>`).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>`;
+        } else {
+          // Mode 3: T=0 Event-Aligned Normalization
+          const xs = ['T-30', 'T-15', 'T=0', 'T+7', 'T+15', 'T+21', 'T+30'];
+          const W = 640, H = 220, pL = 46, pR = 16, pT = 18, pB = 28, pw = W - pL - pR, ph = H - pT - pB;
+          const xOf = i => pL + (i / 6) * pw, yOf = v => pT + ph - ((v - 90) / 34) * ph;
+          const p25 = [98,99,100,98,95,96,97], p75 = [100,100,100,106,112,115,117], med = [99,100,100,104,107,108,109];
+          const poly = [...p75.map((v,i)=>`${xOf(i)},${yOf(v)}`), ...p25.slice().reverse().map((v,i)=>`${xOf(6-i)},${yOf(v)}`)].join(' ');
+          let s = `<polygon points="${poly}" fill="var(--accent)" fill-opacity="0.16"/>
+                   <line x1="${xOf(2)}" y1="${pT}" x2="${xOf(2)}" y2="${pT+ph}" stroke="var(--accent)" stroke-dasharray="4,3" stroke-width="1.6"/>
+                   <text x="${xOf(2)+5}" y="${pT+11}" fill="var(--accent)" font-size="9.5" font-weight="700">T=0 Event Effective Date</text>`;
+          [92, 100, 110, 120].forEach(v => {
+            s += `<line x1="${pL}" y1="${yOf(v)}" x2="${W-pR}" y2="${yOf(v)}" stroke="var(--grid)" stroke-dasharray="${v===100?'':'3,3'}"/>
+                  <text x="${pL-6}" y="${yOf(v)+3}" text-anchor="end" fill="var(--dim)" font-size="9" class="mono">${v}</text>`;
+          });
+          xs.forEach((l, i) => s += `<text x="${xOf(i)}" y="${H-8}" text-anchor="middle" fill="var(--muted)" font-size="9">${l}</text>`);
+          OVERLAY_12.forEach(v => {
+            const col = v.tone === 'red' ? 'var(--red)' : (v.id === 'V2' ? 'var(--green)' : 'var(--dim)');
+            const w = (v.id === 'V2' || v.id === 'V12') ? 2.2 : 1;
+            s += `<polyline fill="none" stroke="${col}" stroke-width="${w}" opacity="${w>1?0.95:0.45}" points="${v.t0.map((val,i)=>`${xOf(i)},${yOf(val)}`).join(' ')}"/>`;
+          });
+          s += `<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="5,3" points="${med.map((val,i)=>`${xOf(i)},${yOf(val)}`).join(' ')}"/>`;
+          ovBody = `
+            <div class="card p-4 space-y-2">
+              <div class="flex flex-wrap justify-between items-center gap-2">
+                <div><h3 class="text-sm font-semibold">Mode 3: T=0 Event-Aligned Cohort Normalization</h3><p class="text-[11px]" style="color:var(--muted)">Aligns 12 disparate launch/devaluation dates onto T-30 → T+30 indexed to 100 at T=0</p></div>
+                <div class="flex gap-3 text-[10.5px]">
+                  <span style="color:var(--accent)"><b>---</b> Cohort Median + P25–P75 Band</span>
+                  <span style="color:var(--green)"><b>—</b> Top Gainer (WOW! +18.1%)</span>
+                  <span style="color:var(--red)"><b>—</b> MITC Devaluations (-2.5% to -5.4%)</span>
+                </div>
+              </div>
+              <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto block">${s}</svg>
+            </div>`;
+        }
+
+        content = `
+          <div class="seg">
+            <button class="${S.ovMode==='pins'?'active':''}" onclick="S.ovMode='pins';render()">1. Multi-Line + Event Pins (1–4)</button>
+            <button class="${S.ovMode==='matrix'?'active':''}" onclick="S.ovMode='matrix';render()">2. Sparkline Anomaly Matrix (12 Variants)</button>
+            <button class="${S.ovMode==='t0'?'active':''}" onclick="S.ovMode='t0';render()">3. T=0 Event-Aligned Normalization</button>
+          </div>
+          ${ovBody}
+        `;
+      }
+
+      return localBar + subNav + content;
+    }
+
+    function togSimCard(id) {
+      const a = S.simCards;
+      if (a.includes(id)) { if (a.length <= 2) return; S.simCards = a.filter(x => x !== id); }
+      else { if (a.length >= 3) a.shift(); S.simCards = [...a, id]; }
+      render();
+    }
+
+    /* =========================================================================
+       9. WORKSPACE 3: DEAL PERFORMANCE (6 EXACT V1.1 + PART B SUB-TABS)
+       ========================================================================= */
+    function renderDeal() {
+      const d = S.deal, r = runDeal(d);
+      const ro = S.dealRole === 'B' ? 'disabled' : '';
+      const bpsCol = r.netBps < d.cfg.bpF ? 'var(--red)' : (r.netBps > d.cfg.bpC ? 'var(--green)' : 'var(--amber)');
+      const mkPos = Math.max(2, Math.min(98, (r.netBps / 25) * 100));
+
+      const topBar = `
+        <div class="card p-3.5 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <div>
+              <div class="text-[9.5px] font-bold uppercase tracking-wider" style="color:var(--green)">Deal Project Switcher (Isolated from Telemetry)</div>
+              <select class="inp font-semibold mt-0.5" onchange="switchDealProj(this.value)">
+                <option value="ISSUER_B" ${S.dealKey==='ISSUER_B'?'selected':''}>Issuer B — FY27 Multi-Variant Deal (V1.1 Reference)</option>
+                <option value="ISSUER_C" ${S.dealKey==='ISSUER_C'?'selected':''}>Issuer C — Co-Brand Renewal</option>
+              </select>
+            </div>
+            <div>
+              <div class="text-[9.5px] font-bold uppercase tracking-wider" style="color:var(--muted)">Perspective Role</div>
+              <div class="seg mt-0.5">
+                <button class="${S.dealRole==='A'?'active':''}" onclick="S.dealRole='A';render()">Network A (Edit)</button>
+                <button class="${S.dealRole==='B'?'active':''}" onclick="S.dealRole='B';render()">Issuer B (Read-Only)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pinned Net BPS Corridor Gauge -->
+          <div class="surface px-3.5 py-2 min-w-[260px]">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="text-[10px] font-bold uppercase" style="color:var(--muted)">Net BPS Corridor</span>
+              <span class="mono text-base font-bold" style="color:${bpsCol}">${r.netBps.toFixed(3)} bps</span>
+            </div>
+            <div class="h-2.5 rounded-full relative overflow-hidden" style="background:linear-gradient(90deg,var(--red) 0%,var(--red) ${(d.cfg.bpF/25)*100}%,var(--amber) ${(d.cfg.bpF/25)*100}%,var(--amber) ${(d.cfg.bpC/25)*100}%,var(--green) ${(d.cfg.bpC/25)*100}%,var(--green) 100%)">
+              <div class="absolute top-0 bottom-0 w-1 bg-white shadow" style="left:${mkPos}%"></div>
+            </div>
+            <div class="flex justify-between mono text-[9.5px] mt-1" style="color:var(--dim)">
+              <span>Floor ${d.cfg.bpF} bps</span><span>Rule: ${d.cfg.milestoneRule==='cif'?'CIF Only':'CIF+Spends'}</span><span>Ceil ${d.cfg.bpC} bps</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const tabs = `
+        <div class="seg">
+          ${[['overview','1. Overview'],['projections','2. Projections'],['revenue','3. Revenue'],['scenarios','4. Scenarios'],['configure','5. Configure'],['performance','6. Performance (Part B)']].map(([k,l]) =>
+            `<button class="${S.dealSub===k?'active':''}" onclick="S.dealSub='${k}';render()">${l}</button>`).join('')}
+        </div>
+      `;
+
+      let sub = '';
+      if (S.dealSub === 'overview') {
+        const wf = [
+          { l:'Routing', v:r.revVal+r.revVol }, { l:'Card Fees', v:r.revCard }, { l:'Intl', v:r.revIntl },
+          { l:'Vol Slab', v:-r.incVol }, { l:'CIF Slab', v:-r.incCard }, { l:'Intl Inc', v:-r.incIntl },
+          { l:'Milestone', v:-r.incMile }, { l:'Upfront', v:-d.cfg.upf }, { l:'Net Rev', v:r.netRev, tot:true }
+        ];
+        const W = 600, H = 190, pL = 44, pR = 12, pT = 18, pB = 28, pw = W - pL - pR, ph = H - pT - pB;
+        let run = 0;
+        const bs = wf.map(x => { if (x.tot) { run = x.v; return { ...x, a: 0, b: x.v }; } const a = run; run += x.v; return { ...x, a, b: run }; });
+        const maxV = Math.max(...bs.flatMap(x => [x.a, x.b])) * 1.12 || 1;
+        const yOf = v => pT + ph - (v / maxV) * ph, step = pw / bs.length, bw = step * 0.58;
+        let wfSvg = '';
+        bs.forEach((x, i) => {
+          const cx = pL + i * step + step / 2, y1 = yOf(Math.max(x.a, x.b)), y2 = yOf(Math.min(x.a, x.b));
+          const col = x.tot ? 'var(--accent)' : (x.v >= 0 ? 'var(--green)' : 'var(--red)');
+          wfSvg += `<rect x="${(cx-bw/2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(2,y2-y1).toFixed(1)}" rx="3" fill="${col}"/>
+                    <text x="${cx.toFixed(1)}" y="${y1-4}" text-anchor="middle" fill="${col}" font-size="8.5" class="mono">${(x.v/1e7).toFixed(1)}</text>
+                    <text x="${cx.toFixed(1)}" y="${H-8}" text-anchor="middle" fill="var(--muted)" font-size="8.5">${x.l}</text>`;
+        });
+
+        sub = `
+          <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2.5">
+            ${kpiCard('d1','Total Spends', F.fR(r.totSp,1), '5-Yr Portfolio GMV', 'V1.1 Ref', true, 'var(--c1)', 'SUM(sCC + sUP) across 60 months', [['Gross BPS', F.bps(r.grossBps)]])}
+            ${kpiCard('d2','Gross Revenue', F.fR(r.totRev,3), F.bps(r.grossBps), '4 Streams', true, 'var(--green)', 'Routing + CardFee + Intl(25%)', [['Routing', F.fR(r.revVal+r.revVol,2)],['Card Fee', F.fR(r.revCard,2)],['Intl', F.fR(r.revIntl,2)]])}
+            ${kpiCard('d3','Total Incentives', F.fR(r.totInc,3), F.bps(r.incBps), 'Incl. Upfront', false, 'var(--red)', 'VolSlab + CIFSlab + Intl + Milestone + Upfront', [['Milestone', F.fR(r.incMile,2)],['Upfront', F.fR(d.cfg.upf,2)]])}
+            ${kpiCard('d4','Net Revenue', F.fR(r.netRev,3), 'Network A Retained', `${r.netBps.toFixed(3)} bps`, r.netBps>=d.cfg.bpF, 'var(--accent)', 'Gross Revenue − Total Incentives', [['Net BPS', r.netBps.toFixed(3)]])}
+            ${kpiCard('d5','EOY CIF (Y5)', F.vol(r.eoyCif), 'Closing Y5 Stock', '100% Plan', true, 'var(--c2)', 'Roll-forward with derived attrition', [['Y1→Y5', '60K → 300K']])}
+            ${kpiCard('d6','Upfront Impact', F.fR(d.cfg.upf,2), `${((d.cfg.upf/r.totSp)*10000).toFixed(2)} bps drag`, 'One-time', true, 'var(--amber)', 'cfg.upf / totSpends × 10,000', [['Ex-Upfront', `${(((r.netRev+d.cfg.upf)/r.totSp)*10000).toFixed(2)} bps`]])}
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="card p-4 lg:col-span-6">
+              <h3 class="text-sm font-semibold mb-2">Revenue-to-Net Waterfall (₹ Cr)</h3>
+              <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto block">${wfSvg}</svg>
+            </div>
+            <div class="card p-4 lg:col-span-6 overflow-x-auto">
+              <h3 class="text-sm font-semibold mb-2">Annual Summary Table (Verified V1.1 Engine)</h3>
+              <table class="ft">
+                <thead><tr><th class="text-left">Year</th><th class="text-right">EOY CIF</th><th class="text-right">Spends (Cr)</th><th class="text-right">Gross Rev</th><th class="text-right">Milestone</th><th class="text-right">Net Rev</th></tr></thead>
+                <tbody>
+                  ${r.years.map(y => `<tr>
+                    <td class="font-bold">Y${y.y+1}</td>
+                    <td class="mono text-right">${Math.round(y.endCif).toLocaleString('en-IN')}</td>
+                    <td class="mono text-right">${(y.spends/1e7).toFixed(3)}</td>
+                    <td class="mono text-right">${F.fR(y.rev,2)}</td>
+                    <td class="mono text-right" style="color:${y.pass?'var(--amber)':'var(--dim)'}">${F.inr(y.mile)}</td>
+                    <td class="mono text-right font-semibold" style="color:var(--green)">${F.fR(y.net,2)}</td>
+                  </tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>`;
+      } else if (S.dealSub === 'projections') {
+        const ms = ['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'];
+        const maxS = Math.max(...d.v.season);
+        sub = `
+          <div class="card p-4 space-y-4">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+              <div><h3 class="text-sm font-semibold">Projections &amp; Derived Monthly Attrition (Binary Search)</h3><p class="text-[11px]" style="color:var(--muted)">Attrition derived automatically so closing CIF hits annual target</p></div>
+              <div class="seg">
+                <button class="${S.dealProjMode==='yearly'?'active':''}" onclick="S.dealProjMode='yearly';render()">Yearly Drivers</button>
+                <button class="${S.dealProjMode==='monthly'?'active':''}" onclick="S.dealProjMode='monthly';render()">Monthly Phasing (Y1)</button>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              ${r.rates.map((rt, i) => `<span class="mono text-[11px] px-2.5 py-1 rounded pill-muted">Y${i+1} Attrition: <b>${(rt*100).toFixed(3)}%</b></span>`).join('')}
+            </div>
+            ${S.dealProjMode === 'yearly' ? `
+              <div class="overflow-x-auto">
+                <table class="ft">
+                  <thead><tr><th class="text-left">Driver</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th></tr></thead>
+                  <tbody>
+                    <tr><td class="font-semibold">Target Closing CIF</td>${d.v.cif.map((v,i)=>`<td><input type="number" class="inp mono w-24 text-right" ${ro} value="${v}" onchange="S.deal.v.cif[${i}]=Number(this.value)||0;render()"/></td>`).join('')}</tr>
+                    <tr><td class="font-semibold">Annual Issuances</td>${d.v.issuances.map((v,i)=>`<td><input type="number" class="inp mono w-24 text-right" ${ro} value="${v}" onchange="S.deal.v.issuances[${i}]=Number(this.value)||0;render()"/></td>`).join('')}</tr>
+                    <tr><td class="font-semibold">CC ATS (₹)</td>${d.v.atsCC.map((v,i)=>`<td><input type="number" class="inp mono w-24 text-right" ${ro} value="${v}" onchange="S.deal.v.atsCC[${i}]=Number(this.value)||0;render()"/></td>`).join('')}</tr>
+                    <tr><td class="font-semibold">UPI ATS (₹)</td>${d.v.atsUPI.map((v,i)=>`<td><input type="number" class="inp mono w-24 text-right" ${ro} value="${v}" onchange="S.deal.v.atsUPI[${i}]=Number(this.value)||0;render()"/></td>`).join('')}</tr>
+                  </tbody>
+                </table>
+              </div>
+            ` : `
+              <div class="overflow-x-auto">
+                <table class="ft">
+                  <thead><tr><th class="text-left">Y1 Month</th>${ms.map(m=>`<th class="text-right">${m}</th>`).join('')}</tr></thead>
+                  <tbody>
+                    <tr><td class="font-semibold">CIF</td>${r.months.slice(0,12).map(m=>`<td class="mono text-right">${F.vol(m.cif)}</td>`).join('')}</tr>
+                    <tr><td class="font-semibold">Spends (Cr)</td>${r.months.slice(0,12).map(m=>`<td class="mono text-right">${(m.tS/1e7).toFixed(1)}</td>`).join('')}</tr>
+                  </tbody>
+                </table>
+              </div>
+            `}
+            <div class="surface p-3 space-y-2">
+              <div class="flex flex-wrap justify-between items-center gap-2">
+                <span class="text-xs font-semibold">12-Month Seasonality Phasing (Fiscal Apr–Mar)</span>
+                <div class="seg">
+                  ${[['flat','Flat'],['festive','Festive'],['q4','Q4 Push'],['ramp','Ramp']].map(([k,l]) => `<button class="${S.dealSeason===k?'active':''}" onclick="S.dealSeason='${k}';S.deal.v.season=[...SEASON_PRESETS.${k}];render()">${l}</button>`).join('')}
+                </div>
+              </div>
+              <div class="grid grid-cols-12 gap-1.5 items-end h-20 pt-2">
+                ${d.v.season.map((w, i) => `<div class="flex flex-col items-center h-full justify-end"><div class="w-full rounded-t" style="height:${(w/maxS)*100}%;background:var(--accent);opacity:0.85"></div><span class="text-[9px] mt-1" style="color:var(--muted)">${ms[i]}</span></div>`).join('')}
+              </div>
+            </div>
+          </div>`;
+      } else if (S.dealSub === 'revenue') {
+        sub = `
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="card p-4 lg:col-span-6 space-y-2.5">
+              <h3 class="text-sm font-semibold">Annual Gross Revenue vs. Incentives</h3>
+              ${r.years.map(y => {
+                const maxR = Math.max(...r.years.map(x => x.rev)) || 1;
+                return `<div class="space-y-1">
+                  <div class="flex justify-between text-xs"><span class="font-bold">Year ${y.y+1}</span><span class="mono">Rev <b>${F.fR(y.rev,2)}</b> · Inc <b style="color:var(--red)">${F.fR(y.inc,2)}</b></span></div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background:var(--border)"><div class="h-full" style="width:${(y.rev/maxR)*100}%;background:var(--green)"></div></div>
+                  <div class="h-2 rounded-full overflow-hidden" style="background:var(--border)"><div class="h-full" style="width:${(y.inc/maxR)*100}%;background:var(--red)"></div></div>
+                </div>`;
+              }).join('')}
+            </div>
+            <div class="card p-4 lg:col-span-6 space-y-2.5">
+              <h3 class="text-sm font-semibold">Year-End Volume &amp; CIF Slab Cliff Proximity</h3>
+              <p class="text-[11px]" style="color:var(--muted)">Cliff slabs apply to 100% of that month's volume once crossed</p>
+              ${r.years.map(y => {
+                const nV = d.slV.find(s => s.thr > y.lastTx);
+                const pV = nV ? Math.min(100, (y.lastTx / nV.thr) * 100) : 100;
+                return `<div class="surface p-2.5 space-y-1">
+                  <div class="flex justify-between text-xs"><span class="font-bold">Y${y.y+1} Dec Month</span><span class="mono">${F.vol(y.lastTx)} txns (${nV ? `${pV.toFixed(0)}% to ${F.vol(nV.thr)}` : 'Max Slab'})</span></div>
+                  <div class="h-1.5 rounded-full overflow-hidden" style="background:var(--border)"><div class="h-full" style="width:${pV}%;background:${pV>82?'var(--amber)':'var(--accent)'}"></div></div>
+                </div>`;
+              }).join('')}
+            </div>
+          </div>`;
+      } else if (S.dealSub === 'scenarios') {
+        const steps = [80, 90, 100, 110, 120];
+        const base = runDeal(d, { cif:1, volume:1, activation:1, ats:1, intl:1 });
+        const cons = runDeal(d, { cif:0.85, volume:0.85, activation:0.90, ats:0.95, intl:0.90 });
+        const aggr = runDeal(d, { cif:1.15, volume:1.15, activation:1.10, ats:1.05, intl:1.10 });
+        sub = `
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="card p-4 lg:col-span-4 space-y-2.5">
+              <div class="flex justify-between items-center"><h3 class="text-sm font-semibold">5 Multiplier Sliders</h3><button onclick="S.deal.pm={cif:1,volume:1,activation:1,ats:1,intl:1};render()" class="text-[11px]" style="color:var(--accent)">Reset 100%</button></div>
+              ${[['cif','CIF Issuances'],['volume','Txns / Active'],['activation','Activation %'],['ats','Avg Ticket Size'],['intl','International %']].map(([k,l]) => `
+                <div>
+                  <div class="flex justify-between text-xs mb-1"><span>${l}</span><span class="mono font-bold">${Math.round(d.pm[k]*100)}%</span></div>
+                  <input type="range" class="sl" min="50" max="150" step="5" value="${Math.round(d.pm[k]*100)}" oninput="S.deal.pm.${k}=this.value/100;render()"/>
+                </div>`).join('')}
+            </div>
+            <div class="card p-4 lg:col-span-8 space-y-4">
+              <div>
+                <h3 class="text-sm font-semibold mb-1">5×5 Sensitivity Matrix (CIF × Activation → Net BPS)</h3>
+                <p class="text-[11px] mb-2" style="color:var(--muted)">Note cliff effect: Conservative (24.05 bps) &gt; Base (15.996 bps) &gt; Aggressive (13.47 bps)</p>
+                <div class="overflow-x-auto">
+                  <table class="ft text-center">
+                    <thead><tr><th>CIF \ Act</th>${steps.map(x=>`<th class="mono">${x}%</th>`).join('')}</tr></thead>
+                    <tbody>
+                      ${steps.map(y => `<tr><th class="mono">${y}%</th>${steps.map(x => {
+                        const val = runDeal(d, { cif:y/100, volume:1, activation:x/100, ats:1, intl:1 }).netBps;
+                        const bg = val < d.cfg.bpF ? 'var(--red-bg)' : (val > d.cfg.bpC ? 'var(--green-bg)' : 'var(--amber-bg)');
+                        const cl = val < d.cfg.bpF ? 'var(--red)' : (val > d.cfg.bpC ? 'var(--green)' : 'var(--amber)');
+                        return `<td class="p-1"><div class="h-cell py-2 mono text-xs font-semibold ${x===100&&y===100?'h-mid':''}" style="background:${bg};color:${cl}">${val.toFixed(2)}</div></td>`;
+                      }).join('')}</tr>`).join('')}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2.5 text-xs">
+                ${[['Conservative', cons], ['Base (100%)', base], ['Aggressive', aggr]].map(([lbl, obj]) => `
+                  <div class="surface p-2.5">
+                    <div class="text-[10px] font-bold uppercase" style="color:var(--muted)">${lbl}</div>
+                    <div class="mono text-base font-bold mt-0.5">${obj.netBps.toFixed(2)} bps</div>
+                    <div class="mono text-[10px]" style="color:var(--dim)">Net ${F.fR(obj.netRev,2)}</div>
+                  </div>`).join('')}
+              </div>
+            </div>
+          </div>`;
+      } else if (S.dealSub === 'configure') {
+        sub = `
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="card p-4 lg:col-span-6 space-y-3">
+              <div class="flex justify-between items-center"><h3 class="text-sm font-semibold">Fee Structure, Corridor &amp; Milestone Rule</h3>${S.dealRole==='B'?'<span class="pill-amber px-2 py-0.5 rounded text-[10px] font-bold">Issuer B Read-Only</span>':''}</div>
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <label>Routing Value (%)<input type="number" step="0.01" class="inp w-full mono mt-1" ${ro} value="${(d.cfg.rvp*100).toFixed(3)}" onchange="S.deal.cfg.rvp=(Number(this.value)||0)/100;render()"/></label>
+                <label>Routing Flat (₹/txn)<input type="number" step="0.1" class="inp w-full mono mt-1" ${ro} value="${d.cfg.rff}" onchange="S.deal.cfg.rff=Number(this.value)||0;render()"/></label>
+                <label>Upfront Incentive (₹)<input type="number" step="500000" class="inp w-full mono mt-1" ${ro} value="${d.cfg.upf}" onchange="S.deal.cfg.upf=Number(this.value)||0;render()"/></label>
+                <label>Card Fee (₹/Qtr)<input type="number" step="10" class="inp w-full mono mt-1" ${ro} value="${d.v.cardFee}" onchange="S.deal.v.cardFee=Number(this.value)||0;render()"/></label>
+                <label>BPS Floor<input type="number" class="inp w-full mono mt-1" ${ro} value="${d.cfg.bpF}" onchange="S.deal.cfg.bpF=Number(this.value)||0;render()"/></label>
+                <label>BPS Ceiling<input type="number" class="inp w-full mono mt-1" ${ro} value="${d.cfg.bpC}" onchange="S.deal.cfg.bpC=Number(this.value)||0;render()"/></label>
+              </div>
+              <div class="surface p-3 space-y-1.5">
+                <div class="text-xs font-bold">Milestone Qualification Rule (V1.1 + New Spec)</div>
+                <label class="flex items-center gap-2 text-xs cursor-pointer"><input type="radio" name="mr" ${ro} ${d.cfg.milestoneRule==='cif'?'checked':''} onchange="S.deal.cfg.milestoneRule='cif';render()"/> <b>CIF Only (95% target)</b> — matches V1.1 default</label>
+                <label class="flex items-center gap-2 text-xs cursor-pointer"><input type="radio" name="mr" ${ro} ${d.cfg.milestoneRule==='cif_spends'?'checked':''} onchange="S.deal.cfg.milestoneRule='cif_spends';render()"/> <b>CIF &amp; Spends (both ≥ 95% of baseline)</b></label>
+              </div>
+            </div>
+            <div class="card p-4 lg:col-span-6 space-y-3">
+              <h3 class="text-sm font-semibold">Volume &amp; CIF Cliff Slabs</h3>
+              <table class="ft">
+                <thead><tr><th class="text-left">Vol Threshold</th><th class="text-right">Flat ₹/Txn</th><th class="text-right">Spend BPS</th></tr></thead>
+                <tbody>${d.slV.map((s,i)=>`<tr><td class="mono">${F.vol(s.thr)}</td><td class="mono text-right"><input type="number" step="0.1" class="inp w-16 text-right !py-0.5" ${ro} value="${s.fb}" onchange="S.deal.slV[${i}].fb=Number(this.value)||0;render()"/></td><td class="mono text-right">${(s.pb*10000).toFixed(1)} bps</td></tr>`).join('')}</tbody>
+              </table>
+              <table class="ft">
+                <thead><tr><th class="text-left">CIF Threshold</th><th class="text-right">Card Fee Return %</th></tr></thead>
+                <tbody>${d.slC.map((s,i)=>`<tr><td class="mono">${F.vol(s.thr)}</td><td class="mono text-right"><input type="number" class="inp w-16 text-right !py-0.5" ${ro} value="${Math.round(s.pb*100)}" onchange="S.deal.slC[${i}].pb=(Number(this.value)||0)/100;render()"/>%</td></tr>`).join('')}</tbody>
+              </table>
+            </div>
+          </div>`;
+      } else {
+        // Sub-Tab 6: Performance (Part B Live Tracking)
+        const base = runDeal(d, { cif:1, volume:1, activation:1, ats:1, intl:1 }, null);
+        const rrPm = { cif:0.97, volume:1.05, activation:1.0, ats:0.94, intl:0.96 };
+        const activePm = S.dealRefMode === 'hold' ? { cif:1, volume:1, activation:1, ats:1, intl:1 } : (S.dealRefMode === 'run_rate' ? rrPm : S.dealManual);
+        const out = runDeal(d, activePm, S.dealAct);
+        const act18 = out.months.slice(0, 18);
+        const aSp = act18.reduce((s, m) => s + m.tS, 0), aRev = act18.reduce((s, m) => s + m.revTot, 0);
+        const aInc = act18.reduce((s, m) => s + m.incVol + m.incCard + m.incIntl, 0) + out.years[0].mile;
+        const dtdPro = ((aRev - aInc - d.cfg.upf * (18 / 60)) / aSp) * 10000;
+        const dtdFull = ((aRev - aInc - d.cfg.upf) / aSp) * 10000;
+
+        // Binary-search Remaining-Term ATS multiplier to hold Floor BPS (or 16 bps)
+        let lo = 0.5, hi = 2.0;
+        for (let k = 0; k < 24; k++) {
+          const mid = (lo + hi) / 2;
+          const tBps = runDeal(d, { ...activePm, ats: mid }, S.dealAct).netBps;
+          if (tBps < d.cfg.bpF) lo = mid; else hi = mid;
+        }
+        const solveAts = ((lo + hi) / 2) * 100;
+
+        // Sequential Revenue Bridge
+        const s1 = runDeal(d, { ...base.pm, cif: activePm.cif, volume:1, activation:1, ats:1, intl:1 }, S.dealAct).netRev;
+        const s2 = runDeal(d, { ...base.pm, cif: activePm.cif, volume: activePm.volume, activation:1, ats:1, intl:1 }, S.dealAct).netRev;
+        const br = [
+          { k:'Locked Baseline Net', v: base.netRev },
+          { k:'Actuals + CIF Variance', v: s1 - base.netRev },
+          { k:'Txn Intensity Variance', v: s2 - s1 },
+          { k:'ATS + Mix + Slab Effect', v: out.netRev - s2 },
+          { k:'Full-Term Outlook Net', v: out.netRev, tot: true }
+        ];
+
+        sub = `
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-xs">
+              <span class="px-2 py-1 rounded pill-accent font-semibold">Locked Baseline · M1–M18 Trino Actuals Loaded</span>
+              <span style="color:var(--muted)">M19–M60 Re-Forecast:</span>
+            </div>
+            <div class="seg">
+              <button class="${S.dealRefMode==='hold'?'active':''}" onclick="S.dealRefMode='hold';render()">Hold Plan</button>
+              <button class="${S.dealRefMode==='run_rate'?'active':''}" onclick="S.dealRefMode='run_rate';render()">3M Run-Rate (Default)</button>
+              <button class="${S.dealRefMode==='manual'?'active':''}" onclick="S.dealRefMode='manual';render()">Manual Override</button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            ${kpiCard('p1','Deal-to-Date BPS (Dual)', `${dtdPro.toFixed(2)} bps`, `Full-Upfront: ${dtdFull.toFixed(2)} bps`, 'M1–M18 Actual', dtdPro>=d.cfg.bpF, 'var(--c2)', 'Shows BOTH Pro-Rated (18/60) & Full Upfront BPS side-by-side', [['Pro-Rated Upfront', `${dtdPro.toFixed(2)} bps`],['Full Upfront', `${dtdFull.toFixed(2)} bps`]])}
+            ${kpiCard('p2','Full-Term Outlook BPS', `${out.netBps.toFixed(3)} bps`, `vs Plan ${base.netBps.toFixed(3)} bps`, F.sgn(out.netBps-base.netBps,' bps',2), out.netBps>=base.netBps, 'var(--accent)', 'Blended M1–M18 Actuals + M19–M60 Re-Forecast', [['Mode', S.dealRefMode]])}
+            ${kpiCard('p3','Outlook Net Revenue', F.fR(out.netRev,2), `vs Plan ${F.fR(base.netRev,2)}`, F.sgn((out.netRev-base.netRev)/1e7,' Cr',2), out.netRev>=base.netRev, 'var(--green)', 'Actuals + Remaining Term Net Rev', [['Spends Outlook', F.fR(out.totSp,1)]])}
+            ${kpiCard('p4','Remaining-Term Floor Solver', `${solveAts.toFixed(1)}% ATS`, `Min ATS mult to hold ${d.cfg.bpF} bps floor`, 'Binary Search', true, 'var(--amber)', 'Solves pm.ats on M19–M60 for Net BPS = Floor', [['Floor Corridor', `${d.cfg.bpF} bps`],['Current Headroom', `+${(out.netBps-d.cfg.bpF).toFixed(2)} bps`]])}
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="card p-4 lg:col-span-7 space-y-2.5">
+              <h3 class="text-sm font-semibold">Sequential Substitution Net Revenue Bridge (Baseline → Outlook)</h3>
+              ${br.map(b => `
+                <div class="surface px-3 py-2 flex justify-between items-center text-xs">
+                  <span class="${b.tot?'font-bold':''}">${b.k}</span>
+                  <span class="mono font-bold" style="color:${b.tot?'var(--accent)':(b.v>=0?'var(--green)':'var(--red)')}">${b.tot?'':(b.v>=0?'+':'')}${F.fR(b.v,2)}</span>
+                </div>`).join('')}
+            </div>
+            <div class="card p-4 lg:col-span-5 space-y-3">
+              <h3 class="text-sm font-semibold">Manual Remaining-Term Override (M19–M60)</h3>
+              <p class="text-[11px]" style="color:var(--muted)">${S.dealRefMode==='manual'?'Active: sliders apply to remaining 42 months only':'Switch mode to Manual Override to adjust future multipliers'}</p>
+              ${[['cif','Future CIF'],['volume','Future Txn Intensity'],['ats','Future ATS']].map(([k,l]) => `
+                <div>
+                  <div class="flex justify-between text-xs mb-1"><span>${l}</span><span class="mono font-bold">${Math.round(S.dealManual[k]*100)}%</span></div>
+                  <input type="range" class="sl" min="60" max="140" step="2" ${S.dealRefMode==='manual'?'':'disabled'} value="${Math.round(S.dealManual[k]*100)}" oninput="S.dealManual.${k}=this.value/100;render()"/>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }
+
+      return topBar + tabs + sub;
+    }
+
+    function switchDealProj(k) {
+      S.dealKey = k; S.deal = mkDeal(k); S.dealAct = mkActuals18(S.deal); S.dealSeason = 'flat'; render();
+    }
+
+    /* =========================================================================
+       10. NAVIGATION, THEME & RENDER ORCHESTRATOR
+       ========================================================================= */
+    const META = {
+      command:     ['Command Center',   'WS 1 · Telemetry & Economics', 'pill-accent', 'CIF, Active Cards, GMV, TPAC/SPAC, MCC (MITC), Top Merchants, Geography & Churn'],
+      economics:   ['Card Economics',   'WS 1 · Telemetry & Economics', 'pill-accent', 'All Rails + UPI 2×2 Merchant Matrix, ₹2K MDR Cliff & Dummy Interchange Rate Card'],
+      wallet:      ['Wallet Share',     'WS 1 · Telemetry & Economics', 'pill-accent', 'Multi-Rail Share of Wallet (This Card vs Other Cards vs Savings UPI) down to MCC & Merchants'],
+      proposition: ['Proposition Hub',  'WS 2 · Proposition Control Plane', 'pill-accent', 'Independent Local Filters · Cross-Network Matrix, Spend Simulator, FS/EMI Offers & 3-Mode Overlay'],
+      deal:        ['Deal Performance', 'WS 3 · Commercial Agreements', 'pill-green',  'Isolated Deal Workspace · Complete V1.1 Projection Engine + Part B Live Performance Tracking']
+    };
+
+    function go(view, sub = null) {
+      S.view = view;
+      if (view === 'proposition' && sub) S.propSub = sub;
+      S.openKpi = null;
+      toggleMob(false);
+      render();
+    }
+
+    function toggleCollapse() {
+      S.collapsed = !S.collapsed;
+      document.getElementById('sidebar').classList.toggle('collapsed', S.collapsed);
+    }
+
+    function toggleMob(open) {
+      const sb = document.getElementById('sidebar'), m = document.getElementById('mobMask');
+      sb.classList.toggle('-translate-x-full', !open);
+      m.classList.toggle('hidden', !open);
+    }
+
+    function toggleTheme() {
+      S.theme = S.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', S.theme);
+      document.getElementById('themeTxt').textContent = S.theme === 'dark' ? '☀ Light Editorial' : '☾ Dark Terminal';
+    }
+
+    function render() {
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.view === S.view));
+      const [t, ws, cls, sub] = META[S.view];
+      document.getElementById('hdrTitle').textContent = t;
+      const wsEl = document.getElementById('hdrWs');
+      wsEl.textContent = ws; wsEl.className = `text-[10px] font-semibold px-2 py-0.5 rounded-full ${cls}`;
+      document.getElementById('hdrSub').textContent = sub;
+
+      renderWS1Filters();
+      const app = document.getElementById('app');
+      try {
+        if (S.view === 'command') app.innerHTML = renderCommand(computeWS1());
+        else if (S.view === 'economics') app.innerHTML = renderEconomics(computeWS1());
+        else if (S.view === 'wallet') app.innerHTML = renderWallet(computeWS1());
+        else if (S.view === 'proposition') app.innerHTML = renderProposition();
+        else app.innerHTML = renderDeal();
+      } catch (err) {
+        app.innerHTML = `<div class="card p-6 text-sm" style="color:var(--red)">Render error: ${err.message}</div>`;
+      }
+    }
+
+    window.onload = function () { render(); };
+  </script>
+</body>
+</html>

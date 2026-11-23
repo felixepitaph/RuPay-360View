@@ -1,0 +1,1228 @@
+{
+ "issuer_bank": "IDFC FIRST Bank",
+ "retrieved_on": "2026-11-23",
+ "extraction_method": "WebFetch page-to-markdown plus LLM summary prompt (not raw text). Marketing copy only; fees must be checked against MITC. All cards LLM_EXTRACT_UNVERIFIED until compared with raw page text.",
+ "not_yet_extracted": [
+  "metal-credit-card/ashva",
+  "metal-credit-card/gaj",
+  "diamond-reserve-credit-card",
+  "FIRSTPrivateCreditCard",
+  "indigo-credit-card",
+  "secured-rupay-credit-card",
+  "lic-credit-card",
+  "business-max-credit-card",
+  "business-multiplier-credit-card",
+  "credit-card-against-fixed-deposits"
+ ],
+ "cards": [
+  {
+   "card_id": "IDFC_FIRST_WEALTH",
+   "card_name": "FIRST Wealth Credit Card",
+   "network": "Visa Infinite",
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/wealth",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "min_annual_income_inr": 3600000
+   },
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true,
+    "addon_inr": 499,
+    "cash_withdrawal_inr": 199,
+    "redemption_inr": 99,
+    "apr_pa": "8.5%-46.2%"
+   },
+   "reward_currency": {
+    "point_value_inr": 0.25,
+    "validity_months": 24
+   },
+   "earn_rules": [
+    {
+     "category": "Dining, travel, international, birthday",
+     "rate_text": "10X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": "from first eligible txn, no minimum",
+     "exclusions": [
+      "rent/property mgmt",
+      "utilities",
+      "insurance",
+      "government",
+      "education",
+      "wallet load",
+      "railway",
+      "FASTag"
+     ]
+    },
+    {
+     "category": "All other eligible online/offline",
+     "rate_text": "3X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Insurance, utilities, railway, FASTag",
+     "rate_text": "1X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "EMI, cash, fuel, fees",
+     "rate_text": "no points",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "up to 3X",
+    "activation_fee_inr": 199,
+    "promo": "100% cashback up to Rs200 on first 4 UPI txns (limited period)"
+   },
+   "travel_bonus": {
+    "hotel": "20% (FAQ says 40 bonus pts per Rs200)",
+    "flight": "10% (FAQ says 20 bonus pts per Rs200)",
+    "cap": "up to 8000 bonus"
+   },
+   "lounge": {
+    "domestic": "1/quarter",
+    "international": "1/quarter via DreamFolks",
+    "railway": "4/year",
+    "spend_gate": "Rs20,000 in current calendar month unlocks benefit"
+   },
+   "forex": {
+    "markup_text": "Zero Forex Markup",
+    "conflict": "FAQ says 1.5% + GST"
+   },
+   "welcome_benefits": [
+    "Rs500 voucher on Rs5,000 spend within 30 days (primary only)",
+    "5% cashback up to Rs1,000 on first EMI within 30 days"
+   ],
+   "movie_offer": "BOGO via District, up to Rs250 off 2nd ticket, 2x/month; needs Rs20,000 spend in month (effective 18 Jun 2026)",
+   "fuel_surcharge_waiver": "1% up to Rs400/statement cycle on Rs200-5,000 txns; page notes revision to Rs300 effective 20 Feb 2025",
+   "insurance": [
+    "Air accident Rs1 crore",
+    "Personal accident Rs10 lakh",
+    "Lost card Rs50,000",
+    "Travel insurance up to USD 1,200",
+    "CFAR up to Rs10,000",
+    "Roadside assistance Rs1,399, 4x/yr"
+   ],
+   "golf": "1 round or lesson per quarter, 20+ courses; needs >Rs20,000 spend in statement cycle",
+   "other_benefits": [
+    "Visa Infinite 300+ merchant offers, ITC/Elivaas, concierge"
+   ],
+   "page_conflicts": [
+    "Forex: main sections say zero markup; FAQ says 1.5% + GST",
+    "Hotel/flight bonus: 20%/10% in main section vs 40/20 pts per Rs200 in FAQ",
+    "Fuel waiver cap Rs400 vs revised Rs300"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_FIRST_SELECT",
+   "card_name": "FIRST Select Credit Card",
+   "network": null,
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/select",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "min_annual_income_inr": 1200000
+   },
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true,
+    "redemption_inr": 99,
+    "apr_pa": "8.5%-46.2%"
+   },
+   "reward_currency": {
+    "point_value_inr": 0.25,
+    "validity_months": 24
+   },
+   "earn_rules": [
+    {
+     "category": "Dining, travel, international, birthday",
+     "rate_text": "10X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": [
+      "rent/property mgmt",
+      "government",
+      "education",
+      "wallet load"
+     ]
+    },
+    {
+     "category": "Other eligible spends",
+     "rate_text": "3X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Utilities, insurance, railway, FASTag",
+     "rate_text": "1X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Fuel, EMI, cash",
+     "rate_text": "no points",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "up to 3X",
+    "activation_fee_inr": 199
+   },
+   "lounge": {
+    "domestic": "1/quarter (4/yr), needs Rs20,000 in current month",
+    "international": "not offered",
+    "railway": "4/quarter, same gate"
+   },
+   "forex": {
+    "markup_text": "0%"
+   },
+   "welcome_benefits": [
+    "Rs500 voucher on Rs5,000 spend within 30 days",
+    "5% cashback up to Rs1,000 on first EMI within 30 days"
+   ],
+   "movie_offer": "BOGO monthly; needs Rs20,000+ spend in previous month",
+   "fuel_surcharge_waiver": "1% up to Rs300/statement cycle on Rs200-5,000",
+   "insurance": [
+    "Air accident Rs1 crore",
+    "Personal accident Rs5 lakh",
+    "Lost card Rs50,000",
+    "CFAR up to Rs10,000",
+    "Travel insurance up to USD 300",
+    "Roadside Rs1,399, 4x/yr"
+   ],
+   "golf": "listed, no count or conditions stated",
+   "page_conflicts": [
+    "Annual fee: lifetime free vs a UPI note saying Rs199 + GST from year 2",
+    "Validity: 24 months vs FAQ 'never expire'"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_FIRST_MILLENNIA",
+   "card_name": "FIRST Millennia Credit Card",
+   "network": null,
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/millennia",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "min_annual_income_inr": 300000
+   },
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true,
+    "addon_inr": 499,
+    "redemption_inr": 99,
+    "cash_withdrawal_inr": 199,
+    "apr_pa": "8.5%-46.2%"
+   },
+   "reward_currency": {
+    "point_value_inr": 0.25,
+    "validity_months": 24
+   },
+   "earn_rules": [
+    {
+     "category": "Dining, travel, international, birthday",
+     "rate_text": "10X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Other eligible",
+     "rate_text": "3X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Utilities, insurance, railway, FASTag",
+     "rate_text": "1X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Fuel, EMI, cash, fees",
+     "rate_text": "no points",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "up to 3X",
+    "activation_fee_inr": 199
+   },
+   "travel_bonus": {
+    "hotel": "20%",
+    "flight": "10%",
+    "cap": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null,
+    "railway": "4/quarter, needs Rs20,000 in current month"
+   },
+   "forex": {
+    "markup_text": "Zero Forex Markup"
+   },
+   "welcome_benefits": [
+    "Rs500 voucher on Rs5,000 spend within 30 days",
+    "5% cashback up to Rs1,000 on first EMI within 30 days"
+   ],
+   "movie_offer": "25% off up to Rs100, once a month via District; needs txn in previous month",
+   "fuel_surcharge_waiver": "1% up to Rs200/month on Rs200-5,000",
+   "insurance": [
+    "Personal accident Rs2 lakh",
+    "Lost card Rs25,000",
+    "Roadside Rs1,399, 4x/yr"
+   ],
+   "page_conflicts": [
+    "Headline says 10X on international; detailed terms tie 10X to dining/travel/international/birthday"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_FIRST_CLASSIC",
+   "card_name": "FIRST Classic Credit Card",
+   "network": null,
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/classic",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "min_annual_income_inr": 300000
+   },
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true,
+    "redemption_inr": 99,
+    "note": "Digital RuPay UPI variant: Rs199 + GST joining and annual (from yr 2)"
+   },
+   "reward_currency": {
+    "point_value_inr": 0.25,
+    "validity_months": 24
+   },
+   "earn_rules": [
+    {
+     "category": "Dining, travel, international, birthday",
+     "rate_text": "10X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Other eligible",
+     "rate_text": "3X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Utilities, insurance, railway, FASTag",
+     "rate_text": "1X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Fuel, EMI, cash",
+     "rate_text": "no points",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "up to 3X",
+    "activation_fee_inr": 199
+   },
+   "travel_bonus": {
+    "hotel": "20%",
+    "flight": "10%",
+    "cap": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null,
+    "railway": "4/quarter, needs Rs20,000 in current month"
+   },
+   "forex": {
+    "markup_text": "Zero Forex Markup (merchant DCC may apply)"
+   },
+   "welcome_benefits": [
+    "Rs500 voucher on Rs5,000 spend within 30 days",
+    "5% cashback up to Rs1,000 on first EMI within 30 days"
+   ],
+   "movie_offer": "25% off up to Rs100 per month if transacted previous month",
+   "fuel_surcharge_waiver": "1% up to Rs200/statement cycle on Rs200-5,000",
+   "insurance": [
+    "Personal accident Rs2 lakh",
+    "Lost card Rs25,000",
+    "Roadside Rs1,399, 4x/yr"
+   ],
+   "page_conflicts": [
+    "10X exclusions: main section lists fuel/EMI/cash; FAQ adds rent, government, education, wallet load",
+    "Fees differ for the digital RuPay variant"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_FIRST_WOW",
+   "card_name": "FIRST WOW! Credit Card",
+   "network": "Visa Infinite",
+   "backing": "FD_BACKED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/wow",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "credit_limit": "100% of FD value",
+    "min_fd_inr": 20000,
+    "nri_min_nre_fd_inr": 25000
+   },
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true,
+    "cash_withdrawal_inr": 199,
+    "apr_pa": "8.5%-46.2%"
+   },
+   "reward_currency": {
+    "point_value_inr": 0.25,
+    "validity_months": 24
+   },
+   "earn_rules": [
+    {
+     "category": "Online, offline, international",
+     "rate_text": "4X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Insurance, utilities, FASTag, railway",
+     "rate_text": "1X",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Fuel, EMI, cash, fees",
+     "rate_text": "no points",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null,
+    "note": "3X UPI belongs to the FIRST Digital variant, not this card"
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "0%"
+   },
+   "insurance": [
+    "Up to Rs25,000 card liability",
+    "Rs2 lakh personal accident",
+    "Rs25,000 purchase protection (not clearly tied to this variant)"
+   ],
+   "page_conflicts": [
+    "Page also shows Rs199 + GST joining fee and 6.3% FD interest in sections not clearly tied to this variant"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_FIRST_WOW_BLACK",
+   "card_name": "FIRST WOW! Black Credit Card",
+   "network": "Mastercard",
+   "backing": "FD_BACKED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/wow-black-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "18-80",
+    "min_fd_inr": 20000,
+    "credit_limit": "100% of FD value"
+   },
+   "fees": {
+    "joining_inr": 750,
+    "annual_inr": 750,
+    "annual_waiver_spend_inr": 150000,
+    "gst_extra": true,
+    "cash_withdrawal_inr": 199
+   },
+   "reward_currency": {
+    "point_value_inr": 0.25,
+    "validity_months": null,
+    "note": "1 RP = Rs0.5 on Rewards Gallery travel (cap 1,00,000 RP/month, 2,00,000/yr); points do not expire"
+   },
+   "earn_rules": [
+    {
+     "category": "Online, offline, international",
+     "rate_text": "4 RP per Rs150",
+     "points_per_block": 4,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Utilities, railway, FASTag, insurance",
+     "rate_text": "1 RP per Rs150",
+     "points_per_block": 1,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "UPI",
+     "rate_text": "3 RP per Rs150 above Rs2,000; 1 RP per Rs150 at or below Rs2,000",
+     "points_per_block": 3,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": "txn above Rs2,000",
+     "exclusions": []
+    },
+    {
+     "category": "Fuel, EMI, cash",
+     "rate_text": "no points",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "3 RP/Rs150 >Rs2,000; 1 RP/Rs150 <=Rs2,000",
+    "cap": "not stated"
+   },
+   "travel_bonus": {
+    "hotel": "16.7%",
+    "flight": "10%",
+    "cap": "8,000 RP per month"
+   },
+   "lounge": {
+    "domestic": "4/yr (1/quarter), needs Rs20,000 prior-month spend",
+    "international": null,
+    "railway": "quarterly, count not stated"
+   },
+   "forex": {
+    "markup_text": "0%"
+   },
+   "welcome_benefits": [
+    "Worth Rs5,000+ on joining fee: Rs500 off first app travel booking (min Rs5,000)",
+    "Up to Rs1,500 off MakeMyTrip",
+    "10% off Mokobara",
+    "3 months EazyDiner Prime",
+    "1 yr Lenskart Gold Max",
+    "5% cashback up to Rs1,000 on first EMI within 30 days"
+   ],
+   "movie_offer": "25% off up to Rs100 once a month via District; needs prior-month spend",
+   "fuel_surcharge_waiver": "1% up to Rs200 on Rs200-5,000",
+   "insurance": [
+    "Personal accident Rs2 lakh",
+    "Lost card Rs25,000",
+    "Roadside Rs1,399",
+    "Trip cancellation up to Rs10,000, 2 claims/policy period"
+   ],
+   "golf": "India: 4 rounds + 12 lessons/yr (1/month); APAC 50% off",
+   "other_benefits": [
+    "Mastercard Culinary Club 350+ restaurants",
+    "Little Emperors 1-yr membership",
+    "No add-on cards",
+    "Includes FIRST Digital RuPay virtual card (UPI)"
+   ],
+   "page_conflicts": [
+    "Lounge: Rs20,000 spend gate vs FAQ 'available by default each quarter'",
+    "Welcome value Rs5,000+ vs calculator Rs7,000",
+    "Fuel waiver per statement cycle vs per month"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_QUANTUM_PLUS",
+   "card_name": "Quantum+ Credit Card",
+   "network": null,
+   "backing": "FD_BACKED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/quantum-plus-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "18-80",
+    "min_fd_inr": 5000
+   },
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true,
+    "cash_withdrawal_inr": 199
+   },
+   "reward_currency": {
+    "type": "cashback"
+   },
+   "earn_rules": [
+    {
+     "category": "Online spends above Rs10,000/cycle",
+     "rate_text": "2%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 2,
+     "cap_text": "Rs500 total cashback per statement cycle",
+     "gate_text": "above Rs10,000 online per cycle",
+     "exclusions": []
+    },
+    {
+     "category": "Online spends up to Rs10,000",
+     "rate_text": "1%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 1,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "UPI Scan & Pay via IDFC FIRST app",
+     "rate_text": "1%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 1,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "In-store",
+     "rate_text": "1%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 1,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Utilities, wallet, insurance, jewellery, government, rent",
+     "rate_text": "0.5%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 0.5,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Hotel/flight via app",
+     "rate_text": "bonus +1%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 1,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "ATM cash, EMI, third-party UPI apps",
+     "rate_text": "no cashback",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "1% via IDFC FIRST app only"
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "Zero forex markup"
+   },
+   "insurance": [
+    "Personal accident Rs2 lakh",
+    "Lost card Rs25,000"
+   ],
+   "page_conflicts": [
+    "Banner says up to 2% on international spends; earn table does not list international separately"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_HELLO_CASHBACK",
+   "card_name": "Hello Cashback Credit Card",
+   "network": null,
+   "backing": "FD_BACKED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/hello-cashback-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "18-80",
+    "min_fd_inr": 10000
+   },
+   "fees": {
+    "joining_inr": 1000,
+    "joining_intro_offer_inr": 0,
+    "joining_intro_valid_till": "2026-11-30",
+    "annual_inr": 1000,
+    "annual_reversal": "100% at Rs2L annual spend; 50% at Rs1L-2L",
+    "gst_extra": true,
+    "cash_withdrawal_inr": 199
+   },
+   "reward_currency": {
+    "type": "cashback"
+   },
+   "earn_rules": [
+    {
+     "category": "Online up to Rs10,000/cycle",
+     "rate_text": "3%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 3,
+     "cap_text": "Online cashback capped Rs1,000/cycle; total Rs1,500/cycle",
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Incremental online above Rs10,000/cycle",
+     "rate_text": "5%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 5,
+     "cap_text": null,
+     "gate_text": "above Rs10,000 online",
+     "exclusions": []
+    },
+    {
+     "category": "Hotel/flight via app",
+     "rate_text": "bonus +1%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 1,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "UPI via IDFC FIRST app",
+     "rate_text": "1%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 1,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "In-store and essential categories",
+     "rate_text": "1%",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 1,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Fuel, ATM, EMI, third-party UPI",
+     "rate_text": "no cashback",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "1% via IDFC FIRST app only"
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "Zero Forex Markup"
+   },
+   "fuel_surcharge_waiver": "1% up to Rs100/statement cycle on Rs200-5,000",
+   "insurance": [
+    "Personal accident Rs2 lakh",
+    "Lost card Rs25,000",
+    "Credit Shield Rs50,000",
+    "Purchase protection Rs25,000",
+    "Roadside Rs1,399, 4x/yr"
+   ],
+   "page_conflicts": [
+    "Joining fee Rs1,000 vs intro Rs0 valid only till 30 Nov 2026",
+    "Annual fee: header 'waived on Rs2L' vs tiered 50%/100% reversal"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_FIRST_POWER_PLUS",
+   "card_name": "FIRST Power+ Credit Card (HPCL)",
+   "network": null,
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/hpcl-power-fuel-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "min_annual_income_inr": 300000
+   },
+   "fees": {
+    "joining_inr": 499,
+    "annual_inr": 499,
+    "annual_reversal_spend_inr": 150000,
+    "gst_extra": true,
+    "cash_withdrawal_inr": 199,
+    "late_fee": "15% of due, min 100, max 1,300",
+    "over_limit": "2.5%, min 550"
+   },
+   "reward_currency": {
+    "type": "points"
+   },
+   "earn_rules": [
+    {
+     "category": "HPCL fuel",
+     "rate_text": "up to 6.5% savings; FAQ 30X per Rs150",
+     "points_per_block": 30,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Grocery and utility",
+     "rate_text": "5%; FAQ 30X per Rs150",
+     "points_per_block": 30,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "IDFC FASTag recharge",
+     "rate_text": "5%; FAQ 30X per Rs150",
+     "points_per_block": 30,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Other retail",
+     "rate_text": "3X",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "HP Pay app",
+     "rate_text": "6 Happy Coins per Rs100",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": "max 600 coins/month at Rs10,000 spend",
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "3X on UPI and retail"
+   },
+   "travel_bonus": {
+    "hotel": "26.67%",
+    "flight": "13.33%",
+    "cap": null
+   },
+   "lounge": {
+    "domestic": "1/quarter, Rs20,000 minimum monthly spend",
+    "international": null
+   },
+   "forex": {
+    "markup_text": "0%"
+   },
+   "welcome_benefits": [
+    "Rs500 voucher on first HPCL fuel txn >=Rs500 within 60 days",
+    "5% EMI cashback up to Rs1,000",
+    "Merchant offers worth Rs1,000+"
+   ],
+   "movie_offer": "25% off up to Rs100 once a month; prior-month spend condition from 18 Jun 2026",
+   "fuel_surcharge_waiver": "Not offered (rewards instead)",
+   "insurance": [
+    "Personal accident Rs2 lakh",
+    "Lost card Rs25,000",
+    "Roadside Rs1,399"
+   ],
+   "page_conflicts": [
+    "Fuel 6.5% headline vs same 30X rate as grocery/FASTag in FAQ; calculator uses 5%",
+    "Fees on this page (Rs499 Power+, Rs199 Power) match the MITC; an earlier listing-page summary showed Rs199 shared, so recheck listing page"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_FIRST_POWER",
+   "card_name": "FIRST Power Credit Card (HPCL)",
+   "network": null,
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/hpcl-power-fuel-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "min_annual_income_inr": 300000
+   },
+   "fees": {
+    "joining_inr": 199,
+    "annual_inr": 199,
+    "annual_reversal_spend_inr": 50000,
+    "gst_extra": true,
+    "cash_withdrawal_inr": 199
+   },
+   "reward_currency": {
+    "type": "points"
+   },
+   "earn_rules": [
+    {
+     "category": "HPCL fuel",
+     "rate_text": "up to 5% savings; FAQ 21X per Rs150",
+     "points_per_block": 21,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Grocery and utility",
+     "rate_text": "2.5%; FAQ 15X per Rs150",
+     "points_per_block": 15,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "IDFC FASTag recharge",
+     "rate_text": "2.5%; FAQ 15X per Rs150",
+     "points_per_block": 15,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Other retail",
+     "rate_text": "2X",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "HP Pay app",
+     "rate_text": "6 Happy Coins per Rs100",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": "max 600 coins/month at Rs10,000 spend",
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "2X on UPI and retail"
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "0%"
+   },
+   "welcome_benefits": [
+    "Rs250 voucher on first HPCL fuel txn >=Rs250 within 60 days",
+    "5% EMI cashback up to Rs1,000",
+    "Merchant offers worth Rs1,000+"
+   ],
+   "fuel_surcharge_waiver": "Not offered (rewards instead)",
+   "insurance": [
+    "Personal accident Rs2 lakh",
+    "Lost card Rs25,000",
+    "Roadside Rs1,399"
+   ],
+   "page_conflicts": [
+    "Fuel 5% headline vs 21X in FAQ"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  },
+  {
+   "card_id": "IDFC_MAYURA",
+   "card_name": "Mayura Credit Card (Metal)",
+   "network": "Mastercard World / Visa Infinite (page groups privileges under both)",
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/mayura",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "fees": {
+    "joining_inr": 5999,
+    "annual_inr": 5999,
+    "gst_extra": true,
+    "addon_joining_inr": "4000 metal / 3000 plastic",
+    "addon_annual_inr": 2000
+   },
+   "reward_currency": {
+    "point_value_inr": 0.25,
+    "note": "Rs0.50 on hotel/flight via Rewards Gallery; covers up to 70% of booking; caps 1,50,000 pts/month and 3,00,000/yr; no expiry while card active"
+   },
+   "earn_rules": [
+    {
+     "category": "All eligible spends up to Rs20,000/statement cycle",
+     "rate_text": "5X (1X = 1 pt per Rs150)",
+     "points_per_block": 5,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": "up to Rs20,000 per cycle",
+     "exclusions": []
+    },
+    {
+     "category": "Incremental spends above Rs20,000/cycle",
+     "rate_text": "10X",
+     "points_per_block": 10,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": "above Rs20,000 per cycle",
+     "exclusions": []
+    },
+    {
+     "category": "International",
+     "rate_text": "5X, counts toward 10X milestone",
+     "points_per_block": 5,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Rent, education, government, wallet load",
+     "rate_text": "3X, excluded from 10X milestone",
+     "points_per_block": 3,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Insurance, utility, railway, FASTag",
+     "rate_text": "1X, excluded from 10X milestone",
+     "points_per_block": 1,
+     "block_inr": 150,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Hotel via app",
+     "rate_text": "+30X bonus (40X total)",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": "25,000 bonus pts/month",
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Flight via app",
+     "rate_text": "+15X bonus (25X total)",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": "25,000 bonus pts/month",
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "EMI, cash, fuel, fees",
+     "rate_text": "no points",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": "4 visits incl 1 guest (FAQ: per quarter)",
+    "international": "4/quarter via DreamFolks",
+    "railway": "4/quarter",
+    "spend_gate": "Rs20,000 in current month unlocks next month"
+   },
+   "forex": {
+    "markup_text": "0%",
+    "conflict": "FAQ heading says 1.0% forex markup"
+   },
+   "welcome_benefits": [
+    "Up to 12,000 pts: 4,000 on joining fee, 4,000 on Rs20,000+ in cycle 2, 4,000 on Rs20,000+ in cycle 3 (cards generated on/after 1 Sep 2025)"
+   ],
+   "milestones": [
+    "Rs8 lakh prior-year spend: 7,500 pts",
+    "Rs15 lakh prior-year spend: 15,000 pts",
+    "Credited when next annual fee is paid"
+   ],
+   "movie_offer": "BOGO up to Rs500 off 2nd ticket, 2x/month; needs Rs20,000 spend in current month",
+   "fuel_surcharge_waiver": "1% up to Rs300/statement cycle on Rs200-5,000",
+   "insurance": [
+    "Air accident Rs1 crore",
+    "Personal accident Rs10 lakh",
+    "Lost card Rs50,000",
+    "Travel insurance up to USD 1,200",
+    "Trip cancellation up to Rs50,000 twice a year",
+    "Roadside Rs1,399"
+   ],
+   "golf": "4 rounds + 12 lessons per calendar year (max 1/month); APAC 50% off",
+   "other_benefits": [
+    "Postcard Rs5,000 off Rs25,000 booking once/quarter (promo valid to 10 Feb 2027)",
+    "Mastercard Culinary Club",
+    "Visa Infinite dining up to 20% off",
+    "Little Emperors 1-yr membership",
+    "ITC/Elivaas stay offers",
+    "Airport meet and greet"
+   ],
+   "page_conflicts": [
+    "Forex: zero in benefits vs 1.0% heading in FAQ",
+    "Golf gating differs across sections",
+    "Annual-fee benefit summary says up to Rs7,500 but Rs8L tier is Rs3,750"
+   ],
+   "verification_status": "LLM_EXTRACT_UNVERIFIED"
+  }
+ ]
+}

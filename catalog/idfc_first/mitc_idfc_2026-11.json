@@ -1,0 +1,119 @@
+{
+  "issuer_bank": "IDFC FIRST Bank",
+  "document": {
+    "name": "IDFC FIRST Bank Credit Cards: Most Important Terms and Conditions (MITC)",
+    "version": null,
+    "document_date": "2026-11-17",
+    "notes": "No version number or effective date is printed in the sections read. The date is the PDF creation date (17 Nov 2026) from file metadata, not a document date. Confirm the effective date with the bank."
+  },
+  "sources": [
+    { "document": "MITC-Document-Customer_1.pdf", "locator": "Schedule of Charges, sections 1-3 (pp. 2-5)", "retrieved_on": "2026-11-23" }
+  ],
+  "variants": [
+    { "variant": "FIRST Millennia", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": 499 },
+    { "variant": "FIRST Classic", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": 499 },
+    { "variant": "FIRST Select", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": 499 },
+    { "variant": "FIRST Wealth", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": 499 },
+    { "variant": "Employee Credit Card", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": 499 },
+    { "variant": "FIRST WOW!", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": null, "notes": "Add-on not available" },
+    { "variant": "Quantum+", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": null, "notes": "Add-on not available" },
+    { "variant": "LIC Classic", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": 499 },
+    { "variant": "LIC Select", "joining_fee_inr": 0, "annual_fee_inr": 0, "addon_fee_inr": 499 },
+    { "variant": "FIRST Digital RuPay", "network_hint": "RUPAY", "is_upi_credit_card": true, "joining_fee_inr": 199, "annual_fee_inr": 199, "addon_fee_inr": null, "notes": "UPI credit card linked to a primary IDFC FIRST credit card. No fees when attached to Gaj. Charges such as late payment and overlimit follow the primary card. Cash advance not applicable." },
+    { "variant": "FIRST EA₹N", "joining_fee_inr": 499, "annual_fee_inr": 499, "addon_fee_inr": null },
+    { "variant": "FIRST Power", "joining_fee_inr": 199, "annual_fee_inr": 199, "addon_fee_inr": 499 },
+    { "variant": "FIRST Power+", "joining_fee_inr": 499, "annual_fee_inr": 499, "addon_fee_inr": 499 },
+    { "variant": "FIRST SWYP", "joining_fee_inr": 499, "annual_fee_inr": 499, "addon_fee_inr": null, "notes": "No revolving credit: customer pays full amount or converts eligible due to EMI" },
+    { "variant": "Hello Cashback", "joining_fee_inr": 1000, "annual_fee_inr": 1000, "addon_fee_inr": null },
+    { "variant": "Ashva", "joining_fee_inr": 2999, "annual_fee_inr": 2999, "addon_fee_inr": null, "notes": "Add-on: joining fee Metal 2,000 / Plastic 1,500; annual fee 1,000 for both" },
+    { "variant": "Diamond Reserve", "joining_fee_inr": 3000, "annual_fee_inr": 3000, "addon_fee_inr": 499 },
+    { "variant": "Club Vistara IDFC FIRST", "joining_fee_inr": 4999, "annual_fee_inr": 4999, "addon_fee_inr": 499 },
+    { "variant": "IndiGo IDFC FIRST", "joining_fee_inr": 4999, "annual_fee_inr": 4999, "addon_fee_inr": 499, "notes": "FD-backed IndiGo IDFC FIRST Secured: no joining fee, annual fee 4,999" },
+    { "variant": "Mayura", "joining_fee_inr": 5999, "annual_fee_inr": 5999, "addon_fee_inr": null, "notes": "Add-on: joining fee Metal 4,000 / Plastic 3,000; annual fee 2,000 for both" },
+    { "variant": "FIRST WOW! Black", "joining_fee_inr": 750, "annual_fee_inr": 750, "addon_fee_inr": null },
+    { "variant": "Gaj", "joining_fee_inr": 12500, "annual_fee_inr": 12500, "annual_fee_waiver_spend_inr": 1000000, "addon_fee_inr": null, "notes": "Annual fee not levied if eligible spends of 10L in the previous card anniversary year (primary, add-on and Digital RuPay card; excludes fuel, instalments, fees, GST, loan-on-card, balance transfer, cash, reversals). Add-on: joining 4,000, annual 2,000 (available by 28 Feb 2026)." },
+    { "variant": "FIRST Private", "joining_fee_inr": 50000, "annual_fee_inr": 25000, "addon_fee_inr": null, "notes": "Add-on: joining fee (1st year) 4,000; annual fee (2nd year onwards) 4,000" }
+  ],
+  "finance_charges": [
+    { "variants": ["All variants except FIRST SWYP"], "monthly_pct": null, "annual_pct": null, "range_note": "Interest on purchases, cash advances and outstanding balances, if payment is between Minimum Due and Total Due: monthly 0.71% to 3.85%, annual 8.5% to 46.2%. Rate depends on the bank's internal policy parameters for each customer." },
+    { "variants": ["All variants except FIRST SWYP"], "monthly_pct": 3.99, "annual_pct": 47.88, "range_note": "Overdue interest on non-payment of Minimum Amount Due by due date. Revised from 47.88% to 46.2% when the customer pays the minimum due." },
+    { "variants": ["FIRST SWYP"], "monthly_pct": null, "annual_pct": null, "range_note": "Not applicable: pay Total Amount Due in full or convert eligible due into EMI" }
+  ],
+  "forex": [
+    { "variants": ["All variants"], "forex_markup_pct": 0.0, "dcc_markup_pct": 0.0, "notes": "Markup charges on foreign currency transactions and dynamic and static currency conversion: NIL. Amount billed after DCC conversion may include fees charged by the acquirer or service provider. Conversion at VISA/RuPay/Mastercard rates on settlement date." }
+  ],
+  "general_fees": [
+    { "fee": "Cash advance", "rule": "INR 199 per transaction (the MITC text reads 'Cash advance transaction fee INR 199'; the worked example shows INR 235 incl. 18% GST). Not applicable to FIRST Digital RuPay.", "flat_inr": 199, "locator": "Schedule of Charges section 3; worked example p. 13" },
+    { "fee": "Late payment", "rule": "For all cards except those below: 15% of Total Amount Due as of the previous statement minus payments received before due date, minimum INR 100, maximum INR 1,300. Nil if Total Amount Due is under INR 100. FIRST SWYP: 15% of Total Amount Due, maximum INR 6,000. FIRST Private: Nil. Digital RuPay: as per primary card.", "pct": 15, "min_inr": 100, "max_inr": 1300, "waived_for": ["FIRST Private"], "locator": "Schedule of Charges section 3" },
+    { "fee": "Over-limit", "rule": "2.5% of the over-limit amount, minimum INR 550. Nil for FIRST EA₹N, FIRST Private, FIRST WOW!, FIRST WOW! Black, Hello Cashback, Quantum+. Digital RuPay: as per primary card.", "pct": 2.5, "min_inr": 550, "waived_for": ["FIRST EA₹N", "FIRST Private", "FIRST WOW!", "FIRST WOW! Black", "Hello Cashback", "Quantum+"], "locator": "Schedule of Charges section 3" },
+    { "fee": "Returned cheque / auto-debit / payment return", "rule": "2% of payment amount, minimum INR 500.", "pct": 2, "min_inr": 500, "locator": "Schedule of Charges section 3" },
+    { "fee": "Reward redemption", "rule": "INR 99 per redemption transaction. Not applicable on FIRST Private, Club Vistara, IndiGo.", "flat_inr": 99, "waived_for": ["FIRST Private", "Club Vistara IDFC FIRST", "IndiGo IDFC FIRST"], "locator": "Schedule of Charges section 3" },
+    { "fee": "Card replacement", "rule": "INR 199 for all cards. Ashva metal INR 1,500; Mayura metal INR 3,500; Gaj INR 4,000; FIRST Private INR 4,000; Digital RuPay Nil. IndiGo: INR 199 per card individually.", "flat_inr": 199, "locator": "Schedule of Charges section 3" },
+    { "fee": "Cash payment at branch, outstation cheque, duplicate statement, charge slip, cheque/cash processing", "rule": "NIL.", "flat_inr": 0, "locator": "Schedule of Charges section 3" },
+    { "fee": "GST", "rule": "18% on all fees, interest and other charges.", "pct": 18, "locator": "Schedule of Charges section 3" }
+  ],
+  "category_fees": [
+    {
+      "category": "Rent and property management", "mccs": ["6513"], "fee_pct": 1.0, "min_fee_inr": 249, "max_fee_inr_per_txn": null,
+      "excluded_variants": ["FIRST Private"],
+      "notes": "1% of transaction value, minimum INR 249 per transaction, domestic transactions only. Fee is not refunded if the payment is reversed.",
+      "locator": "Schedule of Charges section 3"
+    },
+    {
+      "category": "Utility (fair usage)", "mccs": ["4814", "4816", "4899", "4900"], "fee_pct": 1.0, "cumulative_period": "STATEMENT_CYCLE",
+      "thresholds_by_variant": [
+        { "variants": ["Gaj"], "cumulative_above_inr": 50000 },
+        { "variants": ["All other IDFC FIRST credit cards"], "cumulative_above_inr": 20000 }
+      ],
+      "excluded_variants": ["FIRST Private"],
+      "notes": "1% applied to total utility spends in the cycle only if the cycle total exceeds the threshold.",
+      "locator": "Schedule of Charges section 3"
+    },
+    {
+      "category": "Fuel (fee)", "mccs": ["5172", "5541", "5542", "5983"], "fee_pct": 1.0, "cumulative_period": "STATEMENT_CYCLE",
+      "thresholds_by_variant": [ { "variants": ["All cards"], "cumulative_above_inr": 30000 } ],
+      "excluded_variants": ["FIRST Private"],
+      "notes": "1% on total fuel spends in the cycle only if the cycle total exceeds INR 30,000.",
+      "locator": "Schedule of Charges section 3"
+    },
+    {
+      "category": "Passenger railways", "mccs": ["4111", "4112"], "fee_pct": 1.0, "cumulative_period": "STATEMENT_CYCLE",
+      "thresholds_by_variant": [ { "variants": ["All cards"], "cumulative_above_inr": 25000 } ],
+      "excluded_variants": ["FIRST Private"],
+      "notes": "Over and above any convenience fee charged by the booking platform.",
+      "locator": "Schedule of Charges section 3"
+    },
+    {
+      "category": "Tolls and bridges", "mccs": ["4784"], "fee_pct": 1.0, "cumulative_period": "STATEMENT_CYCLE",
+      "thresholds_by_variant": [ { "variants": ["All cards"], "cumulative_above_inr": 10000 } ],
+      "excluded_variants": ["FIRST Private"],
+      "locator": "Schedule of Charges section 3"
+    },
+    {
+      "category": "Education (third-party apps)", "mccs": ["8299", "8211", "8241", "8244", "8249", "8220"], "fee_pct": 1.0, "min_fee_inr": 249,
+      "excluded_variants": ["FIRST Private"],
+      "notes": "1% on education spends made through third-party apps, minimum INR 249 per transaction.",
+      "locator": "Schedule of Charges section 3"
+    }
+  ],
+  "fuel_surcharge_waiver": [
+    { "variants": ["FIRST EA₹N", "FIRST Power", "FIRST Power+", "Club Vistara IDFC FIRST", "IndiGo IDFC FIRST", "Quantum+"], "not_applicable": true },
+    { "variants": ["Hello Cashback"], "waiver_pct": 1.0, "txn_min_inr": 200, "txn_max_inr": 5000, "max_waiver_per_cycle_inr": 100 },
+    { "variants": ["FIRST Millennia", "FIRST Classic", "FIRST WOW!", "FIRST WOW! Black", "LIC Classic", "FIRST SWYP"], "waiver_pct": 1.0, "txn_min_inr": 200, "txn_max_inr": 5000, "max_waiver_per_cycle_inr": 200 },
+    { "variants": ["FIRST Select", "LIC Select", "Employee Credit Card", "FIRST Wealth", "Diamond Reserve", "Ashva", "Mayura", "Gaj"], "waiver_pct": 1.0, "txn_min_inr": 200, "txn_max_inr": 5000, "max_waiver_per_cycle_inr": 300 },
+    { "variants": ["FIRST Private"], "waiver_pct": 1.0, "txn_min_inr": 200, "txn_max_inr": 5000, "no_cap": true },
+    { "variants": ["FIRST Digital RuPay"], "notes": "As per primary credit card. The waiver is capped at 1% of eligible fuel amount; GST on the surcharge is not reversed." }
+  ],
+  "emi_policy": {
+    "processing_fee_stated": false,
+    "notes": "Processing fee, interest, foreclosure fee and pro-rata interest for EMI conversion and Loan on Card are communicated at the time of the transaction, not in the MITC. Pre-EMI interest applies and is not covered by no-cost or low-cost offers (worked example in the MITC)."
+  },
+  "open_questions": [
+    "Effective date of this MITC version is not stated in the document.",
+    "Cash advance fee wording is unclear (fee shown as INR 199 with the text 'Cash advance transaction fee'); the worked example is consistent with INR 199 plus GST.",
+    "Reward earn rates, milestones and lounge access are not in the MITC: need CVP documents per variant.",
+    "Network (Visa/Mastercard/RuPay) per variant is not stated except for the Digital RuPay card.",
+    "Lounge charges are referenced ('as given in Schedule of Charges') but no lounge table was found in the sections read.",
+    "Sections after the Schedule of Charges (billing, interest examples, regulatory text) were searched for pricing terms but not read line by line."
+  ]
+}

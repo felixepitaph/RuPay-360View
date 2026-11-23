@@ -1,0 +1,386 @@
+[
+ {
+  "offer_id": "YES_LIVE_MYNTRA",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Myntra",
+  "category": "Fashion",
+  "channel": "ONLINE",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10
+  },
+  "validity": {
+   "start_date": "2026-11-03",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "T&C PDF p.4 (8 pages; only p.4 read): not valid on EMI, internet banking, card/cash-on-delivery, gift wrap or premium delivery charges; delinquent cardholders and Corporate/Commercial credit cards excluded. Rest of PDF not yet read.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=myntra_nov_26_tnc.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_PAYTM_UTILITY",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Paytm Utility",
+  "category": "Bill payments",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=ybl_paytm_recharges_and_payments_tnc_ond_26.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_BLINKIT",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Blinkit",
+  "category": "Quick commerce",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 125
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=blinkit_tnc_november_26.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_GOIBIBO",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 20
+  },
+  "validity": {
+   "start_date": null,
+   "end_date": "2026-12-31"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted. T&C link on the page is broken (embeds 404.html). 'Up to 20%' tiers unknown.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=ybl_tc_goibibo_ond_26.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_APOLLO247",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Apollo 247",
+  "category": "Health",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted. Page says 'additional 5%'.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=apollo_tnc_november_26.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_SWIGGY_FOOD",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Swiggy Food",
+  "category": "Food delivery",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=swiggy_november_26_tnc.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_DISTRICT_DINING",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "District Dining",
+  "category": "Dining",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=district_nov_26_tnc.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_ZEPTO",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Zepto",
+  "category": "Quick commerce",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 50
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=zepto_november_26_tnc.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_ABHIBUS",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "Abhibus",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15
+  },
+  "validity": {
+   "start_date": null,
+   "end_date": "2027-03-31"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=abhibus_26_tnc.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_CLEARTAX",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "ClearTax",
+  "category": "Tax filing",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 71
+  },
+  "validity": {
+   "start_date": null,
+   "end_date": "2027-03-31"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted. 'Up to 71%' on ITR filing plans; actual discount per plan unknown.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=ybl_cleartax.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_IGP",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "IGP",
+  "category": "Gifting",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 20
+  },
+  "validity": {
+   "start_date": null,
+   "end_date": "2027-03-31"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted. Card tagged debit in the page markup but text says credit cards; verify.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=igp_tnc_26_27.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "YES_LIVE_TAXBUDDY",
+  "offer_source": "ISSUER",
+  "issuer_bank": "YES BANK",
+  "eligible_cards": [],
+  "merchant_brand": "TaxBuddy",
+  "category": "Tax filing",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15
+  },
+  "validity": {
+   "start_date": null,
+   "end_date": "2027-04-15"
+  },
+  "conditions": "Headline only. Eligible cards, minimum transaction, caps and usage limit are in the T&C PDF and are not yet extracted. Page says 'additional 15%'; T&C file name suggests an April 2025 document, so it may be stale.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers",
+    "locator": "Popular/Latest offers list, credit-card offers",
+    "retrieved_on": "2026-11-23"
+   },
+   {
+    "document": "https://www.yes.bank.in/pdf?name=ybl_yes_bank_tax_buddy_april25_tnc.pdf",
+    "locator": "T&C PDF (not yet read)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ }
+]

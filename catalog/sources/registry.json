@@ -1,0 +1,437 @@
+{
+ "description": "Watched sources. content_hash = hash of the page text at the last APPROVED extraction (null = never extracted from raw text). Updated only when a proposal from that source is approved.",
+ "sources": {
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/marquee-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_MARQUEE",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/elite-plus-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_ELITE_PLUS",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/essence-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_ESSENCE",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/select-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_SELECT",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/ace-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_ACE",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/yes-prosperity-rewards-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_PROSPERITY_REWARDS",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/yes-prosperity-cashback-plus-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_PROSPERITY_CASHBACK_PLUS",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/yes-prosperity-cashback-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_PROSPERITY_CASHBACK",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/ai-inside-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_AI_INSIDE",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/uni-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_UNI",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/niyo-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": "YES_NIYO",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/ai-inside-rupay-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/wellness-cards": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/wellness-plus-cards": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/byoc-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/emi-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/paisabazaar-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/paisabazaar-rupay-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/pop-club-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/zagg-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/anq-phi-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/finbooster-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/freo-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/uni-rupay-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/novio-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/novio-rupay-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/klick-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/max-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/rupay-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/yes-first-preferred-credit-card": {
+   "issuer": "YES BANK",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/wealth": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_FIRST_WEALTH",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/select": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_FIRST_SELECT",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/millennia": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_FIRST_MILLENNIA",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/classic": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_FIRST_CLASSIC",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/wow": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_FIRST_WOW",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/wow-black-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_FIRST_WOW_BLACK",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/quantum-plus-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_QUANTUM_PLUS",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/hello-cashback-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_HELLO_CASHBACK",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/hpcl-power-fuel-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_FIRST_POWER",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/mayura": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": "IDFC_MAYURA",
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/ashva": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/gaj": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/diamond-reserve-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/FIRSTPrivateCreditCard": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/indigo-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/secured-rupay-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/lic-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/business-max-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/business-multiplier-credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.idfcfirst.bank.in/credit-card/credit-card-against-fixed-deposits": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "cvp_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": "not yet extracted"
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/yes-privileges/yes-privileges-offers": {
+   "issuer": "YES BANK",
+   "type": "offers_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://firstrewards.in/deal?category=all": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "offers_page",
+   "content_hash": null,
+   "last_approved": null,
+   "note": "FS/EMI tag and expiry only",
+   "card_id": null
+  },
+  "https://www.idfcfirst.bank.in/credit-card": {
+   "issuer": "IDFC FIRST Bank",
+   "type": "listing_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  },
+  "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards": {
+   "issuer": "YES BANK",
+   "type": "listing_page",
+   "card_id": null,
+   "content_hash": null,
+   "last_approved": null,
+   "note": null
+  }
+ }
+}
