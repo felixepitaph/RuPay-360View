@@ -1,0 +1,188 @@
+{
+  "issuer_bank": "YES BANK",
+  "document": {
+    "name": "YES BANK Credit Card MITC",
+    "version": "CMITC_V18_05102026",
+    "document_date": "2026-10-05",
+    "notes": "Date taken from the document code CMITC_V18_05102026 (read as 05 Oct 2026). Several fees changed effective 15 Jun 2026 or 1 Jun 2026; values below are the ones in force after those dates unless a *_before field says otherwise."
+  },
+  "sources": [
+    { "document": "ybl_mitc_pdf.pdf (CMITC_V18_05102026)", "locator": "Section A, items 1-4 (pp. 2-25)", "retrieved_on": "2026-11-23" }
+  ],
+  "variants": [
+    { "variant": "YES Private", "joining_fee_inr": 50000, "annual_fee_inr": 10000, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": 2500000, "notes": "Same row as YES Private for NRI" },
+    { "variant": "YES Private for NRI", "joining_fee_inr": 50000, "annual_fee_inr": 10000, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": 2500000 },
+    { "variant": "YES Private Prime", "joining_fee_inr": 20000, "annual_fee_inr": 10000, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": 2000000 },
+    { "variant": "Marquee", "joining_fee_inr": 9999, "annual_fee_inr": 4999, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": 1000000 },
+    { "variant": "Reserv", "joining_fee_inr": 2499, "annual_fee_inr": 2499, "joining_fee_waiver_spend_inr": 40000, "annual_fee_waiver_spend_inr": 300000, "notes": "Earlier known as YES First Exclusive. Same row as Reserv for NRI" },
+    { "variant": "Reserv for NRI", "joining_fee_inr": 2499, "annual_fee_inr": 2499, "joining_fee_waiver_spend_inr": 40000, "annual_fee_waiver_spend_inr": 300000 },
+    { "variant": "Wellness Plus", "joining_fee_inr": 1499, "annual_fee_inr": 1499, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "YES Prosperity Cashback Plus", "joining_fee_inr": 1499, "annual_fee_inr": 1499, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "Elite+", "joining_fee_inr": 999, "annual_fee_inr": 999, "joining_fee_waiver_spend_inr": 20000, "annual_fee_waiver_spend_inr": 200000, "notes": "Earlier known as YES Premia. Same row as Elite+ issued against FD" },
+    { "variant": "Elite+ issued against FD", "joining_fee_inr": 999, "annual_fee_inr": 999, "joining_fee_waiver_spend_inr": 20000, "annual_fee_waiver_spend_inr": 200000, "notes": "Secured (FD-backed)" },
+    { "variant": "YES First Business", "joining_fee_inr": 999, "annual_fee_inr": 999, "joining_fee_waiver_spend_inr": 20000, "annual_fee_waiver_spend_inr": 300000 },
+    { "variant": "YES Prosperity Cashback", "joining_fee_inr": 999, "annual_fee_inr": 999, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "YES First Preferred", "joining_fee_inr": 999, "annual_fee_inr": 999, "joining_fee_waiver_spend_inr": 50000, "annual_fee_waiver_spend_inr": 250000, "notes": "Joining fee waiver window is three months from card set up. Joining fee not applicable as no longer sourced. Same row for NRI and FD versions" },
+    { "variant": "YES First Preferred for NRI", "joining_fee_inr": 999, "annual_fee_inr": 999, "joining_fee_waiver_spend_inr": 50000, "annual_fee_waiver_spend_inr": 250000 },
+    { "variant": "YES First Preferred issued against FD", "joining_fee_inr": 999, "annual_fee_inr": 999, "joining_fee_waiver_spend_inr": 50000, "annual_fee_waiver_spend_inr": 250000, "notes": "Secured (FD-backed)" },
+    { "variant": "YES Essence", "joining_fee_inr": 799, "annual_fee_inr": 799, "joining_fee_waiver_spend_inr": 20000, "annual_fee_waiver_spend_inr": 100000 },
+    { "variant": "Select", "joining_fee_inr": 599, "annual_fee_inr": 599, "joining_fee_waiver_spend_inr": 10000, "annual_fee_waiver_spend_inr": 100000, "notes": "Earlier known as YES Prosperity Edge. Same row for NRI and FD versions" },
+    { "variant": "Select for NRI", "joining_fee_inr": 599, "annual_fee_inr": 599, "joining_fee_waiver_spend_inr": 10000, "annual_fee_waiver_spend_inr": 100000 },
+    { "variant": "Select issued against FD", "joining_fee_inr": 599, "annual_fee_inr": 599, "joining_fee_waiver_spend_inr": 10000, "annual_fee_waiver_spend_inr": 100000, "notes": "Secured (FD-backed)" },
+    { "variant": "Ace", "joining_fee_inr": 499, "annual_fee_inr": 499, "joining_fee_waiver_spend_inr": 5000, "annual_fee_waiver_spend_inr": 50000, "notes": "Earlier known as YES Prosperity Rewards Plus. Same row as Ace issued against FD" },
+    { "variant": "Ace issued against FD", "joining_fee_inr": 499, "annual_fee_inr": 499, "joining_fee_waiver_spend_inr": 5000, "annual_fee_waiver_spend_inr": 50000, "notes": "Secured (FD-backed)" },
+    { "variant": "YES Prosperity Business", "joining_fee_inr": 499, "annual_fee_inr": 499, "joining_fee_waiver_spend_inr": 10000, "annual_fee_waiver_spend_inr": 100000 },
+    { "variant": "Wellness", "joining_fee_inr": 499, "annual_fee_inr": 499, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "EMI Card", "joining_fee_inr": 499, "annual_fee_inr": 499, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": 120000 },
+    { "variant": "Anq Phi / Paisabazaar Paisasave", "joining_fee_inr": 0, "annual_fee_inr": 499, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": 120000 },
+    { "variant": "Uni", "joining_fee_inr": 0, "annual_fee_inr": 499, "joining_fee_waiver_spend_inr": 5000, "annual_fee_waiver_spend_inr": 50000 },
+    { "variant": "YES Prosperity Rewards", "joining_fee_inr": 399, "annual_fee_inr": 399, "joining_fee_waiver_spend_inr": 5000, "annual_fee_waiver_spend_inr": 25000, "notes": "Joining fee not applicable as no longer sourced" },
+    { "variant": "FREO", "joining_fee_inr": 399, "annual_fee_inr": 399, "joining_fee_waiver_spend_inr": 10000, "annual_fee_waiver_spend_inr": 100000 },
+    { "variant": "POP-CLUB", "joining_fee_inr": 0, "annual_fee_inr": 399, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": 150000 },
+    { "variant": "RuPay Virtual Credit Card", "network_hint": "RUPAY", "is_upi_credit_card": true, "joining_fee_inr": 0, "annual_fee_inr": 0, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null, "notes": "Lifetime free. is_upi_credit_card is inferred from 'RuPay virtual' naming and the fuel-via-UPI clause; the MITC does not say so explicitly. Verify." },
+    { "variant": "Uni RuPay Virtual", "network_hint": "RUPAY", "is_upi_credit_card": true, "joining_fee_inr": 0, "annual_fee_inr": 0, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "Paisabazaar Paisasave RuPay Virtual", "network_hint": "RUPAY", "is_upi_credit_card": true, "joining_fee_inr": 0, "annual_fee_inr": 0, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "AI Inside RuPay Virtual", "network_hint": "RUPAY", "is_upi_credit_card": true, "joining_fee_inr": 0, "annual_fee_inr": 0, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "Novio RuPay Virtual", "network_hint": "RUPAY", "is_upi_credit_card": true, "joining_fee_inr": 0, "annual_fee_inr": 0, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null },
+    { "variant": "Klick / Zagg / Finbooster / AI Inside / NIYO / Novio / Max", "joining_fee_inr": 0, "annual_fee_inr": 0, "joining_fee_waiver_spend_inr": null, "annual_fee_waiver_spend_inr": null, "notes": "Listed in the same lifetime-free row as the RuPay Virtual cards. Zagg issued before 10 Jan 2025 has annual fee 399 waived at 180,000 annual spend. Split into separate variants when card-level data is available." },
+    { "variant": "BYOC Cashback", "joining_fee_inr": null, "annual_fee_inr": null, "notes": "Membership model: one-time card fee Nil (regular) / 249 (eco) / 3499 (metal); monthly fee 99. Optional monthly plan: Silver 99, Gold 149, Platinum 249." },
+    { "variant": "BYOC Rewards", "joining_fee_inr": null, "annual_fee_inr": null, "notes": "Membership model: one-time card fee Nil (regular) / 249 (eco) / 3499 (metal); monthly fee 49. Optional monthly plan: Silver 99, Gold 149, Platinum 249." }
+  ],
+  "finance_charges": [
+    { "variants": ["YES Private", "YES Private Prime", "Marquee", "Reserv"], "monthly_pct": 2.99, "annual_pct": 35.88 },
+    { "variants": ["YES Private for NRI", "Elite+ issued against FD", "Select for NRI", "Select issued against FD", "Ace issued against FD", "YES First Preferred issued against FD", "YES First Preferred for NRI", "Reserv for NRI"], "monthly_pct": 2.49, "annual_pct": 29.88 },
+    { "variants": ["Other Credit Cards"], "monthly_pct": 3.99, "annual_pct": 47.88, "range_note": "Applies to all variants not listed above" }
+  ],
+  "forex": [
+    { "variants": ["YES Private", "YES Private Prime"], "forex_markup_pct": 0.5, "forex_markup_pct_before_change": 0.5, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["Marquee"], "forex_markup_pct": 1.0, "forex_markup_pct_before_change": 1.0, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["Reserv", "Reserv for NRI", "Reserv (FD)", "YES First Preferred", "YES First Preferred for NRI", "YES First Preferred issued against FD", "YES First Business"], "forex_markup_pct": 2.0, "forex_markup_pct_before_change": 1.75, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["YES Prosperity Business"], "forex_markup_pct": 3.0, "forex_markup_pct_before_change": 2.5, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["Elite+", "Elite+ issued against FD", "YES Essence"], "forex_markup_pct": 3.0, "forex_markup_pct_before_change": 2.75, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["Select", "Select for NRI", "Select issued against FD", "Ace", "Ace issued against FD", "RuPay Virtual Credit Card", "Klick"], "forex_markup_pct": 3.5, "forex_markup_pct_before_change": 2.75, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["FREO"], "forex_markup_pct": 3.4, "forex_markup_pct_before_change": 3.4, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["YES Prosperity Rewards", "YES Prosperity Cashback", "YES Prosperity Cashback Plus", "POP-CLUB", "Anq Phi", "Finbooster", "Paisabazaar Paisasave", "Paisabazaar Paisasave RuPay Virtual"], "forex_markup_pct": 3.5, "forex_markup_pct_before_change": 3.4, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["BYOC", "EMI Card", "Wellness", "Wellness Plus", "Zagg", "Novio", "Novio RuPay Virtual", "Max"], "forex_markup_pct": 3.5, "forex_markup_pct_before_change": 3.5, "change_effective": "2026-06-15", "dcc_markup_pct": 1.0 },
+    { "variants": ["Uni", "Uni RuPay Virtual", "AI Inside", "AI Inside RuPay Virtual", "NIYO"], "forex_markup_pct": 0.0, "dcc_markup_pct": 0.0, "notes": "Foreign currency conversion and DCC charges not applicable (zero forex)" }
+  ],
+  "general_fees": [
+    { "fee": "Cash advance", "rule": "2.5% of amount or INR 650, whichever is higher. Before 15 Jun 2026: 2.5% or INR 500. Finance charge applies from withdrawal date.", "pct": 2.5, "min_inr": 650, "effective_from": "2026-06-15", "waived_for": ["YES Private", "AI Inside", "All Virtual Credit Cards (not applicable)"], "locator": "A.3(a)" },
+    { "fee": "Late payment", "rule": "No fee if current outstanding is up to INR 500. Above that, 10% of statement balance or INR 1,350, whichever is lower, per statement.", "pct": 10, "max_inr": 1350, "waived_for": ["YES Private"], "locator": "A.3(b)" },
+    { "fee": "Overlimit", "rule": "INR 550 plus GST per transaction exceeding the credit limit. Overlimit facility reintroduced from 1 Jun 2026, subject to bank eligibility.", "flat_inr": 550, "effective_from": "2026-06-01", "locator": "A.3(c)" },
+    { "fee": "Cheque return / dishonour", "rule": "INR 450 per instance.", "flat_inr": 450, "waived_for": ["YES Private"], "locator": "A.3(d)" },
+    { "fee": "Auto-debit failure", "rule": "From 15 Jun 2026: 2.5% or INR 500, whichever is higher, capped at INR 5,000 per customer per statement. Before: 2% or INR 450, cap INR 1,500.", "pct": 2.5, "min_inr": 500, "max_inr": 5000, "effective_from": "2026-06-15", "waived_for": ["YES Private"], "locator": "A.3(d)" },
+    { "fee": "Reward redemption", "rule": "INR 100 plus GST per redemption request. Flight booking through points adds INR 99 plus GST convenience fee. Points expire 3 years after earning (points-based cards only).", "flat_inr": 100, "waived_for": ["YES Private", "Paisabazaar Paisasave"], "locator": "A.3(l)" },
+    { "fee": "Cash deposit at YES branch", "rule": "From 15 Jun 2026: INR 500 plus GST if repayment is INR 1,000 or more. Before: INR 100.", "flat_inr": 500, "effective_from": "2026-06-15", "locator": "A.3(m)" },
+    { "fee": "Cheque deposit at YES branch", "rule": "From 15 Jun 2026: INR 250 plus GST if repayment is INR 1,000 or more.", "flat_inr": 250, "effective_from": "2026-06-15", "locator": "A.3(n)" },
+    { "fee": "Card re-issuance (lost, stolen, damaged)", "rule": "From 15 Jun 2026: INR 199 for plastic cards (before: INR 100). BYOC eco INR 349, BYOC metal INR 3,599. Not applicable to virtual cards.", "flat_inr": 199, "effective_from": "2026-06-15", "waived_for": ["YES Private"], "locator": "A.3(p)" },
+    { "fee": "Add-on card", "rule": "Nil. Up to 3 add-ons for eligible variants, up to 5 for YES Private.", "flat_inr": 0, "locator": "A.3(o)" },
+    { "fee": "GST", "rule": "18% on all fees and charges.", "pct": 18, "locator": "A.3(u)" }
+  ],
+  "category_fees": [
+    {
+      "category": "Rental", "mccs": ["6513"], "fee_pct": 1.0, "min_fee_inr": 1, "max_fee_inr_per_txn": null,
+      "notes": "Up to INR 1,000: 1% or INR 1, whichever higher. Above INR 1,000: 1% or INR 199, whichever higher. Capped at 5 rental transactions per 30 days.",
+      "locator": "A.3(e)"
+    },
+    {
+      "category": "Wallet load", "mccs": ["6540"], "fee_pct": 1.0, "free_up_to_inr": 2000, "max_fee_inr_per_txn": 5000,
+      "notes": "Applies to third-party wallets irrespective of MCC (e.g. Amazon Pay, Paytm, MobiKwik, CRED). No fee up to INR 2,000 per load.",
+      "locator": "A.3(f)"
+    },
+    {
+      "category": "Education (third-party platforms)", "mccs": ["8211", "8220", "8249", "8299", "8241", "8244", "7911"], "fee_pct": 1.0, "max_fee_inr_per_txn": null,
+      "notes": "Fee capped at INR 5,000 per calendar month. Not charged on payments made directly to school/college or via POS at their premises, or on international education transactions.",
+      "locator": "A.3(g)"
+    },
+    {
+      "category": "Utility and service", "mccs": ["4900", "4814", "0825", "1520", "4899", "1799", "1731", "5261", "7349", "0822", "0820", "1761", "1771", "1740", "823", "1750", "0821", "0824", "0780", "1711", "9402", "7211", "8999", "4816"],
+      "fee_pct": 1.0, "max_fee_inr_per_txn": 5000, "cumulative_period": "PREVIOUS_CALENDAR_MONTH",
+      "thresholds_by_variant": [
+        { "variants": ["YES Private"], "cumulative_above_inr": 100000 },
+        { "variants": ["Marquee", "Reserv", "Uni", "Uni RuPay Virtual", "AI Inside", "AI Inside RuPay Virtual", "NIYO"], "cumulative_above_inr": 50000 },
+        { "variants": ["All other cards"], "cumulative_above_inr": 25000 }
+      ],
+      "notes": "Document text says 'previous calendar month' but the worked examples use the same month. Wording ambiguity: confirm which applies.",
+      "locator": "A.3(h)"
+    },
+    {
+      "category": "Fuel", "mccs": ["5172", "5541", "5542", "5983", "9752"], "fee_pct": 1.0, "max_fee_inr_per_txn": 5000, "per_txn_above_inr": 10000, "cumulative_period": "CALENDAR_MONTH",
+      "thresholds_by_variant": [
+        { "variants": ["YES Private", "Marquee", "Reserv", "Uni", "AI Inside", "AI Inside RuPay Virtual"], "cumulative_above_inr": 50000 },
+        { "variants": ["Other Credit Cards"], "cumulative_above_inr": 25000 }
+      ],
+      "notes": "Fee if a single transaction exceeds INR 10,000 OR monthly cumulative exceeds the threshold.",
+      "locator": "A.3(i)"
+    },
+    {
+      "category": "Transportation (tolls and bridges)", "mccs": ["4784", "4131", "4214", "4789", "4011"], "fee_pct": 1.0, "max_fee_inr_per_txn": 5000, "per_txn_above_inr": 10000, "cumulative_period": "CALENDAR_MONTH",
+      "thresholds_by_variant": [
+        { "variants": ["YES Private", "Marquee", "Reserv", "Uni", "AI Inside", "AI Inside RuPay Virtual"], "cumulative_above_inr": 75000 },
+        { "variants": ["Other Credit Cards"], "cumulative_above_inr": 50000 }
+      ],
+      "locator": "A.3(j)"
+    },
+    {
+      "category": "Passenger railways", "mccs": ["4111", "4112"], "fee_pct": 1.0, "max_fee_inr_per_txn": 5000, "per_txn_above_inr": 30000, "cumulative_period": "CALENDAR_MONTH",
+      "thresholds_by_variant": [ { "variants": ["All cards"], "cumulative_above_inr": 80000 } ],
+      "notes": "Over and above any convenience fee charged by the booking platform.",
+      "locator": "A.3(k)"
+    }
+  ],
+  "reward_rules": [
+    {
+      "rule": "Reward points earned on utility spends are capped per statement cycle",
+      "category": "Utility",
+      "caps_by_variant": [
+        { "variants": ["YES Private"], "cap": null, "unit": "no capping" },
+        { "variants": ["Marquee"], "cap": 1250, "unit": "points per cycle" },
+        { "variants": ["Reserv", "Reserv for NRI"], "cap": 750, "unit": "points per cycle" },
+        { "variants": ["BYOC Rewards"], "cap": 600, "unit": "points per cycle" },
+        { "variants": ["Wellness Plus"], "cap": 450, "unit": "points per cycle" },
+        { "variants": ["Elite+", "Elite+ issued against FD", "YES First Business", "YES First Preferred", "YES First Preferred for NRI", "YES First Preferred issued against FD", "Wellness"], "cap": 300, "unit": "points per cycle" },
+        { "variants": ["Select", "Select for NRI", "Select issued against FD", "Ace", "Ace issued against FD", "YES Prosperity Rewards", "YES Prosperity Business", "RuPay Virtual Credit Card", "YES Essence"], "cap": 150, "unit": "points per cycle" }
+      ],
+      "locator": "A.3(h)"
+    },
+    {
+      "rule": "Redemption caps: Private and Private Prime redeem up to 70% of invoice value against flights/hotels (max 6,00,000 YES CC Rewardz per calendar month); Marquee 3,00,000; Reserv 2,00,000; other points cards 1,00,000. Statement-credit and merchandise redemption subject to monthly caps. Voucher redemption capped at INR 25,000 worth per calendar month for Private, Private Prime, Marquee, Reserv.",
+      "category": "Redemption",
+      "locator": "A.3(l)"
+    }
+  ],
+  "fuel_surcharge_waiver": [
+    { "variants": ["YES Private", "YES Private for NRI", "Marquee", "YES First Business", "YES Prosperity Business", "YES First Preferred", "YES First Preferred for NRI", "YES First Preferred issued against FD"], "waiver_pct": 1.0, "txn_min_inr": 500, "txn_max_inr": 5000, "notes": "Range effective 15 Jun 2026" },
+    { "variants": ["Elite+", "Elite+ issued against FD", "Reserv", "Reserv for NRI", "YES Essence", "NIYO"], "waiver_pct": 1.0, "txn_min_inr": 500, "txn_max_inr": 4000 },
+    { "variants": ["Ace", "Ace issued against FD", "YES Prosperity Rewards", "YES Prosperity Cashback", "YES Prosperity Cashback Plus", "Wellness", "Wellness Plus", "Select", "Select for NRI", "Select issued against FD", "RuPay Virtual Credit Card", "Klick", "Finbooster", "EMI Card", "BYOC", "Anq Phi", "Paisabazaar Paisasave", "Paisabazaar Paisasave RuPay Virtual", "Novio", "Novio RuPay Virtual"], "waiver_pct": 1.0, "txn_min_inr": 500, "txn_max_inr": 3000 },
+    { "variants": ["Uni", "Uni RuPay Virtual"], "waiver_pct": 1.0, "txn_min_inr": null, "txn_max_inr": 7500 },
+    { "variants": ["Zagg", "AI Inside", "AI Inside RuPay Virtual", "FREO"], "waiver_pct": 1.0, "txn_min_inr": 400, "txn_max_inr": 5000 },
+    { "variants": ["POP-CLUB"], "waiver_pct": 1.0, "txn_min_inr": 1000, "txn_max_inr": 3500, "max_waiver_per_cycle_inr": 100, "notes": "Effective 1 Jun 2026" },
+    { "variants": ["YES Private"], "no_cap": true, "notes": "Per-cycle cap: no capping" },
+    { "variants": ["Marquee"], "max_waiver_per_cycle_inr": 1000, "notes": "Per-cycle cap" },
+    { "variants": ["AI Inside"], "max_waiver_per_cycle_inr": 750, "notes": "Per-cycle cap" },
+    { "variants": ["YES First Business", "Reserv", "Reserv issued against FD", "Uni", "Uni RuPay Virtual"], "max_waiver_per_cycle_inr": 500, "notes": "Per-cycle cap" },
+    { "variants": ["POP-CLUB", "Anq Phi"], "max_waiver_per_cycle_inr": 300, "notes": "Per-cycle cap" },
+    { "variants": ["Wellness Plus", "YES Prosperity Business", "EMI Card", "YES First Preferred", "YES First Preferred issued against FD", "Klick", "Zagg", "Paisabazaar Paisasave", "NIYO", "Novio"], "max_waiver_per_cycle_inr": 250, "notes": "Per-cycle cap" },
+    { "variants": ["Select", "Select for NRI", "Select issued against FD", "Elite+", "Elite+ issued against FD", "Wellness", "BYOC", "FREO", "Paisabazaar Paisasave RuPay Virtual", "AI Inside RuPay Virtual", "YES Essence", "Novio RuPay Virtual"], "max_waiver_per_cycle_inr": 125, "notes": "Per-cycle cap" },
+    { "variants": ["Ace", "Ace issued against FD", "YES Prosperity Rewards", "YES Prosperity Cashback", "YES Prosperity Cashback Plus", "Finbooster"], "max_waiver_per_cycle_inr": 100, "notes": "Per-cycle cap" },
+    { "variants": ["All variants listed in the MITC fuel table"], "notes": "No fuel surcharge waiver on fuel transactions done through UPI for the listed variants. For YES RuPay Virtual credit cards, waiver on UPI fuel transactions is capped at INR 125 per statement cycle." }
+  ],
+  "lounge_spend_gates": [
+    { "variants": ["YES Private", "YES Private Prime"], "domestic_quarterly_spend_gate_inr": 0, "notes": "Nil gate. Guest visits: Private 12 per calendar year, Private Prime 4 (domestic plus international combined)." },
+    { "variants": ["Marquee", "Reserv", "Reserv for NRI"], "domestic_quarterly_spend_gate_inr": 100000, "notes": "Marquee guest access: 4 international and 2 domestic per calendar year." },
+    { "variants": ["YES First Preferred", "YES First Preferred for NRI", "YES First Preferred issued against FD", "YES First Business"], "domestic_quarterly_spend_gate_inr": 75000 },
+    { "variants": ["YES Essence"], "domestic_quarterly_spend_gate_inr": 25000 },
+    { "variants": ["Elite+", "Elite+ issued against FD", "Select", "Select for NRI", "Select issued against FD", "BYOC", "YES Prosperity Business", "Wellness Plus", "Zagg", "Novio"], "domestic_quarterly_spend_gate_inr": 50000, "notes": "Spend in previous quarter unlocks domestic lounge in the next quarter. Excludes fee payments, reversals, rental and wallet transactions. No spend gate for international lounges." }
+  ],
+  "emi_policy": {
+    "processing_fee_stated": false,
+    "notes": "The MITC shows EMI conversion examples with a processing fee (example: INR 180 on INR 18,000) but gives no rate table in the sections read. Whether EMI earns rewards or counts toward waiver/milestones is not stated here. Needs the product feature documents."
+  },
+  "open_questions": [
+    "Utility fee trigger: 'previous calendar month' in the rule text vs same-month examples.",
+    "Which variants are UPI credit cards (RuPay Virtual list) is inferred from names, not stated.",
+    "Reward earn rates, milestones and lounge counts are product-feature details not in the MITC: need CVP documents per variant.",
+    "Network (Visa/Mastercard/RuPay) per variant is mostly not stated in the MITC: needs product list or BIN master.",
+    "Section 5 onward (limits, billing, regulatory text) not extracted: no pricing impact seen but not read line by line."
+  ]
+}

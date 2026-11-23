@@ -1,0 +1,7 @@
+trino>=0.328
+jsonschema>=4.20
+python-dotenv>=1.0
+pandas>=2.1
+numpy>=1.26
+duckdb>=1.0
+pytest>=8.0

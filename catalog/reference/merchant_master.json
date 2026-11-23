@@ -1,0 +1,396 @@
+{
+ "description": "Canonical merchants used to join offers, catalog events and Trino merchant data. Seed list built from brands in the Nov 2026 offer catalogs. Competitors = same category. To be replaced or extended by dim_merchant_master from Trino (st.payeemerchantbrand) in Phase 0.",
+ "categories": {
+  "FOOD_DELIVERY": "Food delivery",
+  "QUICK_COMMERCE": "Quick commerce and online grocery",
+  "DINING_ENTERTAINMENT": "Dining and entertainment",
+  "FASHION_BEAUTY": "Fashion and beauty",
+  "TRAVEL_BUS": "Bus travel",
+  "TRAVEL_OTA": "Online travel (flights, hotels)",
+  "HEALTH": "Health and pharmacy",
+  "MARKETPLACE": "Online marketplaces",
+  "ELECTRONICS": "Electronics",
+  "BILL_PAYMENTS": "Bill payments",
+  "TAX_FILING": "Tax filing",
+  "GIFTING": "Gifting",
+  "FURNITURE": "Furniture and home"
+ },
+ "merchants": [
+  {
+   "merchant_id": "SWIGGY",
+   "name": "Swiggy",
+   "aliases": [
+    "Swiggy",
+    "Swiggy Food",
+    "Swiggy Food Delivery"
+   ],
+   "category": "FOOD_DELIVERY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "ZOMATO",
+   "name": "Zomato",
+   "aliases": [
+    "Zomato"
+   ],
+   "category": "FOOD_DELIVERY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "ZEPTO",
+   "name": "Zepto",
+   "aliases": [
+    "Zepto"
+   ],
+   "category": "QUICK_COMMERCE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "BLINKIT",
+   "name": "Blinkit",
+   "aliases": [
+    "Blinkit"
+   ],
+   "category": "QUICK_COMMERCE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "SWIGGY_INSTAMART",
+   "name": "Swiggy Instamart",
+   "aliases": [
+    "Instamart",
+    "Swiggy Instamart"
+   ],
+   "category": "QUICK_COMMERCE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "BIGBASKET",
+   "name": "bigbasket",
+   "aliases": [
+    "bigbasket",
+    "BigBasket"
+   ],
+   "category": "QUICK_COMMERCE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "DISTRICT",
+   "name": "District by Zomato",
+   "aliases": [
+    "District",
+    "District Dining",
+    "District by Zomato",
+    "Zomato / District"
+   ],
+   "category": "DINING_ENTERTAINMENT",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "EAZYDINER",
+   "name": "EazyDiner",
+   "aliases": [
+    "EazyDiner"
+   ],
+   "category": "DINING_ENTERTAINMENT",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "NYKAA",
+   "name": "Nykaa",
+   "aliases": [
+    "Nykaa"
+   ],
+   "category": "FASHION_BEAUTY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "MYNTRA",
+   "name": "Myntra",
+   "aliases": [
+    "Myntra"
+   ],
+   "category": "FASHION_BEAUTY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "AJIO",
+   "name": "Ajio",
+   "aliases": [
+    "Ajio"
+   ],
+   "category": "FASHION_BEAUTY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "REDBUS",
+   "name": "redBus",
+   "aliases": [
+    "redBus"
+   ],
+   "category": "TRAVEL_BUS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "ABHIBUS",
+   "name": "Abhibus",
+   "aliases": [
+    "Abhibus"
+   ],
+   "category": "TRAVEL_BUS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "GOIBIBO",
+   "name": "Goibibo",
+   "aliases": [
+    "Goibibo"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "MAKEMYTRIP",
+   "name": "MakeMyTrip",
+   "aliases": [
+    "MakeMyTrip",
+    "MMT"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "EASEMYTRIP",
+   "name": "EaseMyTrip",
+   "aliases": [
+    "EaseMyTrip",
+    "EMT"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "APOLLO247",
+   "name": "Apollo 24/7",
+   "aliases": [
+    "Apollo 24/7",
+    "Apollo 247"
+   ],
+   "category": "HEALTH",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "AMAZON",
+   "name": "Amazon",
+   "aliases": [
+    "Amazon",
+    "Amazon Pay Smart Stores"
+   ],
+   "category": "MARKETPLACE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "FLIPKART",
+   "name": "Flipkart",
+   "aliases": [
+    "Flipkart"
+   ],
+   "category": "MARKETPLACE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "CROMA",
+   "name": "Croma",
+   "aliases": [
+    "Croma"
+   ],
+   "category": "ELECTRONICS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "PAYTM",
+   "name": "Paytm",
+   "aliases": [
+    "Paytm",
+    "Paytm Utility"
+   ],
+   "category": "BILL_PAYMENTS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "CLEARTAX",
+   "name": "ClearTax",
+   "aliases": [
+    "ClearTax",
+    "Cleartax"
+   ],
+   "category": "TAX_FILING",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "TAXBUDDY",
+   "name": "TaxBuddy",
+   "aliases": [
+    "TaxBuddy"
+   ],
+   "category": "TAX_FILING",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "IGP",
+   "name": "IGP",
+   "aliases": [
+    "IGP"
+   ],
+   "category": "GIFTING",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "YATRA",
+   "name": "Yatra",
+   "aliases": [
+    "Yatra"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "IXIGO",
+   "name": "ixigo",
+   "aliases": [
+    "ixigo"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "KLOOK",
+   "name": "Klook",
+   "aliases": [
+    "Klook"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "AGODA",
+   "name": "Agoda",
+   "aliases": [
+    "Agoda"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "AKBAR_TRAVELS",
+   "name": "Akbar Travels",
+   "aliases": [
+    "Akbar Travels"
+   ],
+   "category": "TRAVEL_OTA",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "VIJAY_SALES",
+   "name": "Vijay Sales",
+   "aliases": [
+    "Vijay Sales"
+   ],
+   "category": "ELECTRONICS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "RELIANCE_DIGITAL",
+   "name": "Reliance Digital",
+   "aliases": [
+    "Reliance Digital"
+   ],
+   "category": "ELECTRONICS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "POORVIKA",
+   "name": "Poorvika",
+   "aliases": [
+    "Poorvika"
+   ],
+   "category": "ELECTRONICS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "PAI_INTERNATIONAL",
+   "name": "Pai International",
+   "aliases": [
+    "Pai International"
+   ],
+   "category": "ELECTRONICS",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "MAX_FASHION",
+   "name": "Max Fashion",
+   "aliases": [
+    "Max Fashion",
+    "Max"
+   ],
+   "category": "FASHION_BEAUTY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "SNITCH",
+   "name": "Snitch",
+   "aliases": [
+    "Snitch"
+   ],
+   "category": "FASHION_BEAUTY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "EATSURE",
+   "name": "EatSure",
+   "aliases": [
+    "EatSure"
+   ],
+   "category": "FOOD_DELIVERY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "BEHROUZ",
+   "name": "Behrouz Biryani",
+   "aliases": [
+    "Behrouz Biryani",
+    "Behrouz"
+   ],
+   "category": "FOOD_DELIVERY",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "PEPPERFRY",
+   "name": "Pepperfry",
+   "aliases": [
+    "Pepperfry"
+   ],
+   "category": "FURNITURE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "HOMETOWN",
+   "name": "HomeTown",
+   "aliases": [
+    "HomeTown"
+   ],
+   "category": "FURNITURE",
+   "trino_brand_keys": []
+  },
+  {
+   "merchant_id": "GODREJ_INTERIO",
+   "name": "Godrej Interio",
+   "aliases": [
+    "Godrej Interio",
+    "Interio"
+   ],
+   "category": "FURNITURE",
+   "trino_brand_keys": []
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "description": "Thresholds for the Watcher. Changed only through a reviewed merge request; the Learning harness proposes changes from analyst verdicts (see ainxt/workflows/W7_learning_loop.md).",
+  "baseline_weeks": 8,
+  "min_history_weeks": 6,
+  "z_threshold": 3.0,
+  "min_abs_pct_change": 0.10,
+  "min_baseline_spend_inr": 1000000,
+  "issuer_wide_share": 0.6,
+  "partial_week_ratio": 0.8,
+  "version": "2026-11-23.1"
+}

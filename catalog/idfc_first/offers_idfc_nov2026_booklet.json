@@ -1,0 +1,3654 @@
+[
+ {
+  "offer_id": "IDFC_NOV26_P3_SWIGGY_SAT",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Swiggy",
+  "category": "Food and quick commerce",
+  "channel": "NOT_STATED",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 75,
+   "min_txn_inr": 750
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "SAT"
+   ]
+  },
+  "conditions": "Weekend Fiesta. Eligible cards not stated on this page.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.3 Weekend Fiesta",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P3_ZEPTO_SUN",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Zepto",
+  "category": "Food and quick commerce",
+  "channel": "NOT_STATED",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 75,
+   "min_txn_inr": 750
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "SUN"
+   ]
+  },
+  "conditions": "Weekend Fiesta. Eligible cards not stated on this page.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.3 Weekend Fiesta",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P3_BLINKIT_SAT",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Blinkit",
+  "category": "Quick commerce",
+  "channel": "NOT_STATED",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 75,
+   "min_txn_inr": 750
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "SAT"
+   ]
+  },
+  "conditions": "Weekend Fiesta. Eligible cards not stated on this page.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.3 Weekend Fiesta",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P3_ZOMATO_SUN",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Zomato",
+  "category": "Food delivery",
+  "channel": "NOT_STATED",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 75,
+   "min_txn_inr": 750
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "SUN"
+   ]
+  },
+  "conditions": "Weekend Fiesta. Eligible cards not stated on this page.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.3 Weekend Fiesta",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P3_NYKAA_SAT",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Nykaa",
+  "category": "Beauty and fashion",
+  "channel": "NOT_STATED",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 400,
+   "min_txn_inr": 1999
+  },
+  "validity": {
+   "start_date": "2026-10-31",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "SAT"
+   ]
+  },
+  "conditions": "Weekend Fiesta. Validity printed as 31 Oct to 30 Nov 2026.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.3 Weekend Fiesta",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P4_EAZYDINER_TIER1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [
+   "IDFC FIRST Private",
+   "Gaj"
+  ],
+  "merchant_brand": "EazyDiner",
+  "category": "Dining",
+  "channel": "NOT_STATED",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 1000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.4 Monthly Offers, Dining",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P4_EAZYDINER_TIER2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [
+   "IndiGo IDFC FIRST",
+   "IDFC FIRST Ashva",
+   "Mayura",
+   "Diamond Reserve",
+   "Business Multiplier",
+   "WOW Black"
+  ],
+  "merchant_brand": "EazyDiner",
+  "category": "Dining",
+  "channel": "NOT_STATED",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 400,
+   "min_txn_inr": 4000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.4 Monthly Offers, Dining",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P4_ZOMATO_DISTRICT",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [
+   "FIRST Millennia",
+   "FIRST SWYP",
+   "FIRST Classic",
+   "FIRST Select",
+   "FIRST Family",
+   "FIRST Power",
+   "FIRST Power+",
+   "LIC Classic",
+   "LIC Select",
+   "FIRST WOW",
+   "FIRST Earn",
+   "Hello Cashback",
+   "FIRST Wealth",
+   "FIRST Business",
+   "FIRST Business Max"
+  ],
+  "merchant_brand": "Zomato / District",
+  "category": "Dining",
+  "channel": "NOT_STATED",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 350,
+   "min_txn_inr": 3500
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "conditions": "The PDF text layer also contains a stale validity line '1st to 31st May 25'; the printed page shows 1 Nov to 30 Nov 2026, which is used here.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.4 Monthly Offers, Dining",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P4_REDBUS",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "redBus",
+  "category": "Travel (bus)",
+  "channel": "NOT_STATED",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 500,
+   "min_txn_inr": 1000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "SAT",
+    "SUN"
+   ]
+  },
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.4 Monthly Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P4_APOLLO247",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Apollo 24/7",
+  "category": "Healthcare",
+  "channel": "NOT_STATED",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 200,
+   "min_txn_inr": 1500
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.4 Monthly Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P4_BIGBASKET",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "bigbasket",
+  "category": "Groceries",
+  "channel": "NOT_STATED",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 100,
+   "min_txn_inr": 999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-05",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.4 Monthly Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P5_AMAZONPAY_SMARTSTORES",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Amazon Pay Smart Stores",
+  "category": "Retail",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 7.5,
+   "max_cap_inr": 3000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.5 Merchant Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P5_ZEPTO_ELECTRONICS",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Zepto",
+  "category": "Electronics",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 4000,
+   "min_txn_inr": 3000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "conditions": "Valid on electronics only. Validity line carries an asterisk with no footnote text read.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.5 Merchant Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P5_AJIO",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Ajio",
+  "category": "Fashion",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 1000,
+   "min_txn_inr": 3000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.5 Merchant Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P5_BIGBASKET_IPHONE",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "bigbasket",
+  "category": "Electronics (iPhone 17 Pro / Pro Max)",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 5000,
+   "min_txn_inr": 54000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "conditions": "Subject to stock availability. Merchant read from the logo; a grocery merchant on an iPhone offer is unusual, verify with the bank.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.5 Merchant Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P5_DISTRICT_NCEMI",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "District by Zomato",
+  "category": "Entertainment / lifestyle",
+  "channel": "ONLINE",
+  "payment_mode": "ANY",
+  "emi_tenures_months": [
+   3
+  ],
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 8,
+   "max_cap_inr": 1500,
+   "min_txn_inr": 4000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "conditions": "Printed as 8% instant discount up to 1500 plus 3M No Cost EMI.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.5 Merchant Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P5_CROMA_FS",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Croma",
+  "category": "Electronics (iPhone 17 Pro / Pro Max)",
+  "channel": "OFFLINE",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 4000,
+   "max_cap_inr": 4000,
+   "min_txn_inr": 54000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "conditions": "Printed as 'Up to 4,000 instant discount'. Subject to stock availability.",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.5 Merchant Offers (Full Swipe side)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P5_CROMA_EMI",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Croma",
+  "category": "Electronics (iPhone 17 Pro / Pro Max)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 5000,
+   "min_txn_inr": 54000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30",
+   "days_of_week": [
+    "ALL"
+   ]
+  },
+  "conditions": "Printed as 'Extra 5,000 instant discount' on the EMI side (marked EMI-only). Unclear whether the extra amount stacks with the Full Swipe offer. Subject to stock availability.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.5 Merchant Offers (EMI side)",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P6_CROMA_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Croma",
+  "category": "Electronics",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 15000,
+   "min_txn_inr": 25000
+  },
+  "validity": {
+   "start_date": "2026-11-05",
+   "end_date": "2026-11-15"
+  },
+  "conditions": "Festival of Dreams; Up to Rs15,000; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.6",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P6_VIJAY_SALES_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Vijay Sales",
+  "category": "Electronics",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.6",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P6_RELIANCE_DIGITAL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Reliance Digital",
+  "category": "Electronics",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 10000,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-10-31",
+   "end_date": "2026-11-11"
+  },
+  "conditions": "Festival of Electronics, full swipe; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.6",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P6_RELIANCE_DIGITAL_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Reliance Digital",
+  "category": "Electronics",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 25000,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-10-31",
+   "end_date": "2026-11-11"
+  },
+  "conditions": "Festival of Electronics, EMI; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.6",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P6_PAI_INTERNATIONAL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Pai International",
+  "category": "Electronics and mobiles",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 7.5,
+   "max_cap_inr": 4000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.6",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P6_POORVIKA_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Poorvika",
+  "category": "Electronics and mobiles",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 4000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.6",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P6_TOP_10_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Top-10",
+  "category": "Electronics and mobiles",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 4000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.6",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P7_YATRA_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Yatra",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 12,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 3500,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.7",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P7_YATRA_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Yatra",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 6000,
+   "min_txn_inr": 15000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.7",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P7_IXIGO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "ixigo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 2500,
+   "min_txn_inr": 5000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic flights & hotels, 3-month no-cost EMI; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.7",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P7_IXIGO_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "ixigo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 5000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic flights & hotels, 6 months and above; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.7",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P7_IXIGO_3",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "ixigo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 5000,
+   "min_txn_inr": 5000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights & hotels, 3-month no-cost EMI; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.7",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P7_IXIGO_4",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "ixigo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 10000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights & hotels, 6 months and above; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.7",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_EASEMYTRIP_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "EaseMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 12,
+   "max_cap_inr": 1800,
+   "min_txn_inr": 3500,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_EASEMYTRIP_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "EaseMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 6000,
+   "min_txn_inr": 10000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic hotels; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_EASEMYTRIP_3",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "EaseMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 4000,
+   "min_txn_inr": 3000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_EASEMYTRIP_4",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "EaseMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 6000,
+   "min_txn_inr": 4000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International hotels; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_KLOOK_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Klook",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 8,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 3000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_AGODA_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Agoda",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 8,
+   "max_cap_inr": 20000,
+   "min_txn_inr": 3000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Hotels; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_AKBAR_TRAVELS_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Akbar Travels",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 1000,
+   "min_txn_inr": 3500
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic & international flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P8_AKBAR_TRAVELS_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Akbar Travels",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 25,
+   "max_cap_inr": 1000,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic & international hotels; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.8",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 5000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic flights; Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 5000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 5000,
+   "min_txn_inr": 5000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic hotel (selected hotels); Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 5000,
+   "min_txn_inr": 5000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Domestic hotel (selected hotels); Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_3",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 7500,
+   "min_txn_inr": 10000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights; Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_3",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 7500,
+   "min_txn_inr": 10000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_4",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 80000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights, high value; Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_4",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 80000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International flights, high value; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_5",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 10000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International hotel; Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_5",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 10000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "International hotel; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_6",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 3000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Outstation cabs; Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_6",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 3000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Outstation cabs; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_7",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 1500,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Airport + hourly rental cabs; Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_7",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 1500,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Airport + hourly rental cabs; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_8",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 1000,
+   "min_txn_inr": 1500,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Bus; Up to / flat as printed; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P10_GOIBIBO_8",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Goibibo",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 1000,
+   "min_txn_inr": 1500,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Bus; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.10",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_9",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 30,
+   "max_cap_inr": 20000,
+   "min_txn_inr": 40000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Holidays; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_10",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 12,
+   "max_cap_inr": 1500,
+   "min_txn_inr": 5000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Tours & attractions; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_11",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 2500,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Business class, domestic; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P9_MAKEMYTRIP_12",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "MakeMyTrip",
+  "category": "Travel",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 15000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Business class, international; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.9",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P11_HOMETOWN_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "HomeTown",
+  "category": "Furniture",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 8000,
+   "min_txn_inr": 30000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.11",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P11_GODREJ_INTERIO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Godrej Interio",
+  "category": "Furniture",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 15000,
+   "min_txn_inr": 15000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.11",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P11_PEPPERFRY_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Pepperfry",
+  "category": "Furniture",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 3500,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.11",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P11_THE_SLEEP_COMPANY_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "The Sleep Company",
+  "category": "Furniture",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "FS",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 1500,
+   "min_txn_inr": 30000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Full swipe; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.11",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P12_FITELO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Fitelo",
+  "category": "Health and wellness",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 3000,
+   "min_txn_inr": 18000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.12",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P12_POTTERY_BARN_WEST_ELM_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Pottery Barn / West Elm",
+  "category": "Home decor",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 20000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.12",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P12_RAY_BAN_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Ray-Ban",
+  "category": "Fashion",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 750,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Tier; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.12",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P12_RAY_BAN_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Ray-Ban",
+  "category": "Fashion",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 1200,
+   "min_txn_inr": 15000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Tier; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.12",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P12_RAY_BAN_3",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Ray-Ban",
+  "category": "Fashion",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 30000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Tier; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.12",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P13_LUXURY_BRANDS_GROUP_ARMA_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Luxury brands group (Armani Exchange, Coach, Hugo Boss, Michael Kors and others)",
+  "category": "Fashion",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 7.5,
+   "max_cap_inr": 5000,
+   "min_txn_inr": 10000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "About 40 brands listed by logo; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.13",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P13_MOTHERCARE_ED_A_MAMMA_AD_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Mothercare / Ed-a-Mamma / adidas Kids / Hamleys",
+  "category": "Kids",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 7.5,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 4000,
+   "with_no_cost_emi": true
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.13",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P14_ACER_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Acer",
+  "category": "Electronics (laptops)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 20000,
+   "min_txn_inr": 30000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.14",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P14_ASUS_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Asus",
+  "category": "Electronics (laptops)",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 3000,
+   "min_txn_inr": 25000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.14",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P14_ASUS_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Asus",
+  "category": "Electronics (laptops)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 2500,
+   "min_txn_inr": 30000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.14",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P14_HP_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "HP",
+  "category": "Electronics (laptops)",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 18000,
+   "min_txn_inr": 39999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.14",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P14_LENOVO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Lenovo",
+  "category": "Electronics (laptops)",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 15000,
+   "min_txn_inr": 30000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.14",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P14_DELL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Dell",
+  "category": "Electronics (laptops)",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 20000,
+   "min_txn_inr": 30000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.14",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P14_BENQ_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "BenQ",
+  "category": "Electronics (laptops)",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 2000,
+   "min_txn_inr": 7500
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.14",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P15_MOTOROLA_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Motorola",
+  "category": "Electronics (mobiles)",
+  "channel": "OFFLINE",
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 12500,
+   "min_txn_inr": 10999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Also on full swipe; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.15",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P15_ONEPLUS_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "OnePlus",
+  "category": "Electronics (mobiles)",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 4500,
+   "min_txn_inr": 9999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.15",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P15_OPPO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Oppo",
+  "category": "Electronics (mobiles)",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 20000,
+   "min_txn_inr": 20000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.15",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P15_REALME_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "realme",
+  "category": "Electronics (mobiles)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 6299,
+   "min_txn_inr": 9999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.15",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P15_VIVO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "vivo",
+  "category": "Electronics (mobiles)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 23000,
+   "min_txn_inr": 20000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.15",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P15_XIAOMI_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Xiaomi",
+  "category": "Electronics (mobiles)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 10000,
+   "min_txn_inr": 7500
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.15",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_CANON_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Canon",
+  "category": "Electronics (audio and camera)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 23000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_BOSE_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Bose",
+  "category": "Electronics (audio and camera)",
+  "channel": "ONLINE_AND_OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 7000,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_JBL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "JBL",
+  "category": "Electronics (audio and camera)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 8000,
+   "min_txn_inr": 3999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_JBL_2",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "JBL",
+  "category": "Electronics (audio and camera)",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 5000,
+   "min_txn_inr": 8000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_NIKON_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Nikon",
+  "category": "Electronics (audio and camera)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 10000,
+   "min_txn_inr": 25000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_MARSHALL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Marshall",
+  "category": "Electronics (audio and camera)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 4000,
+   "min_txn_inr": 7999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_PHILIPS_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Philips",
+  "category": "Electronics (audio and camera)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 2000,
+   "min_txn_inr": 8000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Philips: party speakers and sound bars; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P16_BOAT_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "boAt",
+  "category": "Electronics (audio and camera)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 2500,
+   "min_txn_inr": 5000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.16",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P17_LG_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "LG",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 26,
+   "max_cap_inr": 26000,
+   "min_txn_inr": 9999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.17",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P17_SAMSUNG_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Samsung",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 27.5,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.17",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P17_SONY_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Sony",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 27500,
+   "min_txn_inr": 7000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.17",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P17_HAIER_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Haier",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 27.5,
+   "max_cap_inr": 26000,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.17",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P17_IFB_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "IFB",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 20,
+   "max_cap_inr": 9000,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.17",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P17_BOSCH_SIEMENS_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Bosch / Siemens",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15,
+   "max_cap_inr": 7000,
+   "min_txn_inr": 15000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.17",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P18_GODREJ_APPLIANCES_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Godrej Appliances",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 20,
+   "max_cap_inr": 8000,
+   "min_txn_inr": 9000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.18",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P18_BPL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "BPL",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 20000,
+   "min_txn_inr": 7000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.18",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P18_KENT_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Kent",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 1500,
+   "min_txn_inr": 15000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.18",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P18_LIVPURE_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Livpure",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 2500,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.18",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P18_LLOYD_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Lloyd",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 25,
+   "max_cap_inr": 8000,
+   "min_txn_inr": 9999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.18",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P18_PUREIT_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Pureit",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 1000,
+   "min_txn_inr": 8500
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.18",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P19_TCL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "TCL",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 8000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.19",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P19_WHIRLPOOL_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Whirlpool",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 20000,
+   "min_txn_inr": 9999
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.19",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P19_BLUE_STAR_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Blue Star",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 4000,
+   "min_txn_inr": 18000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.19",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P19_AO_SMITH_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "AO Smith",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 3500,
+   "min_txn_inr": 6500
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.19",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P19_ONIDA_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Onida",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "max_cap_inr": 20000,
+   "min_txn_inr": 18000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Rate printed as 'up to'; Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.19",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P19_HISENSE_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Hisense",
+  "category": "Large appliances",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 20000,
+   "min_txn_inr": 12000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.19",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P20_ATHER_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Ather",
+  "category": "Two wheelers (EV and petrol)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 7.5,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 50000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.20",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P20_TVS_IQUBE_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "TVS iQube",
+  "category": "Two wheelers (EV and petrol)",
+  "channel": "ONLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 5,
+   "max_cap_inr": 7500,
+   "min_txn_inr": 50000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.20",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P20_RIVER_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "River",
+  "category": "Two wheelers (EV and petrol)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 7.5,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 100000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.20",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_P20_HERO_1",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Hero",
+  "category": "Two wheelers (EV and petrol)",
+  "channel": "OFFLINE",
+  "payment_mode": "EMI",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 7.5,
+   "max_cap_inr": 10000,
+   "min_txn_inr": 20000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Page header: offer applicable on EMI transactions only; Eligible cards not stated",
+  "extraction_confidence": "HIGH",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.20",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_EATSURE",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "EatSure",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 30,
+   "max_cap_inr": 100,
+   "min_txn_inr": 249
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code INES30. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.21 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_YATRA",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Yatra",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "max_cap_inr": 2000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code YATRARUPAY2k. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.21 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_JBL",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "JBL",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 15
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code JBLTRDYTRUPAY15. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.21 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_IXIGO",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "ixigo",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 8,
+   "max_cap_inr": 1000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code IXIADN. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.21 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_MAX_FASHION",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Max Fashion",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 200,
+   "min_txn_inr": 1499
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code RUPAYMAX200. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.21 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_AJIO",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Ajio",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 150,
+   "min_txn_inr": 1299
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code ADNAJIO. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.21 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_GIVA",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "GIVA",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 25
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code RUPAYADNETO25. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.22 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_BEHROUZ_BIRYANI",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Behrouz Biryani",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 30,
+   "max_cap_inr": 125,
+   "min_txn_inr": 249
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code INBB30. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.22 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_SWAROVSKI",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Swarovski",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "rate_pct": 10,
+   "min_txn_inr": 10000
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code ALADNETO10. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.22 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "offer_id": "IDFC_NOV26_UPI_SNITCH",
+  "offer_source": "ISSUER",
+  "issuer_bank": "IDFC FIRST Bank",
+  "eligible_cards": [],
+  "merchant_brand": "Snitch",
+  "category": "UPI coupon offer",
+  "channel": "ONLINE",
+  "rails": [
+   "UPI_CC"
+  ],
+  "payment_mode": "ANY",
+  "benefit": {
+   "type": "INSTANT_DISCOUNT",
+   "flat_inr": 500,
+   "min_txn_inr": 2299
+  },
+  "validity": {
+   "start_date": "2026-11-01",
+   "end_date": "2026-11-30"
+  },
+  "conditions": "Coupon code RUPAYSNT500. Listed under 'UPI Offers'. Several codes contain 'RUPAY': may be RuPay-network funded; confirm funding.",
+  "extraction_confidence": "MEDIUM",
+  "sources": [
+   {
+    "document": "IDFC_FIRST_CC_Diwali_Booklet_November_2026_V3.pdf",
+    "locator": "p.22 UPI Offers",
+    "retrieved_on": "2026-11-23"
+   }
+  ]
+ }
+]

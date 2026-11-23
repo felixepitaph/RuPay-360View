@@ -1,0 +1,14 @@
+[
+ {"offer_id": "DEMO_IDFC_ZEPTO_JAN27", "offer_source": "ISSUER", "issuer_bank": "IDFC FIRST Bank", "eligible_cards": ["ALL"],
+  "merchant_brand": "Zepto", "category": "Quick commerce", "channel": "ONLINE", "payment_mode": "FS",
+  "benefit": {"type": "INSTANT_DISCOUNT", "flat_inr": 150, "min_txn_inr": 999},
+  "validity": {"start_date": "2027-01-01", "end_date": "2027-01-07"},
+  "conditions": "SYNTHETIC offer for the demo. Not real.", "extraction_confidence": "HIGH",
+  "sources": [{"document": "demo/catalog (synthetic)", "locator": "n/a", "retrieved_on": "2026-11-23"}]},
+ {"offer_id": "DEMO_YES_ZOMATO_DEC26", "offer_source": "ISSUER", "issuer_bank": "YES BANK", "eligible_cards": ["ALL"],
+  "merchant_brand": "Zomato", "category": "Food delivery", "channel": "ONLINE", "payment_mode": "ANY",
+  "benefit": {"type": "INSTANT_DISCOUNT", "rate_pct": 10},
+  "validity": {"start_date": "2026-12-01", "end_date": "2026-12-20"},
+  "conditions": "SYNTHETIC offer for the demo; ended before the flagged week, so it should not explain it.", "extraction_confidence": "HIGH",
+  "sources": [{"document": "demo/catalog (synthetic)", "locator": "n/a", "retrieved_on": "2026-11-23"}]}
+]

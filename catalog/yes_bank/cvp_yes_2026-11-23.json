@@ -1,0 +1,973 @@
+{
+ "issuer_bank": "YES BANK",
+ "retrieved_on": "2026-11-23",
+ "extraction_method": "Browser raw page text (Claude in Chrome get_page_text / DOM innerText after scrolling to load lazy sections). Reward-rate marketing page only; fees must be checked against MITC v18.",
+ "not_yet_extracted": [
+  "ai-inside-rupay-credit-card",
+  "wellness-cards",
+  "wellness-plus-cards",
+  "byoc-credit-card",
+  "emi-credit-card",
+  "paisabazaar-credit-card",
+  "paisabazaar-rupay-credit-card",
+  "pop-club-credit-card",
+  "zagg-credit-card",
+  "anq-phi-credit-card",
+  "finbooster-card",
+  "freo-credit-card",
+  "uni-rupay-credit-card",
+  "novio-credit-card",
+  "novio-rupay-credit-card",
+  "klick-credit-card",
+  "max-credit-card",
+  "rupay-credit-card",
+  "yes-first-preferred-credit-card"
+ ],
+ "cards": [
+  {
+   "card_id": "YES_MARQUEE",
+   "card_name": "MARQUÉE Credit Card",
+   "network": null,
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/marquee-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "21-60",
+    "income": "Net salary Rs3 lakh/month or ITR Rs36 lakh+",
+    "note": "Not available to existing YES BANK credit card holders"
+   },
+   "fees": {
+    "joining_inr": 9999,
+    "annual_inr": 4999,
+    "annual_waiver_spend_inr": 1000000,
+    "gst_extra": true,
+    "revolve_interest": "2.99% per month (35.88% pa) on overdue"
+   },
+   "reward_currency": {
+    "name": "YES Rewardz Points"
+   },
+   "earn_rules": [
+    {
+     "category": "Online shopping (non-select)",
+     "rate_text": "36 pts per Rs200",
+     "points_per_block": 36,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Max 1L pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry"
+     ]
+    },
+    {
+     "category": "Offline shopping (non-select)",
+     "rate_text": "18 pts per Rs200",
+     "points_per_block": 18,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Max 1L pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry"
+     ]
+    },
+    {
+     "category": "Select categories (MCC 4899 cable/streaming, 4900 utilities; pre-15 Jun 2026 list also insurance 6300/6381 and education 82xx)",
+     "rate_text": "10 pts per Rs200",
+     "points_per_block": 10,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Utility (MCC 4900) points capped 1,250 per statement cycle",
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": "6 visits per calendar quarter, primary and add-on; 2 guest visits per quarter",
+    "international": "Unlimited, primary and add-on (Priority Pass; USD 1 authorisation)",
+    "spend_gate": "Domestic lounge subject to spend threshold (amount not shown on page)"
+   },
+   "forex": {
+    "markup_text": "1% (page: 'best in industry')"
+   },
+   "welcome_benefits": [
+    "Hero banner: 40,000 YES Rewardz Points on joining benefit (credited month after membership fee paid by due date)",
+    "Benefits carousel: ETPrime voucher worth Rs4,500 on joining fee realisation"
+   ],
+   "milestones": [
+    "20,000 bonus points on payment of renewal fee"
+   ],
+   "movie_offer": "Hero: BOGO with BookMyShow; carousel: BOGO on BookMyShow; T&C: max 3 tickets per calendar month, discount capped Rs800/ticket, District not stated",
+   "fuel_surcharge_waiver": "1% on Rs500-5,000 txns; total waiver capped Rs1,000/statement cycle; pre-15 Jun 2026 range was Rs400-5,000",
+   "insurance": [
+    "Purchase protection up to Rs50,000 (accidental damage, 6 months, mobile/electronics bought online)"
+   ],
+   "golf": "Waiver of 4 green fees at select Indian courses; 1 complimentary lesson per calendar month",
+   "page_conflicts": [
+    "Joining benefit: hero says 40,000 pts; carousel says ETPrime voucher worth Rs4,500",
+    "Movie offer: hero mentions BookMyShow (T&C cites Rs800 cap); fuel waiver range shown Rs500-5,000 while T&C says prior range Rs400-5,000"
+   ],
+   "verification_status": "RAW_TEXT_VERIFIED"
+  },
+  {
+   "card_id": "YES_ELITE_PLUS",
+   "card_name": "ELITE+ Credit Card (formerly YES Premia)",
+   "network": "Mastercard/Visa (page cites both; MasterCard SecureCode)",
+   "backing": "UNSECURED",
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/elite-plus-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "21-60",
+    "income": "Net salary Rs1 lakh/month or ITR Rs9 lakh+",
+    "note": "Not available to existing YES BANK credit card holders"
+   },
+   "fees": {
+    "joining_inr": 999,
+    "joining_waiver": "Rs20,000 retail spend within 1 month of card set-up",
+    "annual_inr": 999,
+    "annual_waiver_spend_inr": 200000,
+    "gst_extra": true,
+    "revolve_interest": "3.99% per month (47.88% pa) on revolving, cash advance, overdue"
+   },
+   "reward_currency": {
+    "name": "YES Rewardz Points"
+   },
+   "earn_rules": [
+    {
+     "category": "Online shopping (non-select)",
+     "rate_text": "12 pts per Rs200",
+     "points_per_block": 12,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Max 12,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "jewellery"
+     ]
+    },
+    {
+     "category": "Offline shopping (non-select)",
+     "rate_text": "6 pts per Rs200",
+     "points_per_block": 6,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Max 12,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "jewellery"
+     ]
+    },
+    {
+     "category": "Select categories (MCC 4899, 4900; pre-15 Jun 2026 list also insurance and education)",
+     "rate_text": "4 pts per Rs200",
+     "points_per_block": 4,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Utility (MCC 4900) points capped 300 per statement cycle",
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": "2 per calendar quarter, primary cardmember",
+    "international": "Access via Priority Pass (count not stated)",
+    "spend_gate": "Domestic subject to spend threshold (amount not shown on page)"
+   },
+   "forex": {
+    "markup_text": "3.00% (2.75% prior to 15 Jun 2026)"
+   },
+   "welcome_benefits": [],
+   "movie_offer": "25% discount on District; effective 1 Oct 2026 District app/website only, discount capped Rs250 per calendar month",
+   "fuel_surcharge_waiver": "1% on Rs500-4,000 txns; capped Rs125 per statement cycle; prior range Rs400-5,000",
+   "insurance": [
+    "Purchase protection up to Rs50,000 (accidental damage, 6 months, online-bought mobile/electronics)"
+   ],
+   "golf": "Waiver of 4 green fees at select Indian courses; 1 complimentary lesson per calendar month",
+   "other_benefits": [
+    "Rewards Subscription Plan (choose reward points)"
+   ],
+   "page_conflicts": [
+    "Page says Elite, Elite+ and YES Premia are the same card",
+    "Reward exclusions list expanded effective 15 Jun 2026 (adds insurance, education, railways, toll, ferry, jewellery)"
+   ],
+   "verification_status": "RAW_TEXT_VERIFIED"
+  },
+  {
+   "card_id": "YES_ESSENCE",
+   "card_name": "YES Essence Women's Credit Card",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/essence-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "21-60",
+    "income": "Salaried, net salary Rs30,000/month",
+    "note": "Not for existing YES BANK credit card holders"
+   },
+   "fees": {
+    "joining_inr": 799,
+    "joining_waiver": "Rs20,000 spend within 1 month of set-up",
+    "annual_inr": 799,
+    "annual_waiver_spend_inr": 100000,
+    "gst_extra": true,
+    "lifetime_free_offer": "limited period offer; fees N/A for Lifetime Free variant",
+    "revolve_interest": "3.99% per month (47.88% pa)"
+   },
+   "reward_currency": {
+    "name": "YES Rewardz Points"
+   },
+   "earn_rules": [
+    {
+     "category": "Online fashion, beauty, travel, dining, grocery",
+     "rate_text": "12 pts per Rs200",
+     "points_per_block": 12,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "9,000 pts per statement cycle (Mastercard MCCs: apparel, beauty 5977, travel, dining 5812-5814, grocery 5411)",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet",
+      "fuel",
+      "government",
+      "marketing",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "cash",
+      "EMI",
+      "fees"
+     ]
+    },
+    {
+     "category": "Online shopping (other categories)",
+     "rate_text": "8 pts per Rs200",
+     "points_per_block": 8,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "9,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Offline spends",
+     "rate_text": "4 pts per Rs200",
+     "points_per_block": 4,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "9,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": "1 per calendar quarter, primary only",
+    "international": null,
+    "spend_gate": "Domestic lounge subject to spend threshold (amount not on page)"
+   },
+   "forex": {
+    "markup_text": "2.75%"
+   },
+   "welcome_benefits": [
+    "2 vouchers of Rs500 from welcome bundle (first txn within 45 days of issue)"
+   ],
+   "milestones": [
+    "5,000 bonus pts on Rs50,000 spend in first 90 days",
+    "10,000 bonus pts on Rs1,00,000 annual spend",
+    "Birthday month: Rs1,000 Myntra voucher plus women-centric health checkup",
+    "Annual: ET Prime plus 3-month Sony Liv worth Rs4,500"
+   ],
+   "movie_offer": "BOGO via District once per calendar month; max Rs250 off second ticket",
+   "fuel_surcharge_waiver": "1% on Rs400-5,000 txns (cap not stated on this page)",
+   "insurance": [
+    "Purchase protection up to Rs50,000"
+   ],
+   "golf": "4 green fee waivers and 12 lessons per year",
+   "other_benefits": [
+    "Coffee BOGO at mall outlets, twice per quarter"
+   ],
+   "page_conflicts": [
+    "Headline 'Lifetime Free' limited period offer vs Rs799 fee listed; fee reversal terms apply only to non-lifetime-free variant",
+    "Network not stated; MCC table is Mastercard-defined"
+   ],
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_SELECT",
+   "card_name": "SELECT Credit Card (formerly YES Prosperity Edge)",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/select-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "21-60",
+    "income": "Net salary Rs50,000/month or ITR Rs7.5 lakh+",
+    "note": "Not for existing YES BANK credit card holders"
+   },
+   "fees": {
+    "joining_inr": 599,
+    "joining_waiver": "Rs10,000 retail spend within 1 month of set-up",
+    "annual_inr": 599,
+    "annual_waiver_spend_inr": 100000,
+    "gst_extra": true,
+    "revolve_interest": "3.99% per month (47.88% pa)"
+   },
+   "reward_currency": {
+    "name": "YES Rewardz Points"
+   },
+   "earn_rules": [
+    {
+     "category": "Online shopping (non-select)",
+     "rate_text": "8 pts per Rs200",
+     "points_per_block": 8,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "5,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "jewellery"
+     ]
+    },
+    {
+     "category": "Offline shopping (non-select)",
+     "rate_text": "4 pts per Rs200",
+     "points_per_block": 4,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "5,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "jewellery"
+     ]
+    },
+    {
+     "category": "Select categories (MCC 4899, 4900)",
+     "rate_text": "2 pts per Rs200",
+     "points_per_block": 2,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Utility (MCC 4900) points capped 150 per statement cycle",
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": "1 per calendar quarter",
+    "international": "1 per quarter, only in case of flight delay"
+   },
+   "forex": {
+    "markup_text": "3.50% (2.75% prior to 15 Jun 2026)"
+   },
+   "movie_offer": "BOGO via District; max Rs150 off second ticket, once per user per calendar month",
+   "fuel_surcharge_waiver": "1% on Rs500-3,000 txns; waiver capped Rs125 per statement cycle; prior range Rs400-5,000",
+   "insurance": [
+    "Purchase protection up to Rs50,000"
+   ],
+   "golf": "4 green fee waivers per calendar year; 1 lesson per month; not available on FD-backed Select",
+   "other_benefits": [
+    "Coffee BOGO at mall outlets"
+   ],
+   "page_conflicts": [
+    "Headline says 'Earn 2X on every Rs200 on online shopping' but rewards table says 8 pts online and 2 pts on select categories"
+   ],
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_ACE",
+   "card_name": "ACE Credit Card (formerly YES Prosperity Rewards Plus)",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/ace-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "21-60",
+    "income": "Net salary Rs25,000/month or ITR Rs7.5 lakh+",
+    "note": "Not for existing YES BANK credit card holders"
+   },
+   "fees": {
+    "joining_inr": 499,
+    "joining_waiver": "Reversed on Rs5,000 spend within 1 month of set-up",
+    "annual_inr": 499,
+    "annual_waiver_spend_inr": 50000,
+    "gst_extra": true,
+    "revolve_interest": "3.99% per month on overdue; 2.49% per month against FD"
+   },
+   "reward_currency": {
+    "name": "YES Rewardz Points"
+   },
+   "earn_rules": [
+    {
+     "category": "Online shopping (non-select)",
+     "rate_text": "8 pts per Rs200",
+     "points_per_block": 8,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "5,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "jewellery",
+      "UPI"
+     ]
+    },
+    {
+     "category": "Offline shopping (non-select)",
+     "rate_text": "4 pts per Rs200",
+     "points_per_block": 4,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "5,000 pts per statement cycle",
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "jewellery",
+      "UPI"
+     ]
+    },
+    {
+     "category": "Select categories (MCC 4899, 4900)",
+     "rate_text": "2 pts per Rs200",
+     "points_per_block": 2,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Utility (MCC 4900) points capped 150 per statement cycle",
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": "No reward points on UPI effective 15 Jun 2026"
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "3.50% (2.75% prior to 15 Jun 2026)"
+   },
+   "fuel_surcharge_waiver": "1% on Rs500-3,000 txns; waiver capped Rs100 per statement cycle; prior range Rs400-5,000",
+   "insurance": [
+    "Purchase protection up to Rs50,000"
+   ],
+   "other_benefits": [
+    "Coffee BOGO at mall outlets"
+   ],
+   "page_conflicts": [
+    "Only card of the batch that lists UPI as an excluded reward category on the card page"
+   ],
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_PROSPERITY_REWARDS",
+   "card_name": "YES Prosperity Rewards Credit Card",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/yes-prosperity-rewards-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "status": "Issuance to new customers discontinued; existing cardholders get new card on expiry"
+   },
+   "fees": {
+    "joining_inr": 499,
+    "joining_waiver": "Rs10,000 spend within 1 month of set-up",
+    "annual_inr": 499,
+    "annual_waiver_spend_inr": 100000,
+    "gst_extra": true,
+    "revolve_interest": "3.99% per month (47.88% pa)"
+   },
+   "reward_currency": {
+    "name": "YES Rewardz Points"
+   },
+   "earn_rules": [
+    {
+     "category": "All categories except select",
+     "rate_text": "2 pts per Rs200",
+     "points_per_block": 2,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": [
+      "rental",
+      "wallet load",
+      "fuel",
+      "government",
+      "marketing/advertising",
+      "cash withdrawal",
+      "post-purchase EMI",
+      "instant EMI",
+      "insurance",
+      "education",
+      "railways",
+      "toll",
+      "ferry",
+      "jewellery"
+     ]
+    },
+    {
+     "category": "Select categories (effective 15 Jun 2026: MCC 4121, 4131, 4900, 5411, 5499; earlier list also 4111, 6300, 82xx, 4784)",
+     "rate_text": "1 pt per Rs200",
+     "points_per_block": 1,
+     "block_inr": 200,
+     "cashback_pct": null,
+     "cap_text": "Utility (MCC 4900) points capped 75 per statement cycle",
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "3.50% (3.40% prior to 15 Jun 2026)"
+   },
+   "fuel_surcharge_waiver": "1% on Rs500-3,000 txns; capped Rs100 per statement cycle; prior range Rs400-5,000",
+   "insurance": [
+    "Purchase protection up to Rs50,000"
+   ],
+   "page_conflicts": [
+    "T&C footnotes reference golf, lounge and flight-ticket benefits not shown in the card's benefits section"
+   ],
+   "legacy": true,
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_PROSPERITY_CASHBACK_PLUS",
+   "card_name": "YES Prosperity Cashback Plus Credit Card",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/yes-prosperity-cashback-plus-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "status": "Issuance to new customers discontinued; existing cardholders get new card on expiry"
+   },
+   "fees": {
+    "joining_inr": 1499,
+    "annual_inr": 1499,
+    "gst_extra": true,
+    "revolve_interest": "3.99% per month (47.88% pa)"
+   },
+   "reward_currency": {
+    "name": "Cashback"
+   },
+   "earn_rules": [
+    {
+     "category": "Movies, grocery, utility bill payments (utility only on auto-pay)",
+     "rate_text": "5% cashback",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 5,
+     "cap_text": "cap not captured; see T&C",
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "All other spends except fuel",
+     "rate_text": "0.75% cashback",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 0.75,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": [
+      "fuel"
+     ]
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "3.50%"
+   },
+   "welcome_benefits": [
+    "Cashback Rs250 on Rs2,500 spend within 30 days of set-up"
+   ],
+   "fuel_surcharge_waiver": "1% on Rs500-3,000 txns (cap not captured)",
+   "page_conflicts": [],
+   "legacy": true,
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "completeness": "PARTIAL: T&C caps and MCC lists not captured",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_PROSPERITY_CASHBACK",
+   "card_name": "YES Prosperity Cashback Credit Card",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/yes-prosperity-cashback-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "status": "Issuance to new customers discontinued; existing cardholders get new card on expiry"
+   },
+   "fees": {
+    "joining_inr": 999,
+    "annual_inr": 999,
+    "gst_extra": true,
+    "revolve_interest": "3.99% per month (47.88% pa)"
+   },
+   "reward_currency": {
+    "name": "Cashback"
+   },
+   "earn_rules": [
+    {
+     "category": "Movies and other categories (page text cut off after '5% Cashback on spends on Movie')",
+     "rate_text": "5% cashback (partial)",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 5,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "3.50%"
+   },
+   "welcome_benefits": [
+    "Cashback Rs250 on Rs2,500 spend within 30 days of set-up"
+   ],
+   "fuel_surcharge_waiver": "1% on Rs500-3,000 txns (cap not captured)",
+   "page_conflicts": [],
+   "legacy": true,
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "completeness": "PARTIAL: reward table remainder and T&C not captured",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_AI_INSIDE",
+   "card_name": "AI Inside Credit Card (corporate-employee co-brand)",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/ai-inside-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {
+    "age": "21-60",
+    "note": "Employees of specific corporates tied up with the service provider; not for existing YES BANK credit card holders"
+   },
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true,
+    "cash_withdrawal": "zero fee",
+    "revolve_interest": "3.99% per month (47.88% pa) on revolving credit"
+   },
+   "reward_currency": {
+    "name": "Cashback"
+   },
+   "earn_rules": [
+    {
+     "category": "Spends",
+     "rate_text": "Up to 3% assured cashback (tiers not stated on page)",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": 3,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": [
+      "EMI",
+      "fuel",
+      "fees and charges"
+     ]
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "Zero"
+   },
+   "fuel_surcharge_waiver": "1% on Rs400-5,000 txns (cap not stated)",
+   "page_conflicts": [
+    "Cashback tiers not on card page; need MITC or partner T&C"
+   ],
+   "completeness": "PARTIAL: thin co-brand page",
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_UNI",
+   "card_name": "YES BANK Uni Credit Card",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/uni-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {},
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 499,
+    "annual_waiver_spend_inr": 50000,
+    "gst_extra": true,
+    "note": "Renewal fee waiver not applicable to LTF cards"
+   },
+   "reward_currency": {
+    "name": "Uni coins (issued by partner)"
+   },
+   "earn_rules": [
+    {
+     "category": "All eligible transactions",
+     "rate_text": "Unlimited 1% reward points as Uni coins",
+     "points_per_block": null,
+     "block_inr": null,
+     "cashback_pct": null,
+     "cap_text": "No cap stated",
+     "gate_text": null,
+     "exclusions": [
+      "fuel",
+      "wallet load",
+      "rent",
+      "government",
+      "education",
+      "utility (MCC 4900, 4812-4829, 4899)",
+      "EMI",
+      "cash advance",
+      "marketing/advertising",
+      "international transactions"
+     ]
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "0%"
+   },
+   "fuel_surcharge_waiver": "1% waiver; headline says up to Rs500; T&C: valid for txns up to Rs7,500 only; max waiver per cycle cut off in capture",
+   "page_conflicts": [
+    "Headline 'unlimited 1%' vs T&C excluding international spends despite zero-forex positioning"
+   ],
+   "completeness": "PARTIAL: T&C tail (fuel waiver cap) not captured",
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "backing": "UNSECURED"
+  },
+  {
+   "card_id": "YES_NIYO",
+   "card_name": "YES BANK Niyo Credit Card",
+   "network": null,
+   "source": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/niyo-credit-card",
+    "retrieved_on": "2026-11-23",
+    "content_hash": null
+   },
+   "eligibility": {},
+   "fees": {
+    "joining_inr": 0,
+    "annual_inr": 0,
+    "lifetime_free": true
+   },
+   "reward_currency": {
+    "name": "Niyo coins (issued by partner)"
+   },
+   "earn_rules": [
+    {
+     "category": "Online spends",
+     "rate_text": "4 Niyo coins per Rs100",
+     "points_per_block": 4,
+     "block_inr": 100,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "POS transactions",
+     "rate_text": "2 Niyo coins per Rs100",
+     "points_per_block": 2,
+     "block_inr": 100,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    },
+    {
+     "category": "Travel bookings via Niyo app",
+     "rate_text": "5 Niyo coins per Rs100",
+     "points_per_block": 5,
+     "block_inr": 100,
+     "cashback_pct": null,
+     "cap_text": null,
+     "gate_text": null,
+     "exclusions": []
+    }
+   ],
+   "upi": {
+    "rate_text": null
+   },
+   "lounge": {
+    "domestic": null,
+    "international": null
+   },
+   "forex": {
+    "markup_text": "Zero"
+   },
+   "fuel_surcharge_waiver": "1% on Rs500-4,000 txns; max surcharge waiver Rs250 per statement cycle",
+   "page_conflicts": [],
+   "completeness": "PARTIAL: coin value and exclusions (asterisked) not captured",
+   "verification_status": "RAW_TEXT_VERIFIED",
+   "backing": "UNSECURED"
+  }
+ ]
+}
