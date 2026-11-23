@@ -1,4 +1,6 @@
 // ================================================================== PORTFOLIO LAYER (injected into platform_template.html at build time)
+// DESIGN REFERENCE ONLY. Metric, channel, decline-code and fee definitions here are provisional and are overridden by the internal
+// data (Trino) and reference documents. See docs/DECISIONS.md D-020 for what to expect to be replaced.
 // Synthetic monthly portfolio: CIF, spends, volume, active cards, activation %, issuance, SPAC, TPAC, ATS, three channels,
 // drill-downs (MCC, merchant, geography, UPI app), decline codes, new-to-ecosystem users, card economics.
 const P=D.portfolio,PM=P.months,NM=PM.length,CH3=['CC','UPI','INTL'];
